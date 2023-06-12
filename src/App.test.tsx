@@ -1,10 +1,19 @@
 import { describe, test } from 'vitest';
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import App from './App';
 
 describe('When the app renders', () => {
-  test('it shows the title', () => {
+  test('it shows the text', () => {
     render(<App />);
-    screen.getByText('Frontend fork by Cammy!');
+    screen.getByText('Are you a menace?');
+    screen.getByText('Is that a bad thing?', { exact: false });
+    screen.getByText('This is in no way medical advice.', { exact: false });
+  });
+
+  test('a user can start the personality test', () => {
+    render(<App />);
+    const button = screen.getByRole('button', { name: 'Take the test' });
+    fireEvent.click(button);
+    screen.getByText('captcha');
   });
 });
