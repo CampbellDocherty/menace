@@ -1,0 +1,38 @@
+import { styled } from 'styled-components';
+
+export const CaptchaContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 24px;
+  text-align: justify;
+`;
+
+export const GridWrapper = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  aspect-ratio: 1; /* This ensures the grid stays square */
+  max-width: 100%; /* Ensures the grid doesn't overflow */
+  width: 100%;
+  gap: 4px;
+`;
+
+export const Square = styled.div<{ readonly selected: boolean }>`
+  background-color: #eaeaea;
+  border: ${({ selected }) =>
+    selected ? '3px solid green' : '1px solid #ccc'};
+`;
+
+export const VerifyCaptchaButton = styled.button`
+  border-radius: 4px;
+  background: none;
+  border: 1px solid black;
+  margin-top: 16px;
+  width: 10rem;
+  height: 2rem;
+  cursor: pointer;
+  align-self: flex-end;
+`;
