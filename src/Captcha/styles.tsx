@@ -32,9 +32,21 @@ export const VerifyCaptchaButton = styled.button`
   border-radius: 4px;
   background: none;
   border: 1px solid black;
-  margin-top: 16px;
   width: 10rem;
   height: 2rem;
   cursor: pointer;
   align-self: flex-end;
+`;
+
+export const CaptchaActionWrapper = styled.div`
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+`;
+
+export const ErrorText = styled.p`
+  color: red;
+  margin: 0;
 `;

@@ -1,5 +1,12 @@
 import { useState } from 'react';
-import { Container, GridWrapper, Square, VerifyCaptchaButton } from './styles';
+import {
+  CaptchaActionWrapper,
+  Container,
+  ErrorText,
+  GridWrapper,
+  Square,
+  VerifyCaptchaButton,
+} from './styles';
 
 const gridSquares = Array(9).fill(null);
 
@@ -7,6 +14,8 @@ export const Captcha = () => {
   const [selectedImages, setSelectedImages] = useState<ReadonlyArray<number>>(
     []
   );
+
+  const [captchaError, setCaptchaError] = useState<string | null>(null);
 
   const updatedSelectedImages = (elementToAddOrRemove: number) => {
     const array = [...selectedImages];
@@ -17,6 +26,13 @@ export const Captcha = () => {
       array.push(elementToAddOrRemove);
     }
     setSelectedImages(array);
+  };
+
+  const onVerify = () => {
+    if (selectedImages.length === 0) {
+      setCaptchaError('Please select at least one image');
+      return;
+    }
   };
   return (
     <Container>
@@ -36,7 +52,10 @@ export const Captcha = () => {
           );
         })}
       </GridWrapper>
-      <VerifyCaptchaButton>Verify</VerifyCaptchaButton>
+      <CaptchaActionWrapper>
+        {captchaError && <ErrorText>{captchaError}</ErrorText>}
+        <VerifyCaptchaButton onClick={onVerify}>Verify</VerifyCaptchaButton>
+      </CaptchaActionWrapper>
     </Container>
   );
 };
