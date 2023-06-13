@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Captcha } from './Captcha/Captcha';
 import { Container, Footer, Title } from './styles';
 
 const App = () => {
@@ -28,7 +29,7 @@ const App = () => {
           </Footer>
         </>
       ) : (
-        <p>captcha</p>
+        <Captcha />
       )}
     </Container>
   );
