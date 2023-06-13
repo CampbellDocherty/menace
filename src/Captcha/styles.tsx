@@ -35,6 +35,7 @@ export const VerifyCaptchaButton = styled.button`
   width: 10rem;
   height: 2rem;
   cursor: pointer;
+  margin-left: auto;
 `;
 
 export const CaptchaActionWrapper = styled.div`
