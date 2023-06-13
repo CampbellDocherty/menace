@@ -1,10 +1,5 @@
 import { useState } from 'react';
-import {
-  CaptchaContainer,
-  GridWrapper,
-  Square,
-  VerifyCaptchaButton,
-} from './captchaStyles';
+import { Captcha } from './Captcha/Captcha';
 import { Container, Footer, Title } from './styles';
 
 const App = () => {
@@ -34,24 +29,7 @@ const App = () => {
           </Footer>
         </>
       ) : (
-        <CaptchaContainer>
-          <p>
-            Please select all the images with a menace in them. Click verify
-            once there are none left.
-          </p>
-          <GridWrapper>
-            <Square selected={false} />
-            <Square selected={false} />
-            <Square selected={true} />
-            <Square selected={false} />
-            <Square selected={false} />
-            <Square selected={false} />
-            <Square selected={false} />
-            <Square selected={true} />
-            <Square selected={false} />
-          </GridWrapper>
-          <VerifyCaptchaButton>Verify</VerifyCaptchaButton>
-        </CaptchaContainer>
+        <Captcha />
       )}
     </Container>
   );
