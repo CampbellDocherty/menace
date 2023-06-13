@@ -1,4 +1,4 @@
-import { beforeEach, describe, test } from 'vitest';
+import { beforeEach, describe, expect, test } from 'vitest';
 import { fireEvent, render, screen } from '@testing-library/react';
 import App from '../App';
 
@@ -19,5 +19,17 @@ describe('When the captcha page renders', () => {
     const verifyButton = screen.getByRole('button', { name: 'Verify' });
     fireEvent.click(verifyButton);
     screen.getByText('Please select at least one image');
+  });
+
+  test('selecting an image clears any errors', () => {
+    const verifyButton = screen.getByRole('button', { name: 'Verify' });
+    fireEvent.click(verifyButton);
+    screen.getByText('Please select at least one image');
+
+    const image = screen.getByTestId('captcha-image-1');
+    fireEvent.click(image);
+
+    const errorText = screen.queryByText('Please select at least one image');
+    expect(errorText).toBeNull();
   });
 });

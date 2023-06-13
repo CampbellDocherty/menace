@@ -35,7 +35,6 @@ export const VerifyCaptchaButton = styled.button`
   width: 10rem;
   height: 2rem;
   cursor: pointer;
-  align-self: flex-end;
 `;
 
 export const CaptchaActionWrapper = styled.div`
@@ -43,7 +42,7 @@ export const CaptchaActionWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
+  min-width: 100%;
 `;
 
 export const ErrorText = styled.p`

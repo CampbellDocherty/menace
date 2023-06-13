@@ -18,6 +18,7 @@ export const Captcha = () => {
   const [captchaError, setCaptchaError] = useState<string | null>(null);
 
   const updatedSelectedImages = (elementToAddOrRemove: number) => {
+    setCaptchaError(null);
     const array = [...selectedImages];
     if (array.includes(elementToAddOrRemove)) {
       const index = array.indexOf(elementToAddOrRemove);
