@@ -23,7 +23,9 @@ export const GridWrapper = styled.div`
 export const Square = styled.div<{ readonly selected: boolean }>`
   background-color: #eaeaea;
   border: ${({ selected }) =>
-    selected ? '3px solid green' : '1px solid #ccc'};
+    selected ? '1px solid green' : '1px solid #ccc'};
+  box-shadow: ${({ selected }) =>
+    selected ? 'inset 0 0 0 2px green' : 'none'};
 `;
 
 export const VerifyCaptchaButton = styled.button`

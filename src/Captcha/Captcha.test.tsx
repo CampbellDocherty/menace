@@ -2,7 +2,7 @@ import { describe, test } from 'vitest';
 import { fireEvent, render, screen } from '@testing-library/react';
 import App from '../App';
 
-describe('When the app renders', () => {
+describe('When the captcha page renders', () => {
   test('it shows the text', () => {
     render(<App />);
     const button = screen.getByRole('button', { name: 'Take the test' });
