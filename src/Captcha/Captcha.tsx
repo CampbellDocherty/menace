@@ -9,11 +9,10 @@ import {
 } from './styles';
 
 const gridSquares = Array(9).fill(null);
+const CORRECT_IMAGES = [2, 5, 6];
 
 export const Captcha = () => {
-  const [selectedImages, setSelectedImages] = useState<ReadonlyArray<number>>(
-    []
-  );
+  const [selectedImages, setSelectedImages] = useState<Array<number>>([]);
 
   const [captchaError, setCaptchaError] = useState<string | null>(null);
 
@@ -33,6 +32,13 @@ export const Captcha = () => {
     if (selectedImages.length === 0) {
       setCaptchaError('Please select at least one image');
       return;
+    }
+
+    if (
+      JSON.stringify(selectedImages.sort()) !==
+      JSON.stringify(CORRECT_IMAGES.sort())
+    ) {
+      setCaptchaError("It looks like you didn't select the right images :(");
     }
   };
   return (
