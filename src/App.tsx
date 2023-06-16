@@ -1,36 +1,28 @@
 import { useState } from 'react';
 import { Captcha } from './Captcha/Captcha';
-import { Container, Footer, Title } from './styles';
+import { Home } from './Home/Home';
+import { Container } from './styles';
+
+enum Pages {
+  HOME,
+  CAPTCHA,
+}
 
 const App = () => {
-  const [isTest, setIsTest] = useState(false);
-  const onStartTest = () => {
-    setIsTest(true);
+  const [page, setPage] = useState(Pages.HOME);
+
+  const Router = () => {
+    switch (page) {
+      case Pages.CAPTCHA:
+        return <Captcha />;
+      default:
+        return <Home onProceed={() => setPage(Pages.CAPTCHA)} />;
+    }
   };
+
   return (
     <Container>
-      {!isTest ? (
-        <>
-          <Title>Are you a menace?</Title>
-          <p>
-            Is that a bad thing? In a few short minutes you will know the answer
-            to these questions. And whether you are too much of a menance or too
-            little of a menace Dr. 00ab has the cure! Lorem ipsum dolor sit
-            amet, consectetur adipiscing elit. Nulla fermentum, diam at rutrum
-            cursus, diam quam consectetur lectus, quis tempus justo mauris
-            volutpat massa. In commodo, tortor id malesuada placerat, dolor
-            metus ornare massa, eu pharetra lorem nisi in quam.
-          </p>
-          <button onClick={onStartTest}>Take the test</button>
-          <Footer>
-            This is in no way medical advice. Maecenas sit amet ipsum eget dolor
-            aliquet pellentesque. Sed eget eros pellentesque, vulputate lorem
-            in, aliquet tellus.
-          </Footer>
-        </>
-      ) : (
-        <Captcha />
-      )}
+      <Router />
     </Container>
   );
 };
