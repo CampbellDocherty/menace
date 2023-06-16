@@ -33,12 +33,14 @@ export const Captcha = () => {
       setCaptchaError('Please select at least one image');
       return;
     }
-
+    console.log(selectedImages.sort(), CORRECT_IMAGES);
     if (
       JSON.stringify(selectedImages.sort()) !==
       JSON.stringify(CORRECT_IMAGES.sort())
     ) {
       setCaptchaError("It looks like you didn't select the right images :(");
+      setSelectedImages([]);
+      return;
     }
   };
   return (
@@ -49,12 +51,13 @@ export const Captcha = () => {
       </p>
       <GridWrapper>
         {gridSquares.map((_, i) => {
+          const imageNumber = i + 1;
           return (
             <Square
               key={i}
-              data-testid={`captcha-image-${i + 1}`}
-              onClick={() => updatedSelectedImages(i)}
-              selected={selectedImages.includes(i)}
+              data-testid={`captcha-image-${imageNumber}`}
+              onClick={() => updatedSelectedImages(imageNumber)}
+              selected={selectedImages.includes(imageNumber)}
             />
           );
         })}
