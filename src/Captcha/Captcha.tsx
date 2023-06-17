@@ -11,12 +11,12 @@ import {
 const gridSquares = Array(9).fill(null);
 const CORRECT_IMAGES = [2, 5, 6];
 
-export const Captcha = () => {
+export const Captcha = ({ onProceed }: { onProceed: () => void }) => {
   const [selectedImages, setSelectedImages] = useState<Array<number>>([]);
 
   const [captchaError, setCaptchaError] = useState<string | null>(null);
 
-  const updatedSelectedImages = (elementToAddOrRemove: number) => {
+  const updateSelectedImages = (elementToAddOrRemove: number) => {
     setCaptchaError(null);
     const array = [...selectedImages];
     if (array.includes(elementToAddOrRemove)) {
@@ -33,7 +33,7 @@ export const Captcha = () => {
       setCaptchaError('Please select at least one image');
       return;
     }
-    console.log(selectedImages.sort(), CORRECT_IMAGES);
+
     if (
       JSON.stringify(selectedImages.sort()) !==
       JSON.stringify(CORRECT_IMAGES.sort())
@@ -42,6 +42,8 @@ export const Captcha = () => {
       setSelectedImages([]);
       return;
     }
+
+    onProceed();
   };
   return (
     <Container>
@@ -56,7 +58,7 @@ export const Captcha = () => {
             <Square
               key={i}
               data-testid={`captcha-image-${imageNumber}`}
-              onClick={() => updatedSelectedImages(imageNumber)}
+              onClick={() => updateSelectedImages(imageNumber)}
               selected={selectedImages.includes(imageNumber)}
             />
           );
