@@ -3,6 +3,12 @@ import { fireEvent, screen } from '@testing-library/react';
 import { renderCaptchaScreen } from './renderCaptchaScreen';
 import { selectCaptchaImage } from './selectCaptchaImage';
 
+const selectCorrectCaptchaImages = () => {
+  selectCaptchaImage(2);
+  selectCaptchaImage(5);
+  selectCaptchaImage(6);
+};
+
 describe('When the captcha page renders', () => {
   beforeEach(() => {
     renderCaptchaScreen();
@@ -15,9 +21,7 @@ describe('When the captcha page renders', () => {
   });
 
   test('can proceed to the first question after selecting the right images', () => {
-    selectCaptchaImage(2);
-    selectCaptchaImage(5);
-    selectCaptchaImage(6);
+    selectCorrectCaptchaImages();
     const verifyButton = screen.getByRole('button', { name: 'Verify' });
     fireEvent.click(verifyButton);
     screen.getByText('Scenario 1');

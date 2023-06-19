@@ -3,14 +3,18 @@ import { Captcha } from './Captcha/Captcha';
 import { Home } from './Home/Home';
 import Scenario from './Scenario/Scenario';
 
-enum Pages {
+export enum Pages {
   HOME,
   CAPTCHA,
   SCENARIO_ONE,
 }
 
-const Router = () => {
-  const [page, setPage] = useState(Pages.HOME);
+const Router = ({
+  initialPage = Pages.HOME,
+}: {
+  readonly initialPage?: Pages;
+}) => {
+  const [page, setPage] = useState(initialPage);
 
   switch (page) {
     case Pages.CAPTCHA:
