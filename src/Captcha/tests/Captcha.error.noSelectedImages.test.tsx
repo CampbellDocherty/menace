@@ -1,21 +1,13 @@
 import { beforeEach, describe, expect, test } from 'vitest';
-import { fireEvent, render, screen } from '@testing-library/react';
-import App from '../App';
+import { fireEvent, screen } from '@testing-library/react';
+import { renderCaptchaScreen } from './renderCaptchaScreen';
 
-describe('When the captcha page renders', () => {
+describe('when a user tries to proceed from the captcha page with no images selected', () => {
   beforeEach(() => {
-    render(<App />);
-    const button = screen.getByRole('button', { name: 'Take the test' });
-    fireEvent.click(button);
+    renderCaptchaScreen();
   });
 
-  test('it shows the text', () => {
-    screen.getByText(
-      'Please select all the images with a menace in them. Click verify once there are none left.'
-    );
-  });
-
-  test('clicking verify displays an error when no images are selected', () => {
+  test('an error is shown', () => {
     const verifyButton = screen.getByRole('button', { name: 'Verify' });
     fireEvent.click(verifyButton);
     screen.getByText('Please select at least one image');

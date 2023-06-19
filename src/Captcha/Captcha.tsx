@@ -8,16 +8,15 @@ import {
   VerifyCaptchaButton,
 } from './styles';
 
-const gridSquares = Array(9).fill(null);
+const GRID_SQUARES = Array(9).fill(null);
+const CORRECT_IMAGES = [2, 5, 6];
 
-export const Captcha = () => {
-  const [selectedImages, setSelectedImages] = useState<ReadonlyArray<number>>(
-    []
-  );
+export const Captcha = ({ onProceed }: { onProceed: () => void }) => {
+  const [selectedImages, setSelectedImages] = useState<Array<number>>([]);
 
   const [captchaError, setCaptchaError] = useState<string | null>(null);
 
-  const updatedSelectedImages = (elementToAddOrRemove: number) => {
+  const updateSelectedImages = (elementToAddOrRemove: number) => {
     setCaptchaError(null);
     const array = [...selectedImages];
     if (array.includes(elementToAddOrRemove)) {
@@ -34,6 +33,17 @@ export const Captcha = () => {
       setCaptchaError('Please select at least one image');
       return;
     }
+
+    if (
+      JSON.stringify(selectedImages.sort()) !==
+      JSON.stringify(CORRECT_IMAGES.sort())
+    ) {
+      setCaptchaError("It looks like you didn't select the right images :(");
+      setSelectedImages([]);
+      return;
+    }
+
+    onProceed();
   };
   return (
     <Container>
@@ -42,13 +52,14 @@ export const Captcha = () => {
         there are none left.
       </p>
       <GridWrapper>
-        {gridSquares.map((_, i) => {
+        {GRID_SQUARES.map((_, i) => {
+          const imageNumber = i + 1;
           return (
             <Square
               key={i}
-              data-testid={`captcha-image-${i + 1}`}
-              onClick={() => updatedSelectedImages(i)}
-              selected={selectedImages.includes(i)}
+              data-testid={`captcha-image-${imageNumber}`}
+              onClick={() => updateSelectedImages(imageNumber)}
+              selected={selectedImages.includes(imageNumber)}
             />
           );
         })}
