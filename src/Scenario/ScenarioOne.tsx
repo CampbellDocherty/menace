@@ -1,4 +1,4 @@
-import { Pages } from '../Router';
+import { Pages } from '../Pages';
 
 type Scenarios = Exclude<Pages, Pages.HOME | Pages.CAPTCHA | Pages.RESULTS>;
 

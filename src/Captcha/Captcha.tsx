@@ -8,7 +8,7 @@ import {
   VerifyCaptchaButton,
 } from './styles';
 
-const gridSquares = Array(9).fill(null);
+const GRID_SQUARES = Array(9).fill(null);
 const CORRECT_IMAGES = [2, 5, 6];
 
 export const Captcha = ({ onProceed }: { onProceed: () => void }) => {
@@ -52,7 +52,7 @@ export const Captcha = ({ onProceed }: { onProceed: () => void }) => {
         there are none left.
       </p>
       <GridWrapper>
-        {gridSquares.map((_, i) => {
+        {GRID_SQUARES.map((_, i) => {
           const imageNumber = i + 1;
           return (
             <Square

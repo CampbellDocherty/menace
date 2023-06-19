@@ -1,23 +1,8 @@
 import { useCallback, useState } from 'react';
 import { Captcha } from './Captcha/Captcha';
 import { Home } from './Home/Home';
+import { Pages } from './Pages';
 import Scenario from './Scenario/ScenarioOne';
-
-export enum Pages {
-  HOME,
-  CAPTCHA,
-  SCENARIO_ONE,
-  SCENARIO_TWO,
-  SCENARIO_THREE,
-  SCENARIO_FOUR,
-  SCENARIO_FIVE,
-  SCENARIO_SIX,
-  SCENARIO_SEVEN,
-  SCENARIO_EIGHT,
-  SCENARIO_NINE,
-  SCENARIO_TEN,
-  RESULTS,
-}
 
 const Router = ({
   initialPage = Pages.HOME,

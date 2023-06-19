@@ -1,7 +1,7 @@
 import { beforeEach, describe, test } from 'vitest';
 import { fireEvent, screen } from '@testing-library/react';
 import { renderScenario } from './renderScenario';
-import { Pages } from '../../Router';
+import { Pages } from '../../Pages';
 
 describe('when a user arrives at the third scenario', () => {
   beforeEach(() => {
