@@ -3,13 +3,13 @@ import { fireEvent, screen } from '@testing-library/react';
 import { renderScenario } from './renderScenario';
 import { Pages } from '../../Router';
 
-describe('when a user arrives at the first scenario', () => {
+describe('when a user arrives at the tenth scenario', () => {
   beforeEach(() => {
-    renderScenario(Pages.SCENARIO_ONE);
+    renderScenario(Pages.SCENARIO_TEN);
   });
 
   test('shows the scenario', () => {
-    screen.getByText('Scenario 1');
+    screen.getByText('Scenario 10');
   });
 
   test.each(['Menace', 'Not menace'])(
@@ -17,7 +17,7 @@ describe('when a user arrives at the first scenario', () => {
     (buttonText: string) => {
       const button = screen.getByText(buttonText);
       fireEvent.click(button);
-      screen.getByText('Scenario 2');
+      screen.getByText('Results');
     }
   );
 });
