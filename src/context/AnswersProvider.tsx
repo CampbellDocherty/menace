@@ -1,6 +1,6 @@
-import { ReactNode } from 'react';
+import { ReactNode, useState } from 'react';
 
-import { AnswersContext } from './AnswersContext';
+import { AnswersContext, ScenarioAnswers } from './AnswersContext';
 import { defaultAnswers } from './defaultAnswers';
 
 export const AnswersProvider = ({
@@ -8,7 +8,13 @@ export const AnswersProvider = ({
 }: {
   readonly children: ReactNode;
 }) => {
-  const providerData = defaultAnswers;
+  const [answers, setAnswers] = useState<ScenarioAnswers>(defaultAnswers);
+
+  const updateAnswers = (scenario: number, answer: boolean) => {
+    const updatedAnswers = { ...answers, [scenario]: answer };
+    setAnswers(updatedAnswers);
+  };
+  const providerData = { answers, updateAnswers };
 
   return (
     <AnswersContext.Provider value={providerData}>

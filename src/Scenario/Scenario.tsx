@@ -1,14 +1,22 @@
+import { useContext } from 'react';
+import { AnswersContext } from '../context/AnswersContext';
 import { Pages } from '../Pages';
 
 type Scenarios = Exclude<Pages, Pages.HOME | Pages.CAPTCHA | Pages.RESULTS>;
 
-const Scenario = ({
+export const Scenario = ({
   currentScenario,
   onProceed,
 }: {
   readonly currentScenario: Scenarios;
   readonly onProceed: () => void;
 }) => {
+  const { updateAnswers } = useContext(AnswersContext);
+  const answerQuestion = (isMenace: boolean) => {
+    const currentQuestionNumber = currentScenario - 1;
+    updateAnswers(currentQuestionNumber, isMenace);
+  };
+
   const scenarioTitles: Record<Scenarios, string> = {
     [Pages.SCENARIO_ONE]: 'Scenario 1',
     [Pages.SCENARIO_TWO]: 'Scenario 2',
@@ -24,10 +32,15 @@ const Scenario = ({
   return (
     <>
       <p>{scenarioTitles[currentScenario]}</p>
-      <button onClick={onProceed}>Menace</button>
+      <button
+        onClick={() => {
+          answerQuestion(true);
+          onProceed();
+        }}
+      >
+        Menace
+      </button>
       <button onClick={onProceed}>Not menace</button>
     </>
   );
 };
-
-export default Scenario;

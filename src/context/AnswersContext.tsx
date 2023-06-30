@@ -1,17 +1,25 @@
 import { createContext } from 'react';
 import { defaultAnswers } from './defaultAnswers';
 
-interface AnswersContextType {
-  readonly scenarioOne: boolean | null;
-  readonly scenarioTwo: boolean | null;
-  readonly scenarioThree: boolean | null;
-  readonly scenarioFour: boolean | null;
-  readonly scenarioFive: boolean | null;
-  readonly scenarioSix: boolean | null;
-  readonly scenarioSeven: boolean | null;
-  readonly scenarioEight: boolean | null;
-  readonly scenarioNine: boolean | null;
-  readonly scenarioTen: boolean | null;
+export interface ScenarioAnswers {
+  readonly 1: boolean | null;
+  readonly 2: boolean | null;
+  readonly 3: boolean | null;
+  readonly 4: boolean | null;
+  readonly 5: boolean | null;
+  readonly 6: boolean | null;
+  readonly 7: boolean | null;
+  readonly 8: boolean | null;
+  readonly 9: boolean | null;
+  readonly 10: boolean | null;
 }
 
-export const AnswersContext = createContext<AnswersContextType>(defaultAnswers);
+interface AnswersContextType {
+  readonly answers: ScenarioAnswers;
+  readonly updateAnswers: (scenario: number, answer: boolean) => void;
+}
+
+export const AnswersContext = createContext<AnswersContextType>({
+  answers: defaultAnswers,
+  updateAnswers: () => console.log('hi!'),
+});
