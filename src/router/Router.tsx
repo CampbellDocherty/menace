@@ -10,7 +10,8 @@ const Router = ({
 }: {
   readonly initialPage?: Pages;
 }) => {
-  const [page, setPage] = useState(initialPage);
+  const lastVisitedPage = Number(localStorage.getItem('lastVisitedPage'));
+  const [page, setPage] = useState(lastVisitedPage || initialPage);
   const onProceed = useCallback(() => {
     setPage(page + 1);
   }, [setPage, page]);
