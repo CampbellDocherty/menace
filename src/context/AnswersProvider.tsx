@@ -1,4 +1,4 @@
-import { ReactNode, useState } from 'react';
+import { ReactNode, useMemo, useState } from 'react';
 
 import { AnswersContext, ScenarioAnswers } from './AnswersContext';
 import { defaultAnswers } from './defaultAnswers';
@@ -8,7 +8,15 @@ export const AnswersProvider = ({
 }: {
   readonly children: ReactNode;
 }) => {
-  const [answers, setAnswers] = useState<ScenarioAnswers>(defaultAnswers);
+  const previousAnswers = useMemo(() => {
+    const answersFromStorage = localStorage.getItem('previousAnswers');
+    if (answersFromStorage) return JSON.parse(answersFromStorage);
+    return null;
+  }, []);
+
+  const [answers, setAnswers] = useState<ScenarioAnswers>(
+    previousAnswers || defaultAnswers
+  );
 
   const updateAnswers = (scenario: number, answer: boolean) => {
     const updatedAnswers = { ...answers, [scenario]: answer };
