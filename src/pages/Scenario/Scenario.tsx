@@ -1,6 +1,6 @@
 import { useContext } from 'react';
-import { AnswersContext } from '../context/AnswersContext';
-import { Pages } from '../Pages';
+import { AnswersContext } from '../../context/AnswersContext';
+import { Pages } from '../../Pages';
 
 type Scenarios = Exclude<Pages, Pages.HOME | Pages.CAPTCHA | Pages.RESULTS>;
 

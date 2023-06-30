@@ -3,7 +3,7 @@ import { Captcha } from './Captcha/Captcha';
 import { AnswersContext } from './context/AnswersContext';
 import { Home } from './Home/Home';
 import { Pages } from './Pages';
-import { Scenario } from './Scenario/Scenario';
+import { Scenario } from './pages/Scenario/Scenario';
 
 const Router = ({
   initialPage = Pages.HOME,

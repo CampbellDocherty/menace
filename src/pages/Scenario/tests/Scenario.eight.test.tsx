@@ -1,15 +1,15 @@
 import { beforeEach, describe, test } from 'vitest';
 import { fireEvent, screen } from '@testing-library/react';
 import { renderScenario } from './renderScenario';
-import { Pages } from '../../Pages';
+import { Pages } from '../../../Pages';
 
-describe('when a user arrives at the seventh scenario', () => {
+describe('when a user arrives at the eigth scenario', () => {
   beforeEach(() => {
-    renderScenario(Pages.SCENARIO_SEVEN);
+    renderScenario(Pages.SCENARIO_EIGHT);
   });
 
   test('shows the scenario', () => {
-    screen.getByText('Scenario 7');
+    screen.getByText('Scenario 8');
   });
 
   test.each(['Menace', 'Not menace'])(
@@ -17,7 +17,7 @@ describe('when a user arrives at the seventh scenario', () => {
     (buttonText: string) => {
       const button = screen.getByText(buttonText);
       fireEvent.click(button);
-      screen.getByText('Scenario 8');
+      screen.getByText('Scenario 9');
     }
   );
 });
