@@ -1,7 +1,7 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { beforeEach, describe, expect, test, vi } from 'vitest';
 import { Pages } from '../../Pages';
-import Router from '../../Router';
+import Router from '../../router/Router';
 import { AnswersContext } from '../AnswersContext';
 import { defaultAnswers } from '../defaultAnswers';
 

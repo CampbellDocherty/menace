@@ -21,5 +21,7 @@ interface AnswersContextType {
 
 export const AnswersContext = createContext<AnswersContextType>({
   answers: defaultAnswers,
-  updateAnswers: () => console.log('hi!'),
+  updateAnswers: () => {
+    return;
+  },
 });

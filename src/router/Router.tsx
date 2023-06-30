@@ -1,16 +1,19 @@
 import { useCallback, useState } from 'react';
-import { Captcha } from './pages/Captcha/Captcha';
-import { Home } from './pages/Home/Home';
-import { Pages } from './Pages';
-import { Scenario } from './pages/Scenario/Scenario';
-import { Results } from './pages/Results/Results';
+import { Captcha } from '../pages/Captcha';
+import { Home } from '../pages/Home';
+import { Pages } from '../Pages';
+import { Scenario } from '../pages/Scenario';
+import { Results } from '../pages/Results';
 
 const Router = ({
   initialPage = Pages.HOME,
 }: {
   readonly initialPage?: Pages;
 }) => {
-  const [page, setPage] = useState(initialPage);
+  const lastVisitedPage = Number(localStorage.getItem('lastVisitedPage'));
+  const [page, setPage] = useState(lastVisitedPage || initialPage);
+  localStorage.setItem('lastVisitedPage', `${page}`);
+
   const onProceed = useCallback(() => {
     setPage(page + 1);
   }, [setPage, page]);
