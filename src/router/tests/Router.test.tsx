@@ -10,6 +10,10 @@ describe('When a user lands on a page', () => {
     render(<App />);
   });
 
+  afterEach(() => {
+    localStorage.clear();
+  });
+
   test('sets local storage with that page', () => {
     expect(setItemSpy).toHaveBeenCalledTimes(1);
     expect(setItemSpy).toHaveBeenCalledWith('lastVisitedPage', `${Pages.HOME}`);
