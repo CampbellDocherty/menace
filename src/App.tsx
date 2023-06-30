@@ -1,11 +1,14 @@
+import { AnswersProvider } from './context/AnswersProvider';
 import Router from './Router';
 import { Container } from './styles';
 
 const App = () => {
   return (
-    <Container>
-      <Router />
-    </Container>
+    <AnswersProvider>
+      <Container>
+        <Router />
+      </Container>
+    </AnswersProvider>
   );
 };
 
