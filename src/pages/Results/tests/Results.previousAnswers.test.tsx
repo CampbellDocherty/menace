@@ -2,19 +2,7 @@ import { render, screen } from '@testing-library/react';
 import { beforeEach, describe, test } from 'vitest';
 import App from '../../../App';
 import { Pages } from '../../../Pages';
-
-const MOCK_ANSWERS = () => ({
-  1: true,
-  2: true,
-  3: true,
-  4: true,
-  5: true,
-  6: true,
-  7: true,
-  8: true,
-  9: true,
-  10: true,
-});
+import { MOCK_ANSWERS } from './mockAnswers';
 
 describe('When a user arrives at the results page with previously filled in answers', () => {
   beforeEach(() => {
