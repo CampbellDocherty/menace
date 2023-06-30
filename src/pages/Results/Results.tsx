@@ -18,5 +18,10 @@ export const Results = () => {
   const { answers } = useContext(AnswersContext);
   const result = useMemo(() => calculateResult(answers), [answers]);
 
-  return <p>{`You are ${result}% menace`}</p>;
+  return (
+    <>
+      <p>Results</p>
+      <p>{`You are ${result}% menace`}</p>
+    </>
+  );
 };
