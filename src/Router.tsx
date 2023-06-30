@@ -1,9 +1,9 @@
-import { useCallback, useContext, useState } from 'react';
-import { Captcha } from './Captcha/Captcha';
-import { AnswersContext } from './context/AnswersContext';
-import { Home } from './Home/Home';
+import { useCallback, useState } from 'react';
+import { Captcha } from './pages/Captcha/Captcha';
+import { Home } from './pages/Home/Home';
 import { Pages } from './Pages';
 import { Scenario } from './pages/Scenario/Scenario';
+import { Results } from './pages/Results/Results';
 
 const Router = ({
   initialPage = Pages.HOME,
@@ -14,8 +14,6 @@ const Router = ({
   const onProceed = useCallback(() => {
     setPage(page + 1);
   }, [setPage, page]);
-
-  const { answers } = useContext(AnswersContext);
 
   switch (page) {
     case Pages.CAPTCHA:
@@ -32,7 +30,7 @@ const Router = ({
     case Pages.SCENARIO_TEN:
       return <Scenario currentScenario={page} onProceed={onProceed} />;
     case Pages.RESULTS:
-      return <p>{JSON.stringify(answers)}</p>;
+      return <Results />;
     default:
       return <Home onProceed={onProceed} />;
   }
