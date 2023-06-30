@@ -20,23 +20,9 @@ describe('When a user lands on a page', () => {
   });
 });
 
-const MOCK_ANSWERS = () => ({
-  1: true,
-  2: true,
-  3: true,
-  4: true,
-  5: true,
-  6: true,
-  7: true,
-  8: true,
-  9: true,
-  10: null,
-});
-
 describe('When a user comes back to the app having got part way through the personality test', () => {
   beforeEach(() => {
     localStorage.setItem('lastVisitedPage', `${Pages.SCENARIO_TEN}`);
-    localStorage.setItem('previousAnswers', JSON.stringify(MOCK_ANSWERS()));
     render(<App />);
   });
 
@@ -46,13 +32,5 @@ describe('When a user comes back to the app having got part way through the pers
 
   test('shows them their last visited page', () => {
     screen.getByText('Scenario 10');
-  });
-
-  test('saves their previously inputted answers', () => {
-    screen.getByText('Scenario 10');
-    const button = screen.getByRole('button', { name: 'Menace' });
-    fireEvent.click(button);
-    screen.getByText('Results');
-    screen.getByText('You are 100% menace');
   });
 });

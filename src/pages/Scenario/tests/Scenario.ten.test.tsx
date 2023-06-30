@@ -1,7 +1,8 @@
 import { beforeEach, describe, test } from 'vitest';
-import { fireEvent, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import { renderScenario } from './renderScenario';
 import { Pages } from '../../../Pages';
+import App from '../../../App';
 
 describe('when a user arrives at the tenth scenario', () => {
   beforeEach(() => {
@@ -20,4 +21,33 @@ describe('when a user arrives at the tenth scenario', () => {
       screen.getByText('Results');
     }
   );
+});
+
+const MOCK_ANSWERS = () => ({
+  1: true,
+  2: true,
+  3: true,
+  4: true,
+  5: true,
+  6: true,
+  7: true,
+  8: true,
+  9: true,
+  10: null,
+});
+
+describe('When a user comes back to the tenth scenario having completed the other steps', () => {
+  beforeEach(() => {
+    localStorage.setItem('lastVisitedPage', `${Pages.SCENARIO_TEN}`);
+    localStorage.setItem('previousAnswers', JSON.stringify(MOCK_ANSWERS()));
+    render(<App />);
+  });
+
+  test('saves their previously inputted answers', () => {
+    screen.getByText('Scenario 10');
+    const button = screen.getByRole('button', { name: 'Menace' });
+    fireEvent.click(button);
+    screen.getByText('Results');
+    screen.getByText('You are 100% menace');
+  });
 });
