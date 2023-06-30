@@ -1,5 +1,5 @@
 import { AnswersProvider } from './context/AnswersProvider';
-import Router from './Router';
+import Router from './router/Router';
 import { Container } from './styles';
 
 const App = () => {

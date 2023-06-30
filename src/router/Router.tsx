@@ -1,9 +1,9 @@
 import { useCallback, useState } from 'react';
-import { Captcha } from './pages/Captcha';
-import { Home } from './pages/Home';
-import { Pages } from './Pages';
-import { Scenario } from './pages/Scenario';
-import { Results } from './pages/Results';
+import { Captcha } from '../pages/Captcha';
+import { Home } from '../pages/Home';
+import { Pages } from '../Pages';
+import { Scenario } from '../pages/Scenario';
+import { Results } from '../pages/Results';
 
 const Router = ({
   initialPage = Pages.HOME,

@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import { beforeEach, describe, test, vi } from 'vitest';
 import { AnswersContext } from '../../../context/AnswersContext';
 import { Pages } from '../../../Pages';
-import Router from '../../../Router';
+import Router from '../../../router/Router';
 
 const MOCK_ANSWERS = () => ({
   1: true,
