@@ -24,6 +24,6 @@ describe('When the captcha page renders', () => {
     selectCorrectCaptchaImages();
     const verifyButton = screen.getByRole('button', { name: 'Verify' });
     fireEvent.click(verifyButton);
-    screen.getByText('Scenario 1');
+    screen.getByText('Imagine you', { exact: false });
   });
 });
