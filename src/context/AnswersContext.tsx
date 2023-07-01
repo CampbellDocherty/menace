@@ -21,7 +21,6 @@ interface AnswersContextType {
 
 export const AnswersContext = createContext<AnswersContextType>({
   answers: defaultAnswers,
-  updateAnswers: () => {
-    return;
-  },
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  updateAnswers: () => {},
 });
