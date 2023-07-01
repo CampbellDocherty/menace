@@ -40,7 +40,14 @@ export const Scenario = ({
       >
         Menace
       </button>
-      <button onClick={onProceed}>Not menace</button>
+      <button
+        onClick={() => {
+          answerQuestion(false);
+          onProceed();
+        }}
+      >
+        Not menace
+      </button>
     </>
   );
 };

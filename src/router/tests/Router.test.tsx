@@ -22,7 +22,7 @@ describe('When a user lands on a page', () => {
 
 describe('When a user comes back to the app having got part way through the personality test', () => {
   beforeEach(() => {
-    localStorage.setItem('lastVisitedPage', `${Pages.SCENARIO_FIVE}`);
+    localStorage.setItem('lastVisitedPage', `${Pages.SCENARIO_TEN}`);
     render(<App />);
   });
 
@@ -31,6 +31,6 @@ describe('When a user comes back to the app having got part way through the pers
   });
 
   test('shows them their last visited page', () => {
-    screen.getByText('Scenario 5');
+    screen.getByText('Scenario 10');
   });
 });
