@@ -17,28 +17,70 @@ export const Scenario = ({
     updateAnswers(currentQuestionNumber, isMenace);
   };
 
-  const scenarioTitles: Record<Scenarios, string> = {
-    [Pages.SCENARIO_ONE]: 'Scenario 1',
-    [Pages.SCENARIO_TWO]: 'Scenario 2',
-    [Pages.SCENARIO_THREE]: 'Scenario 3',
-    [Pages.SCENARIO_FOUR]: 'Scenario 4',
-    [Pages.SCENARIO_FIVE]: 'Scenario 5',
-    [Pages.SCENARIO_SIX]: 'Scenario 6',
-    [Pages.SCENARIO_SEVEN]: 'Scenario 7',
-    [Pages.SCENARIO_EIGHT]: 'Scenario 8',
-    [Pages.SCENARIO_NINE]: 'Scenario 9',
-    [Pages.SCENARIO_TEN]: 'Scenario 10',
+  const scenarioTitles: Record<Scenarios, any> = {
+    [Pages.SCENARIO_ONE]: {
+      title:
+        'Imagine you had been seeing someone for 3 months, only sleeping with them, going to Ikea together and spending multiple days in a row with them. Who would this person be to you?',
+      menaceCta: 'Just a friend',
+      notMenaceCta: "Ikea!? We're married",
+    },
+
+    [Pages.SCENARIO_TWO]: {
+      title: 'Scenario 2',
+      menaceCta: 'Menace',
+      notMenaceCta: 'Not menace',
+    },
+    [Pages.SCENARIO_THREE]: {
+      title: 'Scenario 3',
+      menaceCta: 'Menace',
+      notMenaceCta: 'Not menace',
+    },
+    [Pages.SCENARIO_FOUR]: {
+      title: 'Scenario 4',
+      menaceCta: 'Menace',
+      notMenaceCta: 'Not menace',
+    },
+    [Pages.SCENARIO_FIVE]: {
+      title: 'Scenario 5',
+      menaceCta: 'Menace',
+      notMenaceCta: 'Not menace',
+    },
+    [Pages.SCENARIO_SIX]: {
+      title: 'Scenario 6',
+      menaceCta: 'Menace',
+      notMenaceCta: 'Not menace',
+    },
+    [Pages.SCENARIO_SEVEN]: {
+      title: 'Scenario 7',
+      menaceCta: 'Menace',
+      notMenaceCta: 'Not menace',
+    },
+    [Pages.SCENARIO_EIGHT]: {
+      title: 'Scenario 8',
+      menaceCta: 'Menace',
+      notMenaceCta: 'Not menace',
+    },
+    [Pages.SCENARIO_NINE]: {
+      title: 'Scenario 9',
+      menaceCta: 'Menace',
+      notMenaceCta: 'Not menace',
+    },
+    [Pages.SCENARIO_TEN]: {
+      title: 'Scenario 10',
+      menaceCta: 'Menace',
+      notMenaceCta: 'Not menace',
+    },
   };
   return (
-    <>
-      <p>{scenarioTitles[currentScenario]}</p>
+    <div data-testid={currentScenario}>
+      <p>{scenarioTitles[currentScenario].title}</p>
       <button
         onClick={() => {
           answerQuestion(true);
           onProceed();
         }}
       >
-        Menace
+        {scenarioTitles[currentScenario].menaceCta}
       </button>
       <button
         onClick={() => {
@@ -46,8 +88,8 @@ export const Scenario = ({
           onProceed();
         }}
       >
-        Not menace
+        {scenarioTitles[currentScenario].notMenaceCta}
       </button>
-    </>
+    </div>
   );
 };

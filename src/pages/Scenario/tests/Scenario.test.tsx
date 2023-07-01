@@ -4,7 +4,6 @@ import { renderScenario } from './renderScenario';
 import { Pages } from '../../../Pages';
 
 const scenarios = [
-  [1, Pages.SCENARIO_ONE],
   [2, Pages.SCENARIO_TWO],
   [3, Pages.SCENARIO_THREE],
   [4, Pages.SCENARIO_FOUR],
@@ -37,3 +36,24 @@ describe.each(scenarios)(
     );
   }
 );
+
+describe('when a user arrives at scenario 1', () => {
+  beforeEach(() => {
+    renderScenario(Pages.SCENARIO_ONE);
+  });
+
+  test('shows the scenario', () => {
+    screen.getByText(
+      'Imagine you had been seeing someone for 3 months, only sleeping with them, going to Ikea together and spending multiple days in a row with them. Who would this person be to you?'
+    );
+  });
+
+  test.each(['Just a friend', "Ikea!? We're married"])(
+    'can proceed by selecting the %s option',
+    (buttonText: string) => {
+      const button = screen.getByText(buttonText);
+      fireEvent.click(button);
+      screen.getByTestId(Pages.SCENARIO_TWO);
+    }
+  );
+});
