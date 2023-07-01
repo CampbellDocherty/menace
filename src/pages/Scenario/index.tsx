@@ -1,8 +1,7 @@
 import { useContext } from 'react';
 import { AnswersContext } from '../../context/AnswersContext';
-import { Pages } from '../../Pages';
-
-type Scenarios = Exclude<Pages, Pages.HOME | Pages.CAPTCHA | Pages.RESULTS>;
+import { Scenarios } from './types';
+import { useGetScenarioCopy } from './useGetScenarioCopy';
 
 export const Scenario = ({
   currentScenario,
@@ -17,28 +16,19 @@ export const Scenario = ({
     updateAnswers(currentQuestionNumber, isMenace);
   };
 
-  const scenarioTitles: Record<Scenarios, string> = {
-    [Pages.SCENARIO_ONE]: 'Scenario 1',
-    [Pages.SCENARIO_TWO]: 'Scenario 2',
-    [Pages.SCENARIO_THREE]: 'Scenario 3',
-    [Pages.SCENARIO_FOUR]: 'Scenario 4',
-    [Pages.SCENARIO_FIVE]: 'Scenario 5',
-    [Pages.SCENARIO_SIX]: 'Scenario 6',
-    [Pages.SCENARIO_SEVEN]: 'Scenario 7',
-    [Pages.SCENARIO_EIGHT]: 'Scenario 8',
-    [Pages.SCENARIO_NINE]: 'Scenario 9',
-    [Pages.SCENARIO_TEN]: 'Scenario 10',
-  };
+  const { title, menaceCta, notMenaceCta } =
+    useGetScenarioCopy(currentScenario);
+
   return (
     <>
-      <p>{scenarioTitles[currentScenario]}</p>
+      <p data-testid={currentScenario}>{title}</p>
       <button
         onClick={() => {
           answerQuestion(true);
           onProceed();
         }}
       >
-        Menace
+        {menaceCta}
       </button>
       <button
         onClick={() => {
@@ -46,7 +36,7 @@ export const Scenario = ({
           onProceed();
         }}
       >
-        Not menace
+        {notMenaceCta}
       </button>
     </>
   );
