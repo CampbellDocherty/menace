@@ -10,9 +10,4 @@ export const Container = styled.div`
   max-height: 1200px;
   margin-left: auto;
   margin-right: auto;
-
-  & > p {
-    text-align: justify;
-    text-justify: inter-word;
-  }
 `;
