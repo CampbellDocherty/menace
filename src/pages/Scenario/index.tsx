@@ -1,5 +1,11 @@
 import { useContext } from 'react';
 import { AnswersContext } from '../../context/AnswersContext';
+import {
+  Button,
+  ButtonContainer,
+  ScenarioContainer,
+  ScenarioTitle,
+} from './styles';
 import { Scenarios } from './types';
 import { useGetScenarioCopy } from './useGetScenarioCopy';
 
@@ -20,24 +26,26 @@ export const Scenario = ({
     useGetScenarioCopy(currentScenario);
 
   return (
-    <>
-      <p data-testid={currentScenario}>{title}</p>
-      <button
-        onClick={() => {
-          answerQuestion(true);
-          onProceed();
-        }}
-      >
-        {menaceCta}
-      </button>
-      <button
-        onClick={() => {
-          answerQuestion(false);
-          onProceed();
-        }}
-      >
-        {notMenaceCta}
-      </button>
-    </>
+    <ScenarioContainer data-testid={currentScenario}>
+      <ScenarioTitle>{title}</ScenarioTitle>
+      <ButtonContainer>
+        <Button
+          onClick={() => {
+            answerQuestion(true);
+            onProceed();
+          }}
+        >
+          {menaceCta}
+        </Button>
+        <Button
+          onClick={() => {
+            answerQuestion(false);
+            onProceed();
+          }}
+        >
+          {notMenaceCta}
+        </Button>
+      </ButtonContainer>
+    </ScenarioContainer>
   );
 };
