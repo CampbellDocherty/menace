@@ -11,6 +11,7 @@ import {
 import { Scenarios } from './types';
 import { useGetScenarioCopy } from './useGetScenarioCopy';
 import ArrowSvg from '../../assets/arrow-back.svg';
+import { ProgressBar } from './ProgressBar';
 
 export const Scenario = ({
   currentScenario,
@@ -35,6 +36,7 @@ export const Scenario = ({
       <BackButton onClick={goBack}>
         <BackArrow src={ArrowSvg} alt="back arrow" />
       </BackButton>
+      <ProgressBar currentScenario={currentScenario} />
       <ScenarioTitle>{title}</ScenarioTitle>
       <ButtonContainer>
         <Button
