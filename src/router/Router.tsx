@@ -18,6 +18,10 @@ const Router = ({
     setPage(page + 1);
   }, [setPage, page]);
 
+  const goBack = useCallback(() => {
+    setPage(page - 1);
+  }, [setPage, page]);
+
   switch (page) {
     case Pages.CAPTCHA:
       return <Captcha onProceed={onProceed} />;
@@ -31,7 +35,13 @@ const Router = ({
     case Pages.SCENARIO_EIGHT:
     case Pages.SCENARIO_NINE:
     case Pages.SCENARIO_TEN:
-      return <Scenario currentScenario={page} onProceed={onProceed} />;
+      return (
+        <Scenario
+          currentScenario={page}
+          onProceed={onProceed}
+          goBack={goBack}
+        />
+      );
     case Pages.RESULTS:
       return <Results />;
     default:
