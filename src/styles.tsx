@@ -10,4 +10,5 @@ export const Container = styled.div`
   max-height: 1200px;
   margin-left: auto;
   margin-right: auto;
+  justify-content: center;
 `;

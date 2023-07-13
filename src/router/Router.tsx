@@ -18,24 +18,25 @@ const Router = ({
     setPage(page + 1);
   }, [setPage, page]);
 
+  const goBack = useCallback(() => {
+    setPage(page - 1);
+  }, [setPage, page]);
+
   switch (page) {
+    case Pages.HOME:
+      return <Home onProceed={onProceed} />;
     case Pages.CAPTCHA:
       return <Captcha onProceed={onProceed} />;
-    case Pages.SCENARIO_ONE:
-    case Pages.SCENARIO_TWO:
-    case Pages.SCENARIO_THREE:
-    case Pages.SCENARIO_FOUR:
-    case Pages.SCENARIO_FIVE:
-    case Pages.SCENARIO_SIX:
-    case Pages.SCENARIO_SEVEN:
-    case Pages.SCENARIO_EIGHT:
-    case Pages.SCENARIO_NINE:
-    case Pages.SCENARIO_TEN:
-      return <Scenario currentScenario={page} onProceed={onProceed} />;
     case Pages.RESULTS:
       return <Results />;
     default:
-      return <Home onProceed={onProceed} />;
+      return (
+        <Scenario
+          currentScenario={page}
+          onProceed={onProceed}
+          goBack={goBack}
+        />
+      );
   }
 };
 

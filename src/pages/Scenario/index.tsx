@@ -1,6 +1,8 @@
 import { useContext } from 'react';
 import { AnswersContext } from '../../context/AnswersContext';
 import {
+  BackArrow,
+  BackButton,
   Button,
   ButtonContainer,
   ScenarioContainer,
@@ -8,13 +10,16 @@ import {
 } from './styles';
 import { Scenarios } from './types';
 import { useGetScenarioCopy } from './useGetScenarioCopy';
+import ArrowSvg from '../../assets/arrow-back.svg';
 
 export const Scenario = ({
   currentScenario,
   onProceed,
+  goBack,
 }: {
   readonly currentScenario: Scenarios;
   readonly onProceed: () => void;
+  readonly goBack: () => void;
 }) => {
   const { updateAnswers } = useContext(AnswersContext);
   const answerQuestion = (isMenace: boolean) => {
@@ -27,6 +32,9 @@ export const Scenario = ({
 
   return (
     <ScenarioContainer data-testid={currentScenario}>
+      <BackButton onClick={goBack}>
+        <BackArrow src={ArrowSvg} alt="back arrow" />
+      </BackButton>
       <ScenarioTitle>{title}</ScenarioTitle>
       <ButtonContainer>
         <Button
