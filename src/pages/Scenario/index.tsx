@@ -1,5 +1,8 @@
-import { useContext } from 'react';
-import { AnswersContext } from '../../context/AnswersContext';
+import { useContext, useRef, useState } from 'react';
+import { SwitchTransition, CSSTransition } from 'react-transition-group';
+import ArrowSvg from '../../assets/arrow-back.svg';
+import { Scenarios } from './types';
+import { useGetScenarioCopy } from './useGetScenarioCopy';
 import {
   BackArrow,
   BackButton,
@@ -7,10 +10,10 @@ import {
   ButtonContainer,
   ScenarioContainer,
   ScenarioTitle,
+  TRANSITION_CLASS_NAME,
+  TransitionContainer,
 } from './styles';
-import { Scenarios } from './types';
-import { useGetScenarioCopy } from './useGetScenarioCopy';
-import ArrowSvg from '../../assets/arrow-back.svg';
+import { AnswersContext } from '../../context/AnswersContext';
 import { ProgressBar } from './ProgressBar';
 
 export const Scenario = ({
@@ -22,40 +25,76 @@ export const Scenario = ({
   readonly onProceed: () => void;
   readonly goBack: () => void;
 }) => {
+  const [isForward, setIsForward] = useState(true);
+
+  const sceanrioOneRef = useRef<HTMLDivElement>(null);
+  const scenarioTwoRef = useRef<HTMLDivElement>(null);
+  const scenarioThreeRef = useRef<HTMLDivElement>(null);
+  const scenarioFourRef = useRef<HTMLDivElement>(null);
+  const scenarioFiveRef = useRef<HTMLDivElement>(null);
+  const scenarioSixRef = useRef<HTMLDivElement>(null);
+  const scenarioSevenRef = useRef<HTMLDivElement>(null);
+  const scenarioEightRef = useRef<HTMLDivElement>(null);
+  const scenarioNineRef = useRef<HTMLDivElement>(null);
+  const scenarioTenRef = useRef<HTMLDivElement>(null);
+  const scenarioRefs = [
+    sceanrioOneRef,
+    scenarioTwoRef,
+    scenarioThreeRef,
+    scenarioFourRef,
+    scenarioFiveRef,
+    scenarioSixRef,
+    scenarioSevenRef,
+    scenarioEightRef,
+    scenarioNineRef,
+    scenarioTenRef,
+  ];
+  const nodeRef = scenarioRefs[currentScenario - 2];
+
+  const { title, menaceCta, notMenaceCta } =
+    useGetScenarioCopy(currentScenario);
+
   const { updateAnswers } = useContext(AnswersContext);
   const answerQuestion = (isMenace: boolean) => {
     const currentQuestionNumber = currentScenario - 1;
     updateAnswers(currentQuestionNumber, isMenace);
   };
 
-  const { title, menaceCta, notMenaceCta } =
-    useGetScenarioCopy(currentScenario);
+  const onAnswer = (answer: boolean) => {
+    setIsForward(true);
+    answerQuestion(answer);
+    onProceed();
+  };
 
   return (
     <ScenarioContainer data-testid={currentScenario}>
-      <BackButton onClick={goBack}>
+      <BackButton
+        onClick={() => {
+          setIsForward(false);
+          goBack();
+        }}
+      >
         <BackArrow src={ArrowSvg} alt="back arrow" />
       </BackButton>
       <ProgressBar currentScenario={currentScenario} />
-      <ScenarioTitle>{title}</ScenarioTitle>
-      <ButtonContainer>
-        <Button
-          onClick={() => {
-            answerQuestion(true);
-            onProceed();
+      <SwitchTransition mode="out-in">
+        <CSSTransition
+          key={currentScenario}
+          nodeRef={nodeRef}
+          addEndListener={(done: () => void) => {
+            nodeRef.current!.addEventListener('transitionend', done, false);
           }}
+          classNames={TRANSITION_CLASS_NAME}
         >
-          {menaceCta}
-        </Button>
-        <Button
-          onClick={() => {
-            answerQuestion(false);
-            onProceed();
-          }}
-        >
-          {notMenaceCta}
-        </Button>
-      </ButtonContainer>
+          <TransitionContainer ref={nodeRef} isforward={isForward.toString()}>
+            <ScenarioTitle>{title}</ScenarioTitle>
+            <ButtonContainer>
+              <Button onClick={() => onAnswer(true)}>{menaceCta}</Button>
+              <Button onClick={() => onAnswer(false)}>{notMenaceCta}</Button>
+            </ButtonContainer>
+          </TransitionContainer>
+        </CSSTransition>
+      </SwitchTransition>
     </ScenarioContainer>
   );
 };
