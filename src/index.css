@@ -1,3 +1,14 @@
+@font-face {
+  font-family: 'RoyalAcidOutline';
+  src: local('RoyalAcidOutline'),
+    url(./fonts/RoyalAcidOutline.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'TimesSanSerif';
+  src: local('TimesSanSerif'), url(./fonts/TimesSanSerif.ttf) format('truetype');
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
@@ -8,6 +19,11 @@
 
 body {
   margin: 0;
+  font-family: 'TimesSanSerif';
+}
+
+button {
+  font-family: 'TimesSanSerif';
 }
 
 p {

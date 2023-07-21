@@ -1,4 +1,5 @@
 import { styled } from 'styled-components';
+import { BodyText } from '../../styles';
 
 export const ScenarioContainer = styled.div`
   height: 80%;
@@ -34,8 +35,7 @@ export const BackArrow = styled.img`
   width: 50px;
 `;
 
-export const ScenarioTitle = styled.p`
-  font-size: 20px;
+export const ScenarioTitle = styled(BodyText)`
   margin-bottom: 32px;
 `;
 
@@ -57,6 +57,7 @@ export const TRANSITION_CLASS_NAME = `fade`;
 export const TransitionContainer = styled.section<{
   readonly isforward: string;
 }>`
+  height: 60%;
   &.${TRANSITION_CLASS_NAME}-enter {
     opacity: 0;
     transform: ${({ isforward }) =>

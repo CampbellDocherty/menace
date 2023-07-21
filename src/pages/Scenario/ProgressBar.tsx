@@ -7,6 +7,7 @@ const Bar = styled.div`
   border-radius: 8px;
   background-color: #eeeeee;
   margin-bottom: 40px;
+  margin-top: 40px;
 `;
 
 const ProgressAmount = styled.div<{ width: number }>`
