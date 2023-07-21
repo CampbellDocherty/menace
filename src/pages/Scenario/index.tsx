@@ -86,7 +86,7 @@ export const Scenario = ({
           }}
           classNames={TRANSITION_CLASS_NAME}
         >
-          <TransitionContainer ref={nodeRef} isForward={isForward}>
+          <TransitionContainer ref={nodeRef} isforward={isForward.toString()}>
             <ScenarioTitle>{title}</ScenarioTitle>
             <ButtonContainer>
               <Button onClick={() => onAnswer(true)}>{menaceCta}</Button>

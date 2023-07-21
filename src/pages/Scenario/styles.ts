@@ -55,12 +55,12 @@ export const Button = styled.button`
 export const TRANSITION_CLASS_NAME = `fade`;
 
 export const TransitionContainer = styled.section<{
-  readonly isForward: boolean;
+  readonly isforward: string;
 }>`
   &.${TRANSITION_CLASS_NAME}-enter {
     opacity: 0;
-    transform: ${({ isForward }) =>
-      isForward ? 'translateX(100%)' : 'translateX(-100%)'};
+    transform: ${({ isforward }) =>
+      isforward === 'true' ? 'translateX(100%)' : 'translateX(-100%)'};
   }
   &.${TRANSITION_CLASS_NAME}-enter-active {
     transition: opacity 500ms, transform 500ms;
@@ -74,7 +74,7 @@ export const TransitionContainer = styled.section<{
   &.${TRANSITION_CLASS_NAME}-exit-active {
     transition: opacity 500ms, transform 500ms;
     opacity: 0;
-    transform: ${({ isForward }) =>
-      isForward ? 'translateX(-100%)' : 'translateX(100%)'};
+    transform: ${({ isforward }) =>
+      isforward === 'true' ? 'translateX(-100%)' : 'translateX(100%)'};
   }
 `;

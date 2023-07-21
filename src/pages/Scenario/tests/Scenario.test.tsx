@@ -1,7 +1,20 @@
-import { beforeEach, describe, test } from 'vitest';
+import { beforeEach, describe, test, vi } from 'vitest';
 import { fireEvent, screen } from '@testing-library/react';
 import { renderScenario } from './renderScenario';
 import { Pages } from '../../../Pages';
+
+vi.mock('react-transition-group', () => {
+  const FakeSwitchTransition = vi.fn(({ children }) => children);
+  const FakeTransition = vi.fn(({ children }) => children);
+  const FakeCSSTransition = vi.fn((props) => (
+    <FakeTransition>{props.children}</FakeTransition>
+  ));
+  return {
+    SwitchTransition: FakeSwitchTransition,
+    CSSTransition: FakeCSSTransition,
+    Transition: FakeTransition,
+  };
+});
 
 const scenarios = [
   [2, Pages.SCENARIO_TWO],
