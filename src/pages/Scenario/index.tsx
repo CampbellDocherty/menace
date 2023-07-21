@@ -1,7 +1,6 @@
-import { useContext, useRef } from 'react';
+import { useContext, useRef, useState } from 'react';
 import { SwitchTransition, CSSTransition } from 'react-transition-group';
 import ArrowSvg from '../../assets/arrow-back.svg';
-import './index.css';
 import { Scenarios } from './types';
 import { useGetScenarioCopy } from './useGetScenarioCopy';
 import {
@@ -14,6 +13,34 @@ import {
 } from './styles';
 import { AnswersContext } from '../../context/AnswersContext';
 import { ProgressBar } from './ProgressBar';
+import { styled } from 'styled-components';
+
+const CLASS_NAME = `fade`;
+
+const Container = styled.section<{
+  readonly isForward: boolean;
+}>`
+  &.${CLASS_NAME}-enter {
+    opacity: 0;
+    transform: ${({ isForward }) =>
+      isForward ? 'translateX(100%)' : 'translateX(-100%)'};
+  }
+  &.${CLASS_NAME}-enter-active {
+    transition: opacity 500ms, transform 500ms;
+    opacity: 1;
+    transform: translateX(0%);
+  }
+  &.${CLASS_NAME}-exit {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+  &.${CLASS_NAME}-exit-active {
+    transition: opacity 500ms, transform 500ms;
+    opacity: 0;
+    transform: ${({ isForward }) =>
+      isForward ? 'translateX(-100%)' : 'translateX(100%)'};
+  }
+`;
 
 export const Scenario = ({
   currentScenario,
@@ -24,6 +51,8 @@ export const Scenario = ({
   readonly onProceed: () => void;
   readonly goBack: () => void;
 }) => {
+  const [isForward, setIsForward] = useState(true);
+
   const sceanrioOneRef = useRef<HTMLDivElement>(null);
   const scenarioTwoRef = useRef<HTMLDivElement>(null);
   const scenarioThreeRef = useRef<HTMLDivElement>(null);
@@ -56,9 +85,21 @@ export const Scenario = ({
     const currentQuestionNumber = currentScenario - 1;
     updateAnswers(currentQuestionNumber, isMenace);
   };
+
+  const onAnswer = (answer: boolean) => {
+    setIsForward(true);
+    answerQuestion(answer);
+    onProceed();
+  };
+
   return (
     <ScenarioContainer data-testid={currentScenario}>
-      <BackButton onClick={goBack}>
+      <BackButton
+        onClick={() => {
+          setIsForward(false);
+          goBack();
+        }}
+      >
         <BackArrow src={ArrowSvg} alt="back arrow" />
       </BackButton>
       <ProgressBar currentScenario={currentScenario} />
@@ -69,29 +110,15 @@ export const Scenario = ({
           addEndListener={(done: () => void) => {
             nodeRef.current!.addEventListener('transitionend', done, false);
           }}
-          classNames="fade"
+          classNames={CLASS_NAME}
         >
-          <div ref={nodeRef}>
+          <Container ref={nodeRef} isForward={isForward}>
             <ScenarioTitle>{title}</ScenarioTitle>
             <ButtonContainer>
-              <Button
-                onClick={() => {
-                  answerQuestion(true);
-                  onProceed();
-                }}
-              >
-                {menaceCta}
-              </Button>
-              <Button
-                onClick={() => {
-                  answerQuestion(false);
-                  onProceed();
-                }}
-              >
-                {notMenaceCta}
-              </Button>
+              <Button onClick={() => onAnswer(true)}>{menaceCta}</Button>
+              <Button onClick={() => onAnswer(false)}>{notMenaceCta}</Button>
             </ButtonContainer>
-          </div>
+          </Container>
         </CSSTransition>
       </SwitchTransition>
     </ScenarioContainer>
