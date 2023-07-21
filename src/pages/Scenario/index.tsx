@@ -10,37 +10,11 @@ import {
   ButtonContainer,
   ScenarioContainer,
   ScenarioTitle,
+  TRANSITION_CLASS_NAME,
+  TransitionContainer,
 } from './styles';
 import { AnswersContext } from '../../context/AnswersContext';
 import { ProgressBar } from './ProgressBar';
-import { styled } from 'styled-components';
-
-const CLASS_NAME = `fade`;
-
-const Container = styled.section<{
-  readonly isForward: boolean;
-}>`
-  &.${CLASS_NAME}-enter {
-    opacity: 0;
-    transform: ${({ isForward }) =>
-      isForward ? 'translateX(100%)' : 'translateX(-100%)'};
-  }
-  &.${CLASS_NAME}-enter-active {
-    transition: opacity 500ms, transform 500ms;
-    opacity: 1;
-    transform: translateX(0%);
-  }
-  &.${CLASS_NAME}-exit {
-    opacity: 1;
-    transform: translateX(0%);
-  }
-  &.${CLASS_NAME}-exit-active {
-    transition: opacity 500ms, transform 500ms;
-    opacity: 0;
-    transform: ${({ isForward }) =>
-      isForward ? 'translateX(-100%)' : 'translateX(100%)'};
-  }
-`;
 
 export const Scenario = ({
   currentScenario,
@@ -110,15 +84,15 @@ export const Scenario = ({
           addEndListener={(done: () => void) => {
             nodeRef.current!.addEventListener('transitionend', done, false);
           }}
-          classNames={CLASS_NAME}
+          classNames={TRANSITION_CLASS_NAME}
         >
-          <Container ref={nodeRef} isForward={isForward}>
+          <TransitionContainer ref={nodeRef} isForward={isForward}>
             <ScenarioTitle>{title}</ScenarioTitle>
             <ButtonContainer>
               <Button onClick={() => onAnswer(true)}>{menaceCta}</Button>
               <Button onClick={() => onAnswer(false)}>{notMenaceCta}</Button>
             </ButtonContainer>
-          </Container>
+          </TransitionContainer>
         </CSSTransition>
       </SwitchTransition>
     </ScenarioContainer>

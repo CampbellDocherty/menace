@@ -51,3 +51,30 @@ export const Button = styled.button`
   margin-bottom: 4px;
   font-size: 16px;
 `;
+
+export const TRANSITION_CLASS_NAME = `fade`;
+
+export const TransitionContainer = styled.section<{
+  readonly isForward: boolean;
+}>`
+  &.${TRANSITION_CLASS_NAME}-enter {
+    opacity: 0;
+    transform: ${({ isForward }) =>
+      isForward ? 'translateX(100%)' : 'translateX(-100%)'};
+  }
+  &.${TRANSITION_CLASS_NAME}-enter-active {
+    transition: opacity 500ms, transform 500ms;
+    opacity: 1;
+    transform: translateX(0%);
+  }
+  &.${TRANSITION_CLASS_NAME}-exit {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+  &.${TRANSITION_CLASS_NAME}-exit-active {
+    transition: opacity 500ms, transform 500ms;
+    opacity: 0;
+    transform: ${({ isForward }) =>
+      isForward ? 'translateX(-100%)' : 'translateX(100%)'};
+  }
+`;
