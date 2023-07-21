@@ -1,7 +1,7 @@
 import { styled } from 'styled-components';
 
 export const Container = styled.div`
-  padding: 16px 8px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,4 +11,9 @@ export const Container = styled.div`
   margin-left: auto;
   margin-right: auto;
   justify-content: center;
+  position: relative;
+`;
+
+export const BodyText = styled.p`
+  font-size: 20px;
 `;
