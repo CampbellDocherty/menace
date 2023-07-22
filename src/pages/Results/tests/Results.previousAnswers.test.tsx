@@ -12,7 +12,6 @@ describe('When a user arrives at the results page with previously filled in answ
   });
 
   test('shows their previously inputted answers', () => {
-    screen.getByText('Results');
-    screen.getByText('You are 100% menace');
+    screen.getByText('Menace');
   });
 });

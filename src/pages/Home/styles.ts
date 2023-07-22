@@ -1,8 +1,8 @@
 import { styled } from 'styled-components';
 
-export const Title = styled.h1`
+export const Title = styled.h1<{ readonly size?: number }>`
   font-family: 'RoyalAcidOutline';
-  font-size: 75px;
+  font-size: ${({ size }) => (size ? `${size}px` : '75px')};
   margin: 0;
   margin-bottom: 4px;
   color: white;
@@ -11,10 +11,6 @@ export const Title = styled.h1`
   letter-spacing: 2px;
   text-shadow: -1px 1px 1px #000, 1px 1px 1px #000, 1px -1px 0 #000,
     -1px -1px 0 #000;
-
-  & > span {
-    font-size: 20px;
-  }
 `;
 
 export const Footer = styled.p`

@@ -47,7 +47,7 @@ export const CaptchaActionWrapper = styled.div`
 `;
 
 export const ErrorText = styled.p`
-  color: red;
+  color: #ff0033;
   margin: 0;
   margin-right: 16px;
 `;

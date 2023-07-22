@@ -17,7 +17,7 @@ describe('when a user arrives at the tenth scenario', () => {
     (buttonText: string) => {
       const button = screen.getByText(buttonText);
       fireEvent.click(button);
-      screen.getByText('Results');
+      screen.getByText('Not a Menace');
     }
   );
 });
