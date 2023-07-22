@@ -23,4 +23,20 @@ describe('When a user arrives at the results page it shows their personality bas
     setup();
     screen.getByText('Menace');
   });
+  test('between 40% and 60% shows just right', () => {
+    setup({ 1: false, 2: false, 3: false, 4: false });
+    screen.getByText('Just Right');
+  });
+  test('less than 40% shows Not Menace', () => {
+    setup({
+      1: false,
+      2: false,
+      3: false,
+      4: false,
+      5: false,
+      6: false,
+      7: false,
+    });
+    screen.getByText('Not a Menace');
+  });
 });

@@ -9,8 +9,14 @@ export const Results = () => {
   const { answers } = useContext(AnswersContext);
   const result = useMemo(() => calculateResult(answers), [answers]);
   const personality = useMemo(() => {
-    if (result >= 60) {
+    if (result > 60) {
       return 'Menace';
+    }
+    if (result >= 40 && result <= 60) {
+      return 'Just Right';
+    }
+    if (result < 40) {
+      return 'Not a Menace';
     }
   }, [result]);
 
