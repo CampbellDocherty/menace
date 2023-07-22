@@ -20,10 +20,17 @@ const setup = (answers: Record<string, boolean> = {}) => {
 
 describe('When a user arrives at the results page it shows their personality based on the answers', () => {
   test('over 60% shows menace', () => {
-    setup();
+    setup({ 1: false, 2: false });
     screen.getByText('Menace');
     screen.getByText(
       "You're definitely a menace. Maybe too much of a menace - but don't worry we're not judging! We think you can bring that number down with some self development. Check out our recommended media below!"
+    );
+  });
+
+  test('shows unique message for 100% menace', () => {
+    setup();
+    screen.getByText(
+      "100% menace! Even when we were developing this test we thought that was only possible in theory. That's too much menace for one person to harness. You've got to reduce your menace, no one can hold 100% for long! Our recommended media might just be the thing that can save you!"
     );
   });
   test('between 40% and 60% shows just right', () => {
