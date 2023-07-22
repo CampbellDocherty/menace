@@ -1,4 +1,4 @@
-export const MOCK_ANSWERS = () => ({
+export const MOCK_ANSWERS = (answers: Record<string, boolean> = {}) => ({
   1: true,
   2: true,
   3: true,
@@ -9,4 +9,5 @@ export const MOCK_ANSWERS = () => ({
   8: true,
   9: true,
   10: true,
+  ...answers,
 });

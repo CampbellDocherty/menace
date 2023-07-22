@@ -1,25 +1,26 @@
 import { render, screen } from '@testing-library/react';
-import { beforeEach, describe, test, vi } from 'vitest';
+import { describe, test, vi } from 'vitest';
 import { AnswersContext } from '../../../context/AnswersContext';
 import { Pages } from '../../../Pages';
 import Router from '../../../router/Router';
 import { MOCK_ANSWERS } from './mockAnswers';
 
-describe('When a user arrives at the results page', () => {
+const setup = (answers: Record<string, boolean> = {}) => {
   const mockContext = {
-    answers: MOCK_ANSWERS(),
+    answers: MOCK_ANSWERS(answers),
     updateAnswers: vi.fn(),
   };
 
-  beforeEach(() => {
-    render(
-      <AnswersContext.Provider value={mockContext}>
-        <Router initialPage={Pages.RESULTS} />
-      </AnswersContext.Provider>
-    );
-  });
+  render(
+    <AnswersContext.Provider value={mockContext}>
+      <Router initialPage={Pages.RESULTS} />
+    </AnswersContext.Provider>
+  );
+};
 
-  test('shows the result based off of the user answers', () => {
-    screen.getByText('You are 100% menace');
+describe('When a user arrives at the results page it shows their personality based on the answers', () => {
+  test('over 60% shows menace', () => {
+    setup();
+    screen.getByText('Menace');
   });
 });
