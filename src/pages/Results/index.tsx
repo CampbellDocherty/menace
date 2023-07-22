@@ -1,7 +1,7 @@
 import { useContext, useMemo } from 'react';
 import { AnswersContext } from '../../context/AnswersContext';
 import { calculateResult } from './calculateResult';
-import { ResultImage } from './styles';
+import { Description, ResultImage } from './styles';
 import { Title } from '../Home/styles';
 import { ResultBoxPlot } from './ResultBoxPlot';
 import { BodyText } from '../../styles';
@@ -39,7 +39,7 @@ export const Results = () => {
       <ResultImage />
       <Title size={54}>{personality.title}</Title>
       <ResultBoxPlot result={result} />
-      <BodyText>{personality.desc}</BodyText>
+      <Description>{personality.desc}</Description>
     </>
   );
 };

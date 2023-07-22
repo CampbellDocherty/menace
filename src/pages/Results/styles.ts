@@ -1,4 +1,5 @@
 import { styled } from 'styled-components';
+import { BodyText } from '../../styles';
 
 export const ResultImage = styled.img`
   border: 1px solid black;
@@ -7,8 +8,13 @@ export const ResultImage = styled.img`
   margin-bottom: 24px;
 `;
 
+export const Description = styled(BodyText)`
+  width: 75%;
+`;
+
 export const BoxPlot = styled.div`
   margin-top: 24px;
+  margin-bottom: 24px;
   width: 80%;
   height: 40px;
   outline: 1px solid black;
