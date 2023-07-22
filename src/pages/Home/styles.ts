@@ -11,10 +11,6 @@ export const Title = styled.h1<{ readonly size?: number }>`
   letter-spacing: 2px;
   text-shadow: -1px 1px 1px #000, 1px 1px 1px #000, 1px -1px 0 #000,
     -1px -1px 0 #000;
-
-  & > span {
-    font-size: 20px;
-  }
 `;
 
 export const Footer = styled.p`

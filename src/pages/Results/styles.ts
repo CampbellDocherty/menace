@@ -1,7 +1,7 @@
 import { styled } from 'styled-components';
 
 export const ResultImage = styled.img`
-  background-color: grey;
+  border: 1px solid black;
   width: 80px;
   height: 80px;
   margin-bottom: 24px;
@@ -29,4 +29,5 @@ export const ResultMarker = styled.div<{ readonly result: number }>`
   width: ${({ result }) => `${result}%`};
   transform: translate(0, -25%);
   border-right: 2px solid #ff0033;
+  position: relative;
 `;
