@@ -55,12 +55,12 @@ export const Scenario = ({
     useGetScenarioCopy(currentScenario);
 
   const { updateAnswers } = useContext(AnswersContext);
-  const answerQuestion = (isMenace: boolean) => {
+  const answerQuestion = (isMenace: number) => {
     const currentQuestionNumber = currentScenario - 1;
     updateAnswers(currentQuestionNumber, isMenace);
   };
 
-  const onAnswer = (answer: boolean) => {
+  const onAnswer = (answer: number) => {
     setIsForward(true);
     answerQuestion(answer);
     onProceed();
@@ -89,8 +89,8 @@ export const Scenario = ({
           <TransitionContainer ref={nodeRef} isforward={isForward.toString()}>
             <ScenarioTitle>{title}</ScenarioTitle>
             <ButtonContainer>
-              <Button onClick={() => onAnswer(true)}>{menaceCta}</Button>
-              <Button onClick={() => onAnswer(false)}>{notMenaceCta}</Button>
+              <Button onClick={() => onAnswer(1)}>{menaceCta}</Button>
+              <Button onClick={() => onAnswer(0)}>{notMenaceCta}</Button>
             </ButtonContainer>
           </TransitionContainer>
         </CSSTransition>
