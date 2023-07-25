@@ -1,4 +1,4 @@
-import { useContext, useRef, useState } from 'react';
+import { useContext, useState } from 'react';
 import { SwitchTransition, CSSTransition } from 'react-transition-group';
 import ArrowSvg from '../../assets/arrow-back.svg';
 import { Scenarios } from './types';
@@ -15,6 +15,7 @@ import {
 } from './styles';
 import { AnswersContext } from '../../context/AnswersContext';
 import { ProgressBar } from './ProgressBar';
+import { useCreateScenarioRefs } from './useCreateScenarioRefs';
 
 export const Scenario = ({
   currentScenario,
@@ -27,28 +28,7 @@ export const Scenario = ({
 }) => {
   const [isForward, setIsForward] = useState(true);
 
-  const sceanrioOneRef = useRef<HTMLDivElement>(null);
-  const scenarioTwoRef = useRef<HTMLDivElement>(null);
-  const scenarioThreeRef = useRef<HTMLDivElement>(null);
-  const scenarioFourRef = useRef<HTMLDivElement>(null);
-  const scenarioFiveRef = useRef<HTMLDivElement>(null);
-  const scenarioSixRef = useRef<HTMLDivElement>(null);
-  const scenarioSevenRef = useRef<HTMLDivElement>(null);
-  const scenarioEightRef = useRef<HTMLDivElement>(null);
-  const scenarioNineRef = useRef<HTMLDivElement>(null);
-  const scenarioTenRef = useRef<HTMLDivElement>(null);
-  const scenarioRefs = [
-    sceanrioOneRef,
-    scenarioTwoRef,
-    scenarioThreeRef,
-    scenarioFourRef,
-    scenarioFiveRef,
-    scenarioSixRef,
-    scenarioSevenRef,
-    scenarioEightRef,
-    scenarioNineRef,
-    scenarioTenRef,
-  ];
+  const scenarioRefs = useCreateScenarioRefs();
   const nodeRef = scenarioRefs[currentScenario - 2];
 
   const { title, menaceCta, notMenaceCta } =
