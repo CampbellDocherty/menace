@@ -1,7 +1,7 @@
 import { useContext, useMemo } from 'react';
 import { AnswersContext } from '../../context/AnswersContext';
 import { calculateResult } from './calculateResult';
-import { Description, ResultImage } from './styles';
+import { Description, MediaSection, ResultImage } from './styles';
 import { Title } from '../Home/styles';
 import { ResultBoxPlot } from './ResultBoxPlot';
 import { Button } from '../Scenario/styles';
@@ -40,6 +40,7 @@ export const Results = ({ onReset }: { readonly onReset: () => void }) => {
       <Title size={54}>{personality.title}</Title>
       <ResultBoxPlot result={result} />
       <Description>{personality.desc}</Description>
+      <MediaSection />
       <Button
         onClick={() => {
           reset();
