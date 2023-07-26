@@ -31,8 +31,7 @@ export const Scenario = ({
   const scenarioRefs = useCreateScenarioRefs();
   const nodeRef = scenarioRefs[currentScenario - 2];
 
-  const { title, menaceCta, notMenaceCta } =
-    useGetScenarioCopy(currentScenario);
+  const copy = useGetScenarioCopy(currentScenario);
 
   const { updateAnswers } = useContext(AnswersContext);
   const answerQuestion = (isMenace: number) => {
@@ -67,10 +66,16 @@ export const Scenario = ({
           classNames={TRANSITION_CLASS_NAME}
         >
           <TransitionContainer ref={nodeRef} isforward={isForward.toString()}>
-            <ScenarioTitle>{title}</ScenarioTitle>
+            <ScenarioTitle>{copy.title}</ScenarioTitle>
             <ButtonContainer>
-              <Button onClick={() => onAnswer(1)}>{menaceCta}</Button>
-              <Button onClick={() => onAnswer(0)}>{notMenaceCta}</Button>
+              <Button onClick={() => onAnswer(1)}>{copy.fullMenaceCta}</Button>
+              <Button onClick={() => onAnswer(0.75)}>
+                {copy.mostlyMenaceCta}
+              </Button>
+              <Button onClick={() => onAnswer(0.25)}>
+                {copy.mostlyNoMenaceCta}
+              </Button>
+              <Button onClick={() => onAnswer(0)}>{copy.noMenaceCta}</Button>
             </ButtonContainer>
           </TransitionContainer>
         </CSSTransition>
