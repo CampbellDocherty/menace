@@ -6,6 +6,8 @@ const scenarioCopy = {
     title:
       'Imagine you had been seeing someone for 3 months, only sleeping with them, going to Ikea together and spending multiple days in a row with them. Who would this person be to you?',
     fullMenaceCta: 'Just a friend',
+    mostlyMenaceCta: "Sort of together but I'm pretending we're not",
+    mostlyNoMenaceCta: 'Hmm, situationship',
     noMenaceCta: "Ikea!? We're married",
   },
 
@@ -77,8 +79,8 @@ const scenarioCopy = {
 type ScenarioCopy = {
   readonly title: string;
   readonly fullMenaceCta: string;
-  readonly mostlyMenaceCta?: string;
-  readonly mostlyNoMenaceCta?: string;
+  readonly mostlyMenaceCta: string;
+  readonly mostlyNoMenaceCta: string;
   readonly noMenaceCta: string;
 };
 
