@@ -74,7 +74,7 @@ export const Scenario = ({
           }}
           classNames={TRANSITION_CLASS_NAME}
         >
-          <TransitionContainer ref={nodeRef} isforward={isForward.toString()}>
+          <TransitionContainer ref={nodeRef} $isforward={isForward.toString()}>
             <ScenarioTitle>{copy.title}</ScenarioTitle>
             <ButtonContainer>
               {shuffle(copy.cta).map(({ text, menaceValue }) => (
