@@ -19,7 +19,7 @@ export const BackButton = styled.button`
   background-color: none;
   border: none;
   position: absolute;
-  top: 0;
+  top: 20px;
   left: 0;
   display: flex;
   align-items: center;
