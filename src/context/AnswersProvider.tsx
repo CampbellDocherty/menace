@@ -18,7 +18,7 @@ export const AnswersProvider = ({
     previousAnswers || defaultAnswers
   );
 
-  const updateAnswers = (scenario: number, answer: boolean) => {
+  const updateAnswers = (scenario: number, answer: number) => {
     const updatedAnswers = { ...answers, [scenario]: answer };
     localStorage.setItem('previousAnswers', JSON.stringify(updatedAnswers));
     setAnswers(updatedAnswers);

@@ -23,6 +23,6 @@ describe('When a user answer a question', () => {
     const button = screen.getByRole('button', { name: 'Just a friend' });
     fireEvent.click(button);
     expect(mockContext.updateAnswers).toHaveBeenCalledTimes(1);
-    expect(mockContext.updateAnswers).toHaveBeenCalledWith(1, true);
+    expect(mockContext.updateAnswers).toHaveBeenCalledWith(1, 1);
   });
 });

@@ -12,7 +12,7 @@ describe('when a user arrives at the tenth scenario', () => {
     screen.getByText('Scenario 10');
   });
 
-  test.each(['Menace', 'Not menace'])(
+  test.each(['100 menace', '75 menace', '25 menace', '0 menace'])(
     'can proceed by selecting the %s option',
     (buttonText: string) => {
       const button = screen.getByText(buttonText);

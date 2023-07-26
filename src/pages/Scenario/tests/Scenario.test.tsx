@@ -38,7 +38,7 @@ describe.each(scenarios)(
       screen.getByText(`Scenario ${scenarioNumber}`);
     });
 
-    test.each(['Menace', 'Not menace'])(
+    test.each(['100 menace', '75 menace', '0 menace', '0 menace'])(
       'can proceed by selecting the %s option',
       (buttonText: string) => {
         const button = screen.getByText(buttonText);
@@ -68,12 +68,14 @@ describe('when a user arrives at scenario 1', () => {
     );
   });
 
-  test.each(['Just a friend', "Ikea!? We're married"])(
-    'can proceed by selecting the %s option',
-    (buttonText: string) => {
-      const button = screen.getByText(buttonText);
-      fireEvent.click(button);
-      screen.getByTestId(Pages.SCENARIO_TWO);
-    }
-  );
+  test.each([
+    'Just a friend',
+    "Ikea!? We're married",
+    'Hmm, situationship',
+    "Sort of together but I'm pretending we're not",
+  ])('can proceed by selecting the %s option', (buttonText: string) => {
+    const button = screen.getByText(buttonText);
+    fireEvent.click(button);
+    screen.getByTestId(Pages.SCENARIO_TWO);
+  });
 });

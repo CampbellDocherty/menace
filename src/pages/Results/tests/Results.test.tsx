@@ -5,7 +5,7 @@ import { Pages } from '../../../Pages';
 import Router from '../../../router/Router';
 import { MOCK_ANSWERS } from './mockAnswers';
 
-const setup = (answers: Record<string, boolean> = {}) => {
+const setup = (answers: Record<string, number> = {}) => {
   const mockContext = {
     answers: MOCK_ANSWERS(answers),
     updateAnswers: vi.fn(),
@@ -20,7 +20,7 @@ const setup = (answers: Record<string, boolean> = {}) => {
 
 describe('When a user arrives at the results page it shows their personality based on the answers', () => {
   test('over 60% shows menace', () => {
-    setup({ 1: false, 2: false });
+    setup({ 1: 0, 2: 0 });
     screen.getByText('Menace');
     screen.getByText(
       "You're definitely a menace. Maybe too much of a menace - but don't worry we're not judging! We think you can bring that number down with some self development. Check out our recommended media below!"
@@ -34,7 +34,7 @@ describe('When a user arrives at the results page it shows their personality bas
     );
   });
   test('between 40% and 60% shows just right', () => {
-    setup({ 1: false, 2: false, 3: false, 4: false });
+    setup({ 1: 0, 2: 0, 3: 0, 4: 0 });
     screen.getByText('Just Right');
     screen.getByText(
       "You've got the perfect mix of menace and sweetness. You've got the right approach to your romantic life but no one is perfect. Check out our recommneded media, it'll help you stay on your toes!"
@@ -42,13 +42,13 @@ describe('When a user arrives at the results page it shows their personality bas
   });
   test('less than 40% shows Not Menace', () => {
     setup({
-      1: false,
-      2: false,
-      3: false,
-      4: false,
-      5: false,
-      6: false,
-      7: false,
+      1: 0,
+      2: 0,
+      3: 0,
+      4: 0,
+      5: 0,
+      6: 0,
+      7: 0,
     });
     screen.getByText('Not a Menace');
     screen.getByText(

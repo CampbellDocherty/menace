@@ -4,7 +4,6 @@ import { calculateResult } from './calculateResult';
 import { Description, ResultImage } from './styles';
 import { Title } from '../Home/styles';
 import { ResultBoxPlot } from './ResultBoxPlot';
-import { BodyText } from '../../styles';
 
 export const Results = () => {
   const { answers } = useContext(AnswersContext);

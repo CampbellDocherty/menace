@@ -2,21 +2,21 @@ import { createContext } from 'react';
 import { defaultAnswers } from './defaultAnswers';
 
 export interface ScenarioAnswers {
-  readonly 1: boolean | null;
-  readonly 2: boolean | null;
-  readonly 3: boolean | null;
-  readonly 4: boolean | null;
-  readonly 5: boolean | null;
-  readonly 6: boolean | null;
-  readonly 7: boolean | null;
-  readonly 8: boolean | null;
-  readonly 9: boolean | null;
-  readonly 10: boolean | null;
+  readonly 1: number | null;
+  readonly 2: number | null;
+  readonly 3: number | null;
+  readonly 4: number | null;
+  readonly 5: number | null;
+  readonly 6: number | null;
+  readonly 7: number | null;
+  readonly 8: number | null;
+  readonly 9: number | null;
+  readonly 10: number | null;
 }
 
 interface AnswersContextType {
   readonly answers: ScenarioAnswers;
-  readonly updateAnswers: (scenario: number, answer: boolean) => void;
+  readonly updateAnswers: (scenario: number, answer: number) => void;
 }
 
 export const AnswersContext = createContext<AnswersContextType>({
