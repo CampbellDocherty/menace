@@ -3,7 +3,7 @@ import { BodyText } from '../../styles';
 
 export const ScenarioContainer = styled.div`
   height: 80%;
-  width: 90%;
+  width: 85%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,7 +19,7 @@ export const BackButton = styled.button`
   background-color: none;
   border: none;
   position: absolute;
-  top: 20px;
+  top: 0;
   left: 0;
   display: flex;
   align-items: center;
@@ -47,7 +47,8 @@ export const ButtonContainer = styled.div`
 `;
 
 export const Button = styled.button`
-  height: 32px;
+  min-height: 32px;
+  height: fit-content;
   margin-bottom: 4px;
   font-size: 16px;
 `;

@@ -1,14 +1,17 @@
-import { render, screen } from '@testing-library/react';
-import { describe, test, vi } from 'vitest';
+import { fireEvent, render, screen } from '@testing-library/react';
+import { describe, expect, test, vi } from 'vitest';
 import { AnswersContext } from '../../../context/AnswersContext';
 import { Pages } from '../../../Pages';
 import Router from '../../../router/Router';
 import { MOCK_ANSWERS } from './mockAnswers';
 
+const resetAnswersMock = vi.fn();
+
 const setup = (answers: Record<string, number> = {}) => {
   const mockContext = {
     answers: MOCK_ANSWERS(answers),
     updateAnswers: vi.fn(),
+    reset: resetAnswersMock,
   };
 
   render(
@@ -54,5 +57,15 @@ describe('When a user arrives at the results page it shows their personality bas
     screen.getByText(
       "By our calculations you're not a menace. That may sound like a good thing but we think a balanced diet of menace and sweetness is what's best for anyone. You've got to get that number up for your own sake. Our recommended media could help you do just that!"
     );
+  });
+
+  test('resets the test when a user clicks', () => {
+    setup();
+    const button = screen.getByText('Again');
+    fireEvent.click(button);
+
+    expect(resetAnswersMock).toHaveBeenCalledTimes(1);
+
+    screen.getByText('Are you a menace?');
   });
 });

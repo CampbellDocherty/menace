@@ -22,13 +22,17 @@ const Router = ({
     setPage(page - 1);
   }, [setPage, page]);
 
+  const onReset = useCallback(() => {
+    setPage(Pages.HOME);
+  }, [setPage, page]);
+
   switch (page) {
     case Pages.HOME:
       return <Home onProceed={onProceed} />;
     case Pages.CAPTCHA:
       return <Captcha onProceed={onProceed} />;
     case Pages.RESULTS:
-      return <Results />;
+      return <Results onReset={onReset} />;
     default:
       return (
         <Scenario
