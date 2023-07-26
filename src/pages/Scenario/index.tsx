@@ -2,7 +2,7 @@ import { useContext, useState } from 'react';
 import { SwitchTransition, CSSTransition } from 'react-transition-group';
 import ArrowSvg from '../../assets/arrow-back.svg';
 import { Scenarios } from './types';
-import { useGetScenarioCopy } from './useGetScenarioCopy';
+import { CtaCopy, useGetScenarioCopy } from './useGetScenarioCopy';
 import {
   BackArrow,
   BackButton,
@@ -16,6 +16,15 @@ import {
 import { AnswersContext } from '../../context/AnswersContext';
 import { ProgressBar } from './ProgressBar';
 import { useCreateScenarioRefs } from './useCreateScenarioRefs';
+
+const shuffle = (array: Array<CtaCopy>) => {
+  const n = array.length;
+  for (let i = n - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+};
 
 export const Scenario = ({
   currentScenario,
@@ -68,14 +77,11 @@ export const Scenario = ({
           <TransitionContainer ref={nodeRef} isforward={isForward.toString()}>
             <ScenarioTitle>{copy.title}</ScenarioTitle>
             <ButtonContainer>
-              <Button onClick={() => onAnswer(1)}>{copy.fullMenaceCta}</Button>
-              <Button onClick={() => onAnswer(0.75)}>
-                {copy.mostlyMenaceCta}
-              </Button>
-              <Button onClick={() => onAnswer(0.25)}>
-                {copy.mostlyNoMenaceCta}
-              </Button>
-              <Button onClick={() => onAnswer(0)}>{copy.noMenaceCta}</Button>
+              {shuffle(copy.cta).map(({ text, menaceValue }) => (
+                <Button key={text} onClick={() => onAnswer(menaceValue)}>
+                  {text}
+                </Button>
+              ))}
             </ButtonContainer>
           </TransitionContainer>
         </CSSTransition>

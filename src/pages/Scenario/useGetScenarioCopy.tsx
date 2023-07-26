@@ -9,6 +9,15 @@ const scenarioCopy = {
     mostlyMenaceCta: "Sort of together but I'm pretending we're not",
     mostlyNoMenaceCta: 'Hmm, situationship',
     noMenaceCta: "Ikea!? We're married",
+    cta: [
+      { text: 'Just a friend', menaceValue: 1 },
+      {
+        text: "Sort of together but I'm pretending we're not",
+        menaceValue: 0.75,
+      },
+      { text: 'Hmm, situationship', menaceValue: 0.25 },
+      { text: "Ikea!? We're married", menaceValue: 0 },
+    ],
   },
 
   [Pages.SCENARIO_TWO]: {
@@ -17,6 +26,15 @@ const scenarioCopy = {
     mostlyMenaceCta: '75 menace',
     mostlyNoMenaceCta: '25 menace',
     noMenaceCta: '0 menace',
+    cta: [
+      { text: '100 menace', menaceValue: 1 },
+      {
+        text: '75 menace',
+        menaceValue: 0.75,
+      },
+      { text: '25 menace', menaceValue: 0.25 },
+      { text: '0 menace', menaceValue: 0 },
+    ],
   },
   [Pages.SCENARIO_THREE]: {
     title: 'Scenario 3',
@@ -24,6 +42,15 @@ const scenarioCopy = {
     mostlyMenaceCta: '75 menace',
     mostlyNoMenaceCta: '25 menace',
     noMenaceCta: '0 menace',
+    cta: [
+      { text: '100 menace', menaceValue: 1 },
+      {
+        text: '75 menace',
+        menaceValue: 0.75,
+      },
+      { text: '25 menace', menaceValue: 0.25 },
+      { text: '0 menace', menaceValue: 0 },
+    ],
   },
   [Pages.SCENARIO_FOUR]: {
     title: 'Scenario 4',
@@ -31,6 +58,15 @@ const scenarioCopy = {
     mostlyMenaceCta: '75 menace',
     mostlyNoMenaceCta: '25 menace',
     noMenaceCta: '0 menace',
+    cta: [
+      { text: '100 menace', menaceValue: 1 },
+      {
+        text: '75 menace',
+        menaceValue: 0.75,
+      },
+      { text: '25 menace', menaceValue: 0.25 },
+      { text: '0 menace', menaceValue: 0 },
+    ],
   },
   [Pages.SCENARIO_FIVE]: {
     title: 'Scenario 5',
@@ -38,6 +74,15 @@ const scenarioCopy = {
     mostlyMenaceCta: '75 menace',
     mostlyNoMenaceCta: '25 menace',
     noMenaceCta: '0 menace',
+    cta: [
+      { text: '100 menace', menaceValue: 1 },
+      {
+        text: '75 menace',
+        menaceValue: 0.75,
+      },
+      { text: '25 menace', menaceValue: 0.25 },
+      { text: '0 menace', menaceValue: 0 },
+    ],
   },
   [Pages.SCENARIO_SIX]: {
     title: 'Scenario 6',
@@ -45,6 +90,15 @@ const scenarioCopy = {
     mostlyMenaceCta: '75 menace',
     mostlyNoMenaceCta: '25 menace',
     noMenaceCta: '0 menace',
+    cta: [
+      { text: '100 menace', menaceValue: 1 },
+      {
+        text: '75 menace',
+        menaceValue: 0.75,
+      },
+      { text: '25 menace', menaceValue: 0.25 },
+      { text: '0 menace', menaceValue: 0 },
+    ],
   },
   [Pages.SCENARIO_SEVEN]: {
     title: 'Scenario 7',
@@ -52,6 +106,15 @@ const scenarioCopy = {
     mostlyMenaceCta: '75 menace',
     mostlyNoMenaceCta: '25 menace',
     noMenaceCta: '0 menace',
+    cta: [
+      { text: '100 menace', menaceValue: 1 },
+      {
+        text: '75 menace',
+        menaceValue: 0.75,
+      },
+      { text: '25 menace', menaceValue: 0.25 },
+      { text: '0 menace', menaceValue: 0 },
+    ],
   },
   [Pages.SCENARIO_EIGHT]: {
     title: 'Scenario 8',
@@ -59,6 +122,15 @@ const scenarioCopy = {
     mostlyMenaceCta: '75 menace',
     mostlyNoMenaceCta: '25 menace',
     noMenaceCta: '0 menace',
+    cta: [
+      { text: '100 menace', menaceValue: 1 },
+      {
+        text: '75 menace',
+        menaceValue: 0.75,
+      },
+      { text: '25 menace', menaceValue: 0.25 },
+      { text: '0 menace', menaceValue: 0 },
+    ],
   },
   [Pages.SCENARIO_NINE]: {
     title: 'Scenario 9',
@@ -66,6 +138,15 @@ const scenarioCopy = {
     mostlyMenaceCta: '75 menace',
     mostlyNoMenaceCta: '25 menace',
     noMenaceCta: '0 menace',
+    cta: [
+      { text: '100 menace', menaceValue: 1 },
+      {
+        text: '75 menace',
+        menaceValue: 0.75,
+      },
+      { text: '25 menace', menaceValue: 0.25 },
+      { text: '0 menace', menaceValue: 0 },
+    ],
   },
   [Pages.SCENARIO_TEN]: {
     title: 'Scenario 10',
@@ -73,7 +154,21 @@ const scenarioCopy = {
     mostlyMenaceCta: '75 menace',
     mostlyNoMenaceCta: '25 menace',
     noMenaceCta: '0 menace',
+    cta: [
+      { text: '100 menace', menaceValue: 1 },
+      {
+        text: '75 menace',
+        menaceValue: 0.75,
+      },
+      { text: '25 menace', menaceValue: 0.25 },
+      { text: '0 menace', menaceValue: 0 },
+    ],
   },
+};
+
+export type CtaCopy = {
+  readonly text: string;
+  readonly menaceValue: number;
 };
 
 type ScenarioCopy = {
@@ -82,6 +177,7 @@ type ScenarioCopy = {
   readonly mostlyMenaceCta: string;
   readonly mostlyNoMenaceCta: string;
   readonly noMenaceCta: string;
+  cta: Array<CtaCopy>;
 };
 
 export const useGetScenarioCopy = (scenario: Scenarios): ScenarioCopy => {
