@@ -12,7 +12,7 @@ export const Results = () => {
     if (result === 100) {
       return {
         title: 'Menace',
-        desc: "100% menace! Even when we were developing this test we thought that was only possible in theory. That's too much menace for one person to harness. You've got to reduce your menace, no one can hold 100% for long! Our recommended media might just be the thing that can save you!",
+        desc: "100% menace! Even when we were developing this test we thought that was only possible in theory. That's too much menace for one person to harness. Our recommended media might just be the thing that can save you!",
       };
     }
     if (result > 60) {

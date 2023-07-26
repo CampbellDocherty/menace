@@ -30,7 +30,7 @@ describe('When a user arrives at the results page it shows their personality bas
   test('shows unique message for 100% menace', () => {
     setup();
     screen.getByText(
-      "100% menace! Even when we were developing this test we thought that was only possible in theory. That's too much menace for one person to harness. You've got to reduce your menace, no one can hold 100% for long! Our recommended media might just be the thing that can save you!"
+      "100% menace! Even when we were developing this test we thought that was only possible in theory. That's too much menace for one person to harness. Our recommended media might just be the thing that can save you!"
     );
   });
   test('between 40% and 60% shows just right', () => {
