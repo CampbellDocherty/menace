@@ -27,6 +27,7 @@ export const Square = styled.div<{ readonly selected: boolean }>`
     selected ? '1px solid green' : '1px solid #ccc'};
   box-shadow: ${({ selected }) =>
     selected ? 'inset 0 0 0 2px green' : 'none'};
+  cursor: pointer;
 `;
 
 export const VerifyCaptchaButton = styled.button`

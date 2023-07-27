@@ -45,6 +45,9 @@ export const ButtonContainer = styled.div`
 `;
 
 export const Button = styled.button`
+  border-radius: 4px;
+  background: none;
+  border: 1px solid black;
   min-height: 40px;
   height: fit-content;
   margin-bottom: 12px;
@@ -65,9 +68,7 @@ export const TransitionContainer = styled.section<{
       $isforward === 'true' ? 'translateX(100%)' : 'translateX(-100%)'};
   }
   &.${TRANSITION_CLASS_NAME}-enter-active {
-    transition:
-      opacity 500ms,
-      transform 500ms;
+    transition: opacity 500ms, transform 500ms;
     opacity: 1;
     transform: translateX(0%);
   }
@@ -76,9 +77,7 @@ export const TransitionContainer = styled.section<{
     transform: translateX(0%);
   }
   &.${TRANSITION_CLASS_NAME}-exit-active {
-    transition:
-      opacity 500ms,
-      transform 500ms;
+    transition: opacity 500ms, transform 500ms;
     opacity: 0;
     transform: ${({ $isforward }) =>
       $isforward === 'true' ? 'translateX(-100%)' : 'translateX(100%)'};

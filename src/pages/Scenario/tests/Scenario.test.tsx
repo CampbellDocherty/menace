@@ -4,19 +4,6 @@ import { Pages } from '../../../Pages';
 import Router from '../../../router/Router';
 import { Context } from '../../../context/Pages/Context';
 
-vi.mock('react-transition-group', () => {
-  const FakeSwitchTransition = vi.fn(({ children }) => children);
-  const FakeTransition = vi.fn(({ children }) => children);
-  const FakeCSSTransition = vi.fn((props) => (
-    <FakeTransition>{props.children}</FakeTransition>
-  ));
-  return {
-    SwitchTransition: FakeSwitchTransition,
-    CSSTransition: FakeCSSTransition,
-    Transition: FakeTransition,
-  };
-});
-
 const mockPagesContext = {
   page: Pages.SCENARIO_ONE,
   restart: vi.fn(),
@@ -28,7 +15,7 @@ const renderScenario = (page: Pages) => {
   return render(
     <Context.Provider value={{ ...mockPagesContext, page }}>
       <Router />
-    </Context.Provider>,
+    </Context.Provider>
   );
 };
 
@@ -64,7 +51,7 @@ describe.each(scenarios)(
 
       expect(mockPagesContext.proceed).toHaveBeenCalledTimes(1);
     });
-  },
+  }
 );
 
 describe('when a user arrives at scenario 1', () => {
@@ -78,7 +65,7 @@ describe('when a user arrives at scenario 1', () => {
 
   test('shows the scenario', () => {
     screen.getByText(
-      'Imagine you had been seeing someone for 3 months, only sleeping with them, going to Ikea together and spending multiple days in a row with them. Who would this person be to you?',
+      'Imagine you had been seeing someone for 3 months, only sleeping with them, going to Ikea together and spending multiple days in a row with them. Who would this person be to you?'
     );
   });
 

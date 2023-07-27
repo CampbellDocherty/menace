@@ -35,7 +35,7 @@ export const MusicPlayer = () => {
     }
   }, [testStarted]);
 
-  const onClick = () => {
+  const onClick = async () => {
     if (audioRef && audioRef.current) {
       if (audioRef.current.paused) {
         setIsPaused(false);
