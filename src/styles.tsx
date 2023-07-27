@@ -18,6 +18,12 @@ export const BodyText = styled.p`
   font-size: 20px;
 `;
 
+export const IntroText = styled(BodyText)`
+  font-size: 24px;
+  padding-left: 16px;
+  padding-right: 16px;
+`;
+
 export const RestartButton = styled.button<{ readonly $teststarted: boolean }>`
   height: 50px;
   width: 50px;
