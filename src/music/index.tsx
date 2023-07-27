@@ -47,12 +47,6 @@ export const MusicPlayer = () => {
     }
   };
 
-  // useEffect(() => {
-  //   if (audioRef && audioRef.current) {
-  //     setIsPaused(audioRef.current.paused)
-  //   }
-  // }, [audioRef])
-
   return (
     <>
       <AudioContainer $teststarted={testStarted}>

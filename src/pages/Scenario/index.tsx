@@ -70,7 +70,7 @@ export const Scenario = ({
           key={currentScenario}
           nodeRef={nodeRef}
           addEndListener={(done: () => void) => {
-            nodeRef.current!.addEventListener('transitionend', done, false);
+            nodeRef.current?.addEventListener('transitionend', done, false);
           }}
           classNames={TRANSITION_CLASS_NAME}
         >

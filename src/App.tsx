@@ -12,8 +12,8 @@ const App = () => {
       <AnswersProvider>
         <Container>
           <Router />
-          <Restart />
         </Container>
+        <Restart />
       </AnswersProvider>
     </Provider>
   );

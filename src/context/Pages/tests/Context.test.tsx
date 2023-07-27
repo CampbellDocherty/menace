@@ -12,7 +12,7 @@ const setupContext = (initialPage = Pages.HOME) => ({
   restart: vi.fn(),
 });
 
-const setup = (mockContext: any) => {
+const setup = (mockContext: ReturnType<typeof setupContext>) => {
   return render(
     <Context.Provider value={mockContext}>
       <Router />
