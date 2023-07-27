@@ -164,7 +164,10 @@ Error generating stack: `+i.message+`
   width: 100%;
   text-align: center;
   letter-spacing: 2px;
-  text-shadow: -1px 1px 1px #000, 1px 1px 1px #000, 1px -1px 0 #000,
+  text-shadow:
+    -1px 1px 1px #000,
+    1px 1px 1px #000,
+    1px -1px 0 #000,
     -1px -1px 0 #000;
 `,x0=A.p`
   position: fixed;
@@ -222,7 +225,9 @@ Error generating stack: `+i.message+`
     transform: ${({$isforward:e})=>e==="true"?"translateX(100%)":"translateX(-100%)"};
   }
   &.${sr}-enter-active {
-    transition: opacity 500ms, transform 500ms;
+    transition:
+      opacity 500ms,
+      transform 500ms;
     opacity: 1;
     transform: translateX(0%);
   }
@@ -231,7 +236,9 @@ Error generating stack: `+i.message+`
     transform: translateX(0%);
   }
   &.${sr}-exit-active {
-    transition: opacity 500ms, transform 500ms;
+    transition:
+      opacity 500ms,
+      transform 500ms;
     opacity: 0;
     transform: ${({$isforward:e})=>e==="true"?"translateX(-100%)":"translateX(100%)"};
   }
