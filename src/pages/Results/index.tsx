@@ -1,13 +1,12 @@
 import { useContext, useMemo } from 'react';
-import { AnswersContext } from '../../context/AnswersContext';
+import { AnswersContext } from '../../context/Answers/AnswersContext';
 import { calculateResult } from './calculateResult';
 import { Description, MediaSection, ResultImage } from './styles';
 import { Title } from '../Home/styles';
 import { ResultBoxPlot } from './ResultBoxPlot';
-import { Button } from '../Scenario/styles';
 
-export const Results = ({ onReset }: { readonly onReset: () => void }) => {
-  const { answers, reset } = useContext(AnswersContext);
+export const Results = () => {
+  const { answers } = useContext(AnswersContext);
   const result = useMemo(() => calculateResult(answers), [answers]);
   const personality = useMemo(() => {
     if (result === 100) {
@@ -41,14 +40,6 @@ export const Results = ({ onReset }: { readonly onReset: () => void }) => {
       <ResultBoxPlot result={result} />
       <Description>{personality.desc}</Description>
       <MediaSection />
-      <Button
-        onClick={() => {
-          reset();
-          onReset();
-        }}
-      >
-        Again
-      </Button>
     </>
   );
 };

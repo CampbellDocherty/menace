@@ -1,4 +1,4 @@
-import { ScenarioAnswers } from '../../context/AnswersContext';
+import { ScenarioAnswers } from '../../context/Answers/AnswersContext';
 
 export const calculateResult = (answers: ScenarioAnswers) => {
   const answerValues = Object.values(answers);

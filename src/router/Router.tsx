@@ -1,52 +1,24 @@
-/* eslint-disable @typescript-eslint/no-empty-function */
-import { useCallback, useEffect, useState } from 'react';
+import { useContext } from 'react';
 import { Captcha } from '../pages/Captcha';
 import { Home } from '../pages/Home';
 import { Pages } from '../Pages';
 import { Scenario } from '../pages/Scenario';
 import { Results } from '../pages/Results';
+import { Context } from '../context/Pages/Context';
 
-const Router = ({
-  initialPage = Pages.HOME,
-  onTestStart = () => {},
-}: {
-  readonly initialPage?: Pages;
-  readonly onTestStart?: () => void;
-}) => {
-  const lastVisitedPage = Number(localStorage.getItem('lastVisitedPage'));
-  const [page, setPage] = useState(lastVisitedPage || initialPage);
-  localStorage.setItem('lastVisitedPage', `${page}`);
-
-  const onProceed = useCallback(() => {
-    if (page === Pages.HOME) {
-      onTestStart();
-    }
-    setPage(page + 1);
-  }, [setPage, page]);
-
-  const goBack = useCallback(() => {
-    setPage(page - 1);
-  }, [setPage, page]);
-
-  const onReset = useCallback(() => {
-    onTestStart();
-    setPage(Pages.HOME);
-  }, [setPage, page]);
+const Router = () => {
+  const { page, proceed, back } = useContext(Context);
 
   switch (page) {
     case Pages.HOME:
-      return <Home onProceed={onProceed} />;
+      return <Home onProceed={proceed} />;
     case Pages.CAPTCHA:
-      return <Captcha onProceed={onProceed} />;
+      return <Captcha onProceed={proceed} />;
     case Pages.RESULTS:
-      return <Results onReset={onReset} />;
+      return <Results />;
     default:
       return (
-        <Scenario
-          currentScenario={page}
-          onProceed={onProceed}
-          goBack={goBack}
-        />
+        <Scenario currentScenario={page} onProceed={proceed} goBack={back} />
       );
   }
 };

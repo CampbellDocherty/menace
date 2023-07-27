@@ -11,8 +11,35 @@ export const Container = styled.div`
   margin-left: auto;
   margin-right: auto;
   padding-top: 8%;
+  position: relative;
 `;
 
 export const BodyText = styled.p`
   font-size: 20px;
+`;
+
+export const RestartButton = styled.button<{ readonly $teststarted: boolean }>`
+  height: 50px;
+  width: 50px;
+  outline: none;
+  background: none;
+  background-color: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  position: fixed;
+  bottom: 40px;
+  left: 20px;
+  transform: ${({ $teststarted }) =>
+    $teststarted ? 'translateX(0%)' : 'translateX(-150%)'};
+  transition: transform 600ms;
+`;
+
+export const RestartIcon = styled.img`
+  width: 50px;
+  height: 50px;
+  opacity: 80%;
 `;

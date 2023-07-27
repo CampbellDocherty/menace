@@ -1,9 +1,10 @@
-import { fireEvent, render, screen } from '@testing-library/react';
-import { describe, expect, test, vi } from 'vitest';
-import { AnswersContext } from '../../../context/AnswersContext';
+import { render, screen } from '@testing-library/react';
+import { describe, test, vi } from 'vitest';
+import { AnswersContext } from '../../../context/Answers/AnswersContext';
 import { Pages } from '../../../Pages';
 import Router from '../../../router/Router';
 import { MOCK_ANSWERS } from './mockAnswers';
+import { Context } from '../../../context/Pages/Context';
 
 const resetAnswersMock = vi.fn();
 
@@ -14,10 +15,19 @@ const setup = (answers: Record<string, number> = {}) => {
     reset: resetAnswersMock,
   };
 
+  const mockPagesContext = {
+    page: Pages.RESULTS,
+    restart: vi.fn(),
+    proceed: vi.fn(),
+    back: vi.fn(),
+  };
+
   render(
-    <AnswersContext.Provider value={mockContext}>
-      <Router initialPage={Pages.RESULTS} />
-    </AnswersContext.Provider>
+    <Context.Provider value={mockPagesContext}>
+      <AnswersContext.Provider value={mockContext}>
+        <Router />
+      </AnswersContext.Provider>
+    </Context.Provider>
   );
 };
 
@@ -57,15 +67,5 @@ describe('When a user arrives at the results page it shows their personality bas
     screen.getByText(
       "By our calculations you're not a menace. That may sound like a good thing but we think a balanced diet of menace and sweetness is what's best for anyone. You've got to get that number up for your own sake. Our recommended media could help you do just that!"
     );
-  });
-
-  test('resets the test when a user clicks', () => {
-    setup();
-    const button = screen.getByText('Again');
-    fireEvent.click(button);
-
-    expect(resetAnswersMock).toHaveBeenCalledTimes(1);
-
-    screen.getByText('Are you a menace?');
   });
 });

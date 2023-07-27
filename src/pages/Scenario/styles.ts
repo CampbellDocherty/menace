@@ -25,10 +25,6 @@ export const BackButton = styled.button`
   align-items: center;
   justify-content: center;
   cursor: pointer;
-
-  &:focus {
-    border: 1px solid black;
-  }
 `;
 
 export const BackArrow = styled.img`

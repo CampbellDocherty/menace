@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/media-has-caption */
-import { useEffect, useRef, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import menaceUrl from './menace.mp3';
 import coverArt from './cover-art.jpg';
 import PlaySvg from '../assets/play.svg';
@@ -13,12 +13,13 @@ import {
   SongArtist,
   SongTitle,
 } from './styles';
+import { Context } from '../context/Pages/Context';
+import { Pages } from '../Pages';
 
-export const MusicPlayer = ({
-  testStarted,
-}: {
-  readonly testStarted: boolean;
-}) => {
+export const MusicPlayer = () => {
+  const { page } = useContext(Context);
+  const testStarted = page !== Pages.HOME;
+
   const audioRef = useRef<HTMLAudioElement>(null);
   const [isPaused, setIsPaused] = useState(true);
 
@@ -45,8 +46,6 @@ export const MusicPlayer = ({
       }
     }
   };
-
-  console.log({ testStarted });
 
   return (
     <>

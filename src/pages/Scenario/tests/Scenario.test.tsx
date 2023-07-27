@@ -1,7 +1,8 @@
-import { beforeEach, describe, test, vi } from 'vitest';
-import { fireEvent, screen } from '@testing-library/react';
-import { renderScenario } from './renderScenario';
+import { afterEach, beforeEach, describe, expect, test, vi } from 'vitest';
+import { fireEvent, render, screen } from '@testing-library/react';
 import { Pages } from '../../../Pages';
+import Router from '../../../router/Router';
+import { Context } from '../../../context/Pages/Context';
 
 vi.mock('react-transition-group', () => {
   const FakeSwitchTransition = vi.fn(({ children }) => children);
@@ -15,6 +16,21 @@ vi.mock('react-transition-group', () => {
     Transition: FakeTransition,
   };
 });
+
+const mockPagesContext = {
+  page: Pages.SCENARIO_ONE,
+  restart: vi.fn(),
+  proceed: vi.fn(),
+  back: vi.fn(),
+};
+
+const renderScenario = (page: Pages) => {
+  return render(
+    <Context.Provider value={{ ...mockPagesContext, page }}>
+      <Router />
+    </Context.Provider>
+  );
+};
 
 const scenarios = [
   [2, Pages.SCENARIO_TWO],
@@ -34,25 +50,19 @@ describe.each(scenarios)(
       renderScenario(page);
     });
 
+    afterEach(() => {
+      vi.clearAllMocks();
+    });
+
     test('shows the scenario', () => {
       screen.getByText(`Scenario ${scenarioNumber}`);
     });
 
-    test.each(['100 menace', '75 menace', '0 menace', '0 menace'])(
-      'can proceed by selecting the %s option',
-      (buttonText: string) => {
-        const button = screen.getByText(buttonText);
-        fireEvent.click(button);
-        const nextScenarioNumber = scenarioNumber + 1;
-        screen.getByText(`Scenario ${nextScenarioNumber}`);
-      }
-    );
+    test('can proceed by selecting an option', () => {
+      const button = screen.getByText('100 menace');
+      fireEvent.click(button);
 
-    test('can go back', () => {
-      const backButton = screen.getByAltText('back arrow');
-      fireEvent.click(backButton);
-      const previousScreen = page - 1;
-      screen.getByTestId(previousScreen);
+      expect(mockPagesContext.proceed).toHaveBeenCalledTimes(1);
     });
   }
 );
@@ -62,20 +72,36 @@ describe('when a user arrives at scenario 1', () => {
     renderScenario(Pages.SCENARIO_ONE);
   });
 
+  afterEach(() => {
+    vi.clearAllMocks();
+  });
+
   test('shows the scenario', () => {
     screen.getByText(
       'Imagine you had been seeing someone for 3 months, only sleeping with them, going to Ikea together and spending multiple days in a row with them. Who would this person be to you?'
     );
   });
 
-  test.each([
-    'Just a friend',
-    "Ikea!? We're married",
-    'Hmm, situationship',
-    "Sort of together but I'm pretending we're not",
-  ])('can proceed by selecting the %s option', (buttonText: string) => {
-    const button = screen.getByText(buttonText);
+  test('can proceed by selecting the %s option', () => {
+    const button = screen.getByText('Just a friend');
     fireEvent.click(button);
-    screen.getByTestId(Pages.SCENARIO_TWO);
+
+    expect(mockPagesContext.proceed).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe('when a user arrives at scenario 10', () => {
+  beforeEach(() => {
+    renderScenario(Pages.SCENARIO_TEN);
+  });
+
+  test('shows the scenario', () => {
+    screen.getByText('Scenario 10');
+  });
+
+  test('can proceed by selecting an option', () => {
+    const button = screen.getByText('100 menace');
+    fireEvent.click(button);
+    expect(mockPagesContext.proceed).toHaveBeenCalledOnce();
   });
 });

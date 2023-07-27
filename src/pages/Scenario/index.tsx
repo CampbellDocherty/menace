@@ -13,7 +13,7 @@ import {
   TRANSITION_CLASS_NAME,
   TransitionContainer,
 } from './styles';
-import { AnswersContext } from '../../context/AnswersContext';
+import { AnswersContext } from '../../context/Answers/AnswersContext';
 import { ProgressBar } from './ProgressBar';
 import { useCreateScenarioRefs } from './useCreateScenarioRefs';
 
@@ -70,7 +70,7 @@ export const Scenario = ({
           key={currentScenario}
           nodeRef={nodeRef}
           addEndListener={(done: () => void) => {
-            nodeRef.current!.addEventListener('transitionend', done, false);
+            nodeRef.current?.addEventListener('transitionend', done, false);
           }}
           classNames={TRANSITION_CLASS_NAME}
         >
