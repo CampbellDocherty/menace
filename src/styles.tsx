@@ -18,7 +18,7 @@ export const BodyText = styled.p`
   font-size: 20px;
 `;
 
-export const RestartButton = styled.button`
+export const RestartButton = styled.button<{ readonly $teststarted: boolean }>`
   height: 50px;
   width: 50px;
   outline: none;
@@ -33,13 +33,13 @@ export const RestartButton = styled.button`
   position: fixed;
   bottom: 40px;
   left: 20px;
-
-  &:focus {
-    border: 1px solid black;
-  }
+  transform: ${({ $teststarted }) =>
+    $teststarted ? 'translateX(0%)' : 'translateX(-150%)'};
+  transition: transform 600ms;
 `;
 
 export const RestartIcon = styled.img`
   width: 50px;
   height: 50px;
+  opacity: 80%;
 `;
