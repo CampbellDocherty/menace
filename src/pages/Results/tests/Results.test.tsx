@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { describe, expect, test, vi } from 'vitest';
-import { AnswersContext } from '../../../context/AnswersContext';
+import { AnswersContext } from '../../../context/Answers';
 import { Pages } from '../../../Pages';
 import Router from '../../../router/Router';
 import { MOCK_ANSWERS } from './mockAnswers';

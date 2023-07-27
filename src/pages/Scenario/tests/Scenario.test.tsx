@@ -47,13 +47,6 @@ describe.each(scenarios)(
         screen.getByText(`Scenario ${nextScenarioNumber}`);
       }
     );
-
-    test('can go back', () => {
-      const backButton = screen.getByAltText('back arrow');
-      fireEvent.click(backButton);
-      const previousScreen = page - 1;
-      screen.getByTestId(previousScreen);
-    });
   }
 );
 

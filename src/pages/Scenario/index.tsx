@@ -13,7 +13,7 @@ import {
   TRANSITION_CLASS_NAME,
   TransitionContainer,
 } from './styles';
-import { AnswersContext } from '../../context/AnswersContext';
+import { AnswersContext } from '../../context/Answers/AnswersContext';
 import { ProgressBar } from './ProgressBar';
 import { useCreateScenarioRefs } from './useCreateScenarioRefs';
 
