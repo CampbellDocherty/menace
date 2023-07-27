@@ -1,14 +1,17 @@
-import { render, screen } from '@testing-library/react';
-import { describe, test, vi } from 'vitest';
+import { fireEvent, render, screen } from '@testing-library/react';
+import { describe, expect, test, vi } from 'vitest';
 import { AnswersContext } from '../../../context/AnswersContext';
 import { Pages } from '../../../Pages';
 import Router from '../../../router/Router';
 import { MOCK_ANSWERS } from './mockAnswers';
 
+const resetAnswersMock = vi.fn();
+
 const setup = (answers: Record<string, number> = {}) => {
   const mockContext = {
     answers: MOCK_ANSWERS(answers),
     updateAnswers: vi.fn(),
+    reset: resetAnswersMock,
   };
 
   render(
@@ -30,7 +33,7 @@ describe('When a user arrives at the results page it shows their personality bas
   test('shows unique message for 100% menace', () => {
     setup();
     screen.getByText(
-      "100% menace! Even when we were developing this test we thought that was only possible in theory. That's too much menace for one person to harness. You've got to reduce your menace, no one can hold 100% for long! Our recommended media might just be the thing that can save you!"
+      "100% menace! Even when we were developing this test we thought that was only possible in theory. That's too much menace for one person to harness. Our recommended media might just be the thing that can save you!"
     );
   });
   test('between 40% and 60% shows just right', () => {
@@ -54,5 +57,15 @@ describe('When a user arrives at the results page it shows their personality bas
     screen.getByText(
       "By our calculations you're not a menace. That may sound like a good thing but we think a balanced diet of menace and sweetness is what's best for anyone. You've got to get that number up for your own sake. Our recommended media could help you do just that!"
     );
+  });
+
+  test('resets the test when a user clicks', () => {
+    setup();
+    const button = screen.getByText('Again');
+    fireEvent.click(button);
+
+    expect(resetAnswersMock).toHaveBeenCalledTimes(1);
+
+    screen.getByText('Are you a menace?');
   });
 });

@@ -3,7 +3,7 @@ import { BodyText } from '../../styles';
 
 export const ScenarioContainer = styled.div`
   height: 80%;
-  width: 90%;
+  width: 85%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -24,6 +24,7 @@ export const BackButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 
   &:focus {
     border: 1px solid black;
@@ -36,7 +37,8 @@ export const BackArrow = styled.img`
 `;
 
 export const ScenarioTitle = styled(BodyText)`
-  margin-bottom: 32px;
+  margin-bottom: 40px;
+  font-size: 24px;
 `;
 
 export const ButtonContainer = styled.div`
@@ -47,9 +49,12 @@ export const ButtonContainer = styled.div`
 `;
 
 export const Button = styled.button`
-  height: 32px;
-  margin-bottom: 4px;
-  font-size: 16px;
+  min-height: 40px;
+  height: fit-content;
+  margin-bottom: 12px;
+  font-size: 20px;
+  padding: 4px;
+  cursor: pointer;
 `;
 
 export const TRANSITION_CLASS_NAME = `fade`;

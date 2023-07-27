@@ -7,6 +7,7 @@ import {
   Square,
   VerifyCaptchaButton,
 } from './styles';
+import { BodyText } from '../../styles';
 
 const GRID_SQUARES = Array(9).fill(null);
 const CORRECT_IMAGES = [2, 5, 6];
@@ -47,10 +48,10 @@ export const Captcha = ({ onProceed }: { onProceed: () => void }) => {
   };
   return (
     <Container>
-      <p>
+      <BodyText>
         Please select all the images with a menace in them. Click verify once
         there are none left.
-      </p>
+      </BodyText>
       <GridWrapper>
         {GRID_SQUARES.map((_, i) => {
           const imageNumber = i + 1;

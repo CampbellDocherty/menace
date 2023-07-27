@@ -23,7 +23,13 @@ export const AnswersProvider = ({
     localStorage.setItem('previousAnswers', JSON.stringify(updatedAnswers));
     setAnswers(updatedAnswers);
   };
-  const providerData = { answers, updateAnswers };
+
+  const reset = () => {
+    localStorage.removeItem('previousAnswers');
+    setAnswers(defaultAnswers);
+  };
+
+  const providerData = { answers, updateAnswers, reset };
 
   return (
     <AnswersContext.Provider value={providerData}>

@@ -6,6 +6,7 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
+  max-width: 500px;
   height: 100%;
   padding: 24px;
   text-align: justify;
@@ -36,6 +37,8 @@ export const VerifyCaptchaButton = styled.button`
   height: 2rem;
   cursor: pointer;
   margin-left: auto;
+  font-size: 20px;
+  padding: 4px;
 `;
 
 export const CaptchaActionWrapper = styled.div`
@@ -43,7 +46,7 @@ export const CaptchaActionWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-width: 100%;
+  width: 100%;
 `;
 
 export const ErrorText = styled.p`

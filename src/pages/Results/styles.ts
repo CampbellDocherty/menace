@@ -9,13 +9,14 @@ export const ResultImage = styled.img`
 `;
 
 export const Description = styled(BodyText)`
-  width: 75%;
+  width: 85%;
+  font-size: 24px;
 `;
 
 export const BoxPlot = styled.div`
   margin-top: 24px;
   margin-bottom: 24px;
-  width: 80%;
+  width: 90%;
   height: 40px;
   outline: 1px solid black;
   position: relative;
@@ -36,4 +37,14 @@ export const ResultMarker = styled.div<{ readonly result: number }>`
   transform: translate(0, -25%);
   border-right: 2px solid #ff0033;
   position: relative;
+`;
+
+export const MediaSection = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 20%;
+  border: 1px solid black;
+  margin-bottom: 24px;
 `;

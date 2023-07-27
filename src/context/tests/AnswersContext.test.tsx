@@ -9,6 +9,7 @@ describe('When a user answer a question', () => {
   const mockContext = {
     answers: defaultAnswers,
     updateAnswers: vi.fn(),
+    reset: vi.fn(),
   };
 
   beforeEach(() => {

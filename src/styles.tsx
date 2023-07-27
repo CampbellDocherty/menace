@@ -10,8 +10,7 @@ export const Container = styled.div`
   max-height: 1200px;
   margin-left: auto;
   margin-right: auto;
-  justify-content: center;
-  position: relative;
+  padding-top: 8%;
 `;
 
 export const BodyText = styled.p`

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
 import { createContext } from 'react';
 import { defaultAnswers } from './defaultAnswers';
 
@@ -17,10 +18,11 @@ export interface ScenarioAnswers {
 interface AnswersContextType {
   readonly answers: ScenarioAnswers;
   readonly updateAnswers: (scenario: number, answer: number) => void;
+  readonly reset: () => void;
 }
 
 export const AnswersContext = createContext<AnswersContextType>({
   answers: defaultAnswers,
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
   updateAnswers: () => {},
+  reset: () => {},
 });

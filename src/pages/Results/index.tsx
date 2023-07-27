@@ -1,18 +1,19 @@
 import { useContext, useMemo } from 'react';
 import { AnswersContext } from '../../context/AnswersContext';
 import { calculateResult } from './calculateResult';
-import { Description, ResultImage } from './styles';
+import { Description, MediaSection, ResultImage } from './styles';
 import { Title } from '../Home/styles';
 import { ResultBoxPlot } from './ResultBoxPlot';
+import { Button } from '../Scenario/styles';
 
-export const Results = () => {
-  const { answers } = useContext(AnswersContext);
+export const Results = ({ onReset }: { readonly onReset: () => void }) => {
+  const { answers, reset } = useContext(AnswersContext);
   const result = useMemo(() => calculateResult(answers), [answers]);
   const personality = useMemo(() => {
     if (result === 100) {
       return {
         title: 'Menace',
-        desc: "100% menace! Even when we were developing this test we thought that was only possible in theory. That's too much menace for one person to harness. You've got to reduce your menace, no one can hold 100% for long! Our recommended media might just be the thing that can save you!",
+        desc: "100% menace! Even when we were developing this test we thought that was only possible in theory. That's too much menace for one person to harness. Our recommended media might just be the thing that can save you!",
       };
     }
     if (result > 60) {
@@ -39,6 +40,15 @@ export const Results = () => {
       <Title size={54}>{personality.title}</Title>
       <ResultBoxPlot result={result} />
       <Description>{personality.desc}</Description>
+      <MediaSection />
+      <Button
+        onClick={() => {
+          reset();
+          onReset();
+        }}
+      >
+        Again
+      </Button>
     </>
   );
 };
