@@ -4,6 +4,7 @@ import { AnswersContext } from '../../../context/Answers/AnswersContext';
 import { Pages } from '../../../Pages';
 import Router from '../../../router/Router';
 import { MOCK_ANSWERS } from './mockAnswers';
+import { Context } from '../../../context/Pages/Context';
 
 const resetAnswersMock = vi.fn();
 
@@ -14,10 +15,19 @@ const setup = (answers: Record<string, number> = {}) => {
     reset: resetAnswersMock,
   };
 
+  const mockPagesContext = {
+    page: Pages.RESULTS,
+    restart: vi.fn(),
+    proceed: vi.fn(),
+    back: vi.fn(),
+  };
+
   render(
-    <AnswersContext.Provider value={mockContext}>
-      <Router initialPage={Pages.RESULTS} />
-    </AnswersContext.Provider>
+    <Context.Provider value={mockPagesContext}>
+      <AnswersContext.Provider value={mockContext}>
+        <Router initialPage={Pages.RESULTS} />
+      </AnswersContext.Provider>
+    </Context.Provider>
   );
 };
 
