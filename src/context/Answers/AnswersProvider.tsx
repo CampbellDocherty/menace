@@ -15,7 +15,7 @@ export const AnswersProvider = ({
   }, []);
 
   const [answers, setAnswers] = useState<ScenarioAnswers>(
-    previousAnswers || defaultAnswers
+    previousAnswers || defaultAnswers,
   );
 
   const updateAnswers = (scenario: number, answer: number) => {

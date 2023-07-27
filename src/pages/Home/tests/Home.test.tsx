@@ -15,7 +15,7 @@ describe('When the app renders', () => {
     const button = screen.getByRole('button', { name: 'Take the test' });
     fireEvent.click(button);
     screen.getByText(
-      'Please select all the images with a menace in them. Click verify once there are none left.'
+      'Please select all the images with a menace in them. Click verify once there are none left.',
     );
   });
 });
