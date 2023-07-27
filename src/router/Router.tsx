@@ -11,7 +11,7 @@ const Router = ({
 }: {
   readonly initialPage?: Pages;
 }) => {
-  const { page, proceed, back, restart } = useContext(Context);
+  const { page, proceed, back } = useContext(Context);
 
   switch (page) {
     case Pages.HOME:
@@ -19,7 +19,7 @@ const Router = ({
     case Pages.CAPTCHA:
       return <Captcha onProceed={proceed} />;
     case Pages.RESULTS:
-      return <Results onRestart={restart} />;
+      return <Results />;
     default:
       return (
         <Scenario currentScenario={page} onProceed={proceed} goBack={back} />

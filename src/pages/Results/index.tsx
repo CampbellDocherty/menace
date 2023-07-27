@@ -4,10 +4,9 @@ import { calculateResult } from './calculateResult';
 import { Description, MediaSection, ResultImage } from './styles';
 import { Title } from '../Home/styles';
 import { ResultBoxPlot } from './ResultBoxPlot';
-import { Button } from '../Scenario/styles';
 
-export const Results = ({ onRestart }: { readonly onRestart: () => void }) => {
-  const { answers, reset } = useContext(AnswersContext);
+export const Results = () => {
+  const { answers } = useContext(AnswersContext);
   const result = useMemo(() => calculateResult(answers), [answers]);
   const personality = useMemo(() => {
     if (result === 100) {
@@ -41,14 +40,6 @@ export const Results = ({ onRestart }: { readonly onRestart: () => void }) => {
       <ResultBoxPlot result={result} />
       <Description>{personality.desc}</Description>
       <MediaSection />
-      <Button
-        onClick={() => {
-          reset();
-          onRestart();
-        }}
-      >
-        Again
-      </Button>
     </>
   );
 };
