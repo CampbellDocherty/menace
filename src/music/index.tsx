@@ -27,6 +27,9 @@ export const MusicPlayer = ({
       if (testStarted) {
         setIsPaused(false);
         audioRef.current.play();
+      } else {
+        setIsPaused(true);
+        audioRef.current.pause();
       }
     }
   }, [testStarted]);
@@ -42,6 +45,8 @@ export const MusicPlayer = ({
       }
     }
   };
+
+  console.log({ testStarted });
 
   return (
     <>

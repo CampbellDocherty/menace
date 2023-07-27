@@ -17,13 +17,10 @@ const Router = ({
   const [page, setPage] = useState(lastVisitedPage || initialPage);
   localStorage.setItem('lastVisitedPage', `${page}`);
 
-  useEffect(() => {
-    if (page !== 0) {
+  const onProceed = useCallback(() => {
+    if (page === Pages.HOME) {
       onTestStart();
     }
-  }, [page]);
-
-  const onProceed = useCallback(() => {
     setPage(page + 1);
   }, [setPage, page]);
 

@@ -8,7 +8,7 @@ const App = () => {
   const [testStarted, setTestStarted] = useState(false);
   const onTestStart = useCallback(() => {
     setTestStarted(!testStarted);
-  }, []);
+  }, [testStarted]);
 
   return (
     <>
