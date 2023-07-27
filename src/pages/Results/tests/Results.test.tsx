@@ -25,7 +25,7 @@ const setup = (answers: Record<string, number> = {}) => {
   render(
     <Context.Provider value={mockPagesContext}>
       <AnswersContext.Provider value={mockContext}>
-        <Router initialPage={Pages.RESULTS} />
+        <Router />
       </AnswersContext.Provider>
     </Context.Provider>
   );
