@@ -1,12 +1,15 @@
 @font-face {
   font-family: 'RoyalAcidOutline';
-  src: local('RoyalAcidOutline'),
+  src:
+    local('RoyalAcidOutline'),
     url(./fonts/RoyalAcidOutline.ttf) format('truetype');
 }
 
 @font-face {
   font-family: 'TimesSanSerif';
-  src: local('TimesSanSerif'), url(./fonts/TimesSanSerif.ttf) format('truetype');
+  src:
+    local('TimesSanSerif'),
+    url(./fonts/TimesSanSerif.ttf) format('truetype');
 }
 
 :root {

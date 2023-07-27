@@ -28,7 +28,7 @@ describe('Answers context', () => {
           <Router />
           <Restart />
         </AnswersContext.Provider>
-      </Context.Provider>
+      </Context.Provider>,
     );
   });
 

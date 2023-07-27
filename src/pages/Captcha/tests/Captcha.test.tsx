@@ -16,7 +16,7 @@ describe('When the captcha page renders', () => {
 
   test('it shows the text', () => {
     screen.getByText(
-      'Please select all the images with a menace in them. Click verify once there are none left.'
+      'Please select all the images with a menace in them. Click verify once there are none left.',
     );
   });
 
