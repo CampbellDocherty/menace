@@ -31,10 +31,17 @@ export const MusicPlayer = () => {
   }, [page]);
 
   useEffect(() => {
+    const playAudio = async () => {
+      if (!audioRef || !audioRef.current) {
+        return null;
+      }
+      await audioRef.current.play();
+    };
+
     if (audioRef && audioRef.current) {
       if (testStarted) {
         setIsPaused(false);
-        audioRef.current.play();
+        playAudio();
       } else {
         setIsPaused(true);
         audioRef.current.pause();
@@ -81,7 +88,7 @@ export const MusicPlayer = () => {
         <CoverArt onClick={onClick} src={coverArt} alt="cover art for menace" />
       </AudioContainer>
       <audio loop controls={false} ref={audioRef}>
-        <source src={menaceUrl} type="audio/ogg" />
+        <source src={menaceUrl} type="audio/mp3" />
         Your browser does not support the audio element.
       </audio>
     </>

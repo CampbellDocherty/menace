@@ -9,10 +9,7 @@ export const Title = styled.h1<{ readonly size?: number }>`
   width: 100%;
   text-align: center;
   letter-spacing: 2px;
-  text-shadow:
-    -1px 1px 1px #000,
-    1px 1px 1px #000,
-    1px -1px 0 #000,
+  text-shadow: -1px 1px 1px #000, 1px 1px 1px #000, 1px -1px 0 #000,
     -1px -1px 0 #000;
 `;
 
