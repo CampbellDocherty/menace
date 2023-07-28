@@ -15,7 +15,7 @@ const renderScenario = (page: Pages) => {
   return render(
     <Context.Provider value={{ ...mockPagesContext, page }}>
       <Router />
-    </Context.Provider>
+    </Context.Provider>,
   );
 };
 
@@ -41,13 +41,13 @@ describe.each(scenarios)(
 
       expect(mockPagesContext.proceed).toHaveBeenCalledTimes(1);
     });
-  }
+  },
 );
 
 test('Scenario 1', () => {
   renderScenario(Pages.SCENARIO_ONE);
   screen.getByText(
-    'Imagine you had been seeing someone for 3 months, only sleeping with them, going to Ikea together and spending multiple days in a row with them. Who would this person be to you?'
+    'Imagine you had been seeing someone for 3 months, only sleeping with them, going to Ikea together and spending multiple days in a row with them. Who would this person be to you?',
   );
   const button = screen.getByText('Just a friend');
   fireEvent.click(button);
@@ -67,10 +67,10 @@ test('Scenario 2', () => {
 test('Scenario 3', () => {
   renderScenario(Pages.SCENARIO_THREE);
   screen.getByText(
-    "Let's say you had been going out with someone for 3 years. How long would you wait to get with someone new after the breakup?"
+    "Let's say you had been going out with someone for 3 years. How long would you wait to get with someone new after the breakup?",
   );
   const button = screen.getByText(
-    'With someone for 3 years?! Hahahahahahahahaha'
+    'With someone for 3 years?! Hahahahahahahahaha',
   );
   fireEvent.click(button);
 
@@ -98,10 +98,10 @@ test('Scenario 5', () => {
 test('Scenario 6', () => {
   renderScenario(Pages.SCENARIO_SIX);
   screen.getByText(
-    "Imagine you are waiting for your date in a bar. You're talking to the cute bartender and you're really hitting it off. What do you do?"
+    "Imagine you are waiting for your date in a bar. You're talking to the cute bartender and you're really hitting it off. What do you do?",
   );
   const button = screen.getByText(
-    'Ask what time they get off and make sure your date ends before then'
+    'Ask what time they get off and make sure your date ends before then',
   );
   fireEvent.click(button);
 
@@ -111,10 +111,10 @@ test('Scenario 6', () => {
 test('Scenario 7', () => {
   renderScenario(Pages.SCENARIO_SEVEN);
   screen.getByText(
-    "You're on holiday with your friends and after a wild night on the strip you end up cheating on your partner. What is your next move?"
+    "You're on holiday with your friends and after a wild night on the strip you end up cheating on your partner. What is your next move?",
   );
   const button = screen.getByText(
-    'What happens on holiday stays on holiday 🤷‍♂️'
+    'What happens on holiday stays on holiday 🤷‍♂️',
   );
   fireEvent.click(button);
 

@@ -13,18 +13,17 @@ vi.mock('react-transition-group', () => {
   };
 });
 
-
-vi.spyOn(window.HTMLMediaElement.prototype, 'pause')
-  .mockImplementation(() => vi.fn())
-vi.spyOn(window.HTMLMediaElement.prototype, 'play')
-  .mockImplementation(() => new Promise(vi.fn))
+vi.spyOn(window.HTMLMediaElement.prototype, 'pause').mockImplementation(() =>
+  vi.fn(),
+);
+vi.spyOn(window.HTMLMediaElement.prototype, 'play').mockImplementation(
+  () => new Promise(vi.fn),
+);
 
 beforeEach(() => {
   localStorage.clear();
 });
 
 afterEach(() => {
-  vi.clearAllMocks()
-})
-
-
+  vi.clearAllMocks();
+});

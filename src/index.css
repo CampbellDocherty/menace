@@ -1,12 +1,15 @@
 @font-face {
   font-family: 'RoyalAcidOutline';
-  src: local('RoyalAcidOutline'),
+  src:
+    local('RoyalAcidOutline'),
     url(./fonts/RoyalAcidOutline.ttf) format('truetype');
 }
 
 @font-face {
   font-family: 'ComicNeueSans';
-  src: local('ComicNeueSans'), url(./fonts/ComicNeueSans.ttf) format('truetype');
+  src:
+    local('ComicNeueSans'),
+    url(./fonts/ComicNeueSans.ttf) format('truetype');
 }
 
 :root {
