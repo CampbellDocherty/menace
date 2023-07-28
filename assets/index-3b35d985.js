@@ -54,7 +54,7 @@ Error generating stack: `+i.message+`
 `,Yn=$.p`
   font-size: 20px;
 `,r0=$(Yn)`
-  font-size: 24px;
+  font-size: 20px;
   padding-left: 16px;
   padding-right: 16px;
 `,o0=$.button`
@@ -158,7 +158,7 @@ Error generating stack: `+i.message+`
   margin-right: 16px;
 `,y0=Array(9).fill(null),w0=[2,5,6],x0=({onProceed:e})=>{const[t,n]=I.useState([]),[r,o]=I.useState(null),i=u=>{o(null);const s=[...t];if(s.includes(u)){const a=s.indexOf(u);s.splice(a,1)}else s.push(u);n(s)},l=()=>{if(t.length===0){o("Please select at least one image");return}if(JSON.stringify(t.sort())!==JSON.stringify(w0.sort())){o("It looks like you didn't select the right images :("),n([]);return}e()};return N.jsxs(d0,{children:[N.jsx(Yn,{children:"Please select all the images with a menace in them. Click verify once there are none left."}),N.jsx(p0,{children:y0.map((u,s)=>{const a=s+1;return N.jsx(h0,{"data-testid":`captcha-image-${a}`,onClick:()=>i(a),selected:t.includes(a)},s)})}),N.jsxs(g0,{children:[r&&N.jsx(v0,{children:r}),N.jsx(m0,{onClick:l,children:"Verify"})]})]})},Sd=$.h1`
   font-family: 'RoyalAcidOutline';
-  font-size: ${({size:e})=>e?`${e}px`:"75px"};
+  font-size: ${({size:e})=>e?`${e}px`:"64px"};
   margin: 0;
   margin-bottom: 4px;
   color: white;
@@ -173,7 +173,7 @@ Error generating stack: `+i.message+`
 `,S0=$.p`
   position: fixed;
   left: 50%;
-  bottom: 20px;
+  bottom: 5px;
   transform: translate(-50%, -50%);
   margin: 0 auto;
   font-size: 14px;
