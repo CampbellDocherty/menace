@@ -10,7 +10,6 @@ export const Container = styled.div`
   max-height: 100vh;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 8%;
   position: relative;
 `;
 
