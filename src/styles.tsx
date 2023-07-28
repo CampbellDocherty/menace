@@ -8,7 +8,6 @@ export const Container = styled.div`
   align-items: center;
   max-width: 700px;
   max-height: 100vh;
-  min-height: 100vh;
   margin-left: auto;
   margin-right: auto;
   position: relative;
