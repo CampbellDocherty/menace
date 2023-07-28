@@ -8,84 +8,105 @@ const scenarioCopy = {
     cta: [
       { text: 'Just a friend', menaceValue: 1 },
       {
-        text: "Sort of together but I'm pretending we're not",
+        text: 'I just needed a bedside table 😏',
         menaceValue: 0.75,
       },
       { text: 'Hmm, situationship', menaceValue: 0.25 },
-      { text: "Ikea!? We're married", menaceValue: 0 },
+      { text: "Ikea!? That's my partner", menaceValue: 0 },
     ],
   },
   [Pages.SCENARIO_TWO]: {
-    title: 'Scenario 2',
+    title: 'If you have gone to a booty call, how long do you stay?',
 
     cta: [
-      { text: '100 menace', menaceValue: 1 },
+      { text: "I'm out as soon as the deed is done", menaceValue: 1 },
       {
-        text: '75 menace',
+        text: "I'll talk a bit but I'm not staying the night",
         menaceValue: 0.75,
       },
-      { text: '25 menace', menaceValue: 0.25 },
-      { text: '0 menace', menaceValue: 0 },
+      { text: 'Just for the night, out of decency', menaceValue: 0.25 },
+      {
+        text: 'All night... how else would I get my cuddles 🥺',
+        menaceValue: 0,
+      },
     ],
   },
   [Pages.SCENARIO_THREE]: {
-    title: 'Scenario 3',
+    title:
+      "Let's say you had been going out with someone for 3 years. How long would you wait to get with someone new after the breakup?",
     cta: [
-      { text: '100 menace', menaceValue: 1 },
+      { text: 'With someone for 3 years?! Hahahahahahahahaha', menaceValue: 1 },
       {
-        text: '75 menace',
+        text: '3 days, a day for each year',
         menaceValue: 0.75,
       },
-      { text: '25 menace', menaceValue: 0.25 },
-      { text: '0 menace', menaceValue: 0 },
+      {
+        text: 'For the right person, I could be tempted pretty quickly',
+        menaceValue: 0.25,
+      },
+      { text: 'A few months I think', menaceValue: 0 },
     ],
   },
   [Pages.SCENARIO_FOUR]: {
-    title: 'Scenario 4',
+    title: 'How do you usually break up with people?',
     cta: [
-      { text: '100 menace', menaceValue: 1 },
+      { text: '👻', menaceValue: 1 },
       {
-        text: '75 menace',
+        text: 'Text of course',
         menaceValue: 0.75,
       },
-      { text: '25 menace', menaceValue: 0.25 },
-      { text: '0 menace', menaceValue: 0 },
+      { text: 'On the phone. Respectful and quick', menaceValue: 0.25 },
+      { text: 'In person, I owe it to them', menaceValue: 0 },
     ],
   },
   [Pages.SCENARIO_FIVE]: {
-    title: 'Scenario 5',
+    title: 'How many people are on your roster right now?',
     cta: [
-      { text: '100 menace', menaceValue: 1 },
+      { text: "A lot, and there's room for more", menaceValue: 1 },
       {
-        text: '75 menace',
+        text: 'More than 3',
         menaceValue: 0.75,
       },
-      { text: '25 menace', menaceValue: 0.25 },
-      { text: '0 menace', menaceValue: 0 },
+      { text: '0-3', menaceValue: 0.25 },
+      { text: "What's a roster?", menaceValue: 0 },
     ],
   },
   [Pages.SCENARIO_SIX]: {
-    title: 'Scenario 6',
+    title:
+      "Imagine you are waiting for your date in a bar. You're talking to the cute bartender and you're really hitting it off. What do you do?",
     cta: [
-      { text: '100 menace', menaceValue: 1 },
       {
-        text: '75 menace',
+        text: 'Ask what time they get off and make sure your date ends before then',
+        menaceValue: 1,
+      },
+      {
+        text: 'Ask for their number',
         menaceValue: 0.75,
       },
-      { text: '25 menace', menaceValue: 0.25 },
-      { text: '0 menace', menaceValue: 0 },
+      {
+        text: 'Come back to the bar another time to ask them out',
+        menaceValue: 0.25,
+      },
+      {
+        text: 'My date is my date! Anything with the bartender is just harmless fun',
+        menaceValue: 0,
+      },
     ],
   },
   [Pages.SCENARIO_SEVEN]: {
-    title: 'Scenario 7',
+    title:
+      "You're on holiday with your friends and after a wild night on the strip you end up cheating on your partner. What is your next move?",
     cta: [
-      { text: '100 menace', menaceValue: 1 },
+      { text: 'What happens on holiday stays on holiday 🤷‍♂️', menaceValue: 1 },
       {
-        text: '75 menace',
+        text: "Cheating on holiday doesn't count",
         menaceValue: 0.75,
       },
-      { text: '25 menace', menaceValue: 0.25 },
-      { text: '0 menace', menaceValue: 0 },
+      { text: "I'd tell them, but not straight away", menaceValue: 0.25 },
+      {
+        text: "Not cheating! 😣 I'd come clean immediately",
+        menaceValue: 0,
+      },
     ],
   },
   [Pages.SCENARIO_EIGHT]: {

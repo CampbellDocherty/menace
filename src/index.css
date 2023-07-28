@@ -6,10 +6,10 @@
 }
 
 @font-face {
-  font-family: 'TimesSanSerif';
+  font-family: 'ComicNeueSans';
   src:
-    local('TimesSanSerif'),
-    url(./fonts/TimesSanSerif.ttf) format('truetype');
+    local('ComicNeueSans'),
+    url(./fonts/ComicNeueSans.ttf) format('truetype');
 }
 
 :root {
@@ -22,11 +22,12 @@
 
 body {
   margin: 0;
-  font-family: 'TimesSanSerif';
+  font-family: 'ComicNeueSans';
 }
 
 button {
-  font-family: 'TimesSanSerif';
+  font-family: 'ComicNeueSans';
+  color: black;
 }
 
 p {

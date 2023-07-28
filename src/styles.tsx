@@ -1,21 +1,27 @@
 import { styled } from 'styled-components';
 
 export const Container = styled.div`
+  margin-top: 5rem;
   padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   max-width: 700px;
-  height: 100vh;
-  max-height: 1200px;
+  max-height: 100vh;
+  min-height: 100vh;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 8%;
   position: relative;
 `;
 
 export const BodyText = styled.p`
   font-size: 20px;
+`;
+
+export const IntroText = styled(BodyText)`
+  font-size: 24px;
+  padding-left: 16px;
+  padding-right: 16px;
 `;
 
 export const RestartButton = styled.button<{ readonly $teststarted: boolean }>`
