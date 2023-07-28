@@ -6,7 +6,6 @@ const Bar = styled.div`
   height: 20px;
   border-radius: 8px;
   background-color: #eeeeee;
-  margin: 0 auto;
 `;
 
 const ProgressAmount = styled.div<{ width: number }>`
