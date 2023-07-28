@@ -18,7 +18,7 @@ export const BodyText = styled.p`
 `;
 
 export const IntroText = styled(BodyText)`
-  font-size: 24px;
+  font-size: 20px;
   padding-left: 16px;
   padding-right: 16px;
 `;
