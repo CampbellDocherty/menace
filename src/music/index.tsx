@@ -24,9 +24,24 @@ export const MusicPlayer = () => {
 
   useEffect(() => {
     if (audioRef && audioRef.current) {
+      if (page === Pages.HOME) {
+        audioRef.current.currentTime = 0;
+      }
+    }
+  }, [page]);
+
+  useEffect(() => {
+    const playAudio = async () => {
+      if (!audioRef || !audioRef.current) {
+        return null;
+      }
+      await audioRef.current.play();
+    };
+
+    if (audioRef && audioRef.current) {
       if (testStarted) {
         setIsPaused(false);
-        audioRef.current.play();
+        playAudio();
       } else {
         setIsPaused(true);
         audioRef.current.pause();
@@ -38,7 +53,11 @@ export const MusicPlayer = () => {
     if (audioRef && audioRef.current) {
       if (audioRef.current.paused) {
         setIsPaused(false);
-        audioRef.current.play();
+        try {
+          await audioRef.current.play();
+        } catch (e) {
+          console.log('here', e);
+        }
       } else {
         setIsPaused(true);
         audioRef.current.pause();
@@ -68,8 +87,8 @@ export const MusicPlayer = () => {
         </ArtistInfoContainer>
         <CoverArt onClick={onClick} src={coverArt} alt="cover art for menace" />
       </AudioContainer>
-      <audio loop controls={false} autoPlay ref={audioRef}>
-        <source src={menaceUrl} type="audio/ogg" />
+      <audio loop controls={false} ref={audioRef}>
+        <source src={menaceUrl} type="audio/mp3" />
         Your browser does not support the audio element.
       </audio>
     </>
