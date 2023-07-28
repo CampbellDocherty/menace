@@ -1,13 +1,14 @@
 import { styled } from 'styled-components';
 
 export const Container = styled.div`
-  margin-top: 2rem;
+  margin-top: 5rem;
   padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   max-width: 700px;
   max-height: 100vh;
+  min-height: 100vh;
   margin-left: auto;
   margin-right: auto;
   position: relative;

@@ -9,7 +9,6 @@ import {
   AudioContainer,
   AudioControlImage,
   CoverArt,
-  ImageStack,
   SongArtist,
   SongTitle,
 } from './styles';
@@ -54,17 +53,20 @@ export const MusicPlayer = () => {
           <SongTitle>Menace</SongTitle>
           <SongArtist>by 00ab</SongArtist>
           {isPaused ? (
-            <AudioControlImage src={PlaySvg} alt="Play button for the music" />
+            <AudioControlImage
+              onClick={onClick}
+              src={PlaySvg}
+              alt="Play button for the music"
+            />
           ) : (
             <AudioControlImage
+              onClick={onClick}
               src={PauseSvg}
               alt="Pause button for the music"
             />
           )}
         </ArtistInfoContainer>
-        <ImageStack onClick={onClick}>
-          <CoverArt src={coverArt} alt="cover art for menace" />
-        </ImageStack>
+        <CoverArt onClick={onClick} src={coverArt} alt="cover art for menace" />
       </AudioContainer>
       <audio loop controls={false} autoPlay ref={audioRef}>
         <source src={menaceUrl} type="audio/ogg" />
