@@ -83,3 +83,36 @@ export const TransitionContainer = styled.section<{
       $isforward === 'true' ? 'translateX(-100%)' : 'translateX(100%)'};
   }
 `;
+
+export const BubbleButton = styled.button`
+  border-radius: 8px;
+  background: none;
+  min-height: 40px;
+  height: fit-content;
+  margin-bottom: 16px;
+  font-size: 20px;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  line-height: 1.3em;
+  padding: 8px;
+  border: 2px solid black;
+  box-sizing: border-box;
+
+  /* &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    box-sizing: border-box;
+
+    height: 4px;
+    width: 4px;
+    bottom: 10px;
+    left: -2px;
+    background: #fff;
+    box-shadow: -4px -4px #fff, -4px 0 #fff, -8px 0 #fff, 0 -8px #fff,
+      -4px 4px #000, -8px 4px #000, -12px 4px #000, -16px 4px #000, -12px 0 #000,
+      -8px -4px #000, -4px -8px #000, 0 -4px #fff;
+  } */
+`;

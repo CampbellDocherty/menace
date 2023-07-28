@@ -6,7 +6,7 @@ const Bar = styled.div`
   height: 20px;
   border-radius: 8px;
   background-color: #eeeeee;
-  margin-bottom: 40px;
+  margin-bottom: 32px;
   margin-top: 40px;
 `;
 
