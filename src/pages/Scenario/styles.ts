@@ -11,6 +11,13 @@ export const ScenarioContainer = styled.div`
   position: relative;
 `;
 
+export const ScenarioHeader = styled.div`
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+`;
+
 export const BackButton = styled.button`
   height: 50px;
   width: 50px;
@@ -18,9 +25,6 @@ export const BackButton = styled.button`
   background: none;
   background-color: none;
   border: none;
-  position: absolute;
-  top: 20px;
-  left: 0;
   display: flex;
   align-items: center;
   justify-content: center;

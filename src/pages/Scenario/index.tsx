@@ -7,9 +7,9 @@ import {
   BackArrow,
   BackButton,
   BubbleButton,
-  Button,
   ButtonContainer,
   ScenarioContainer,
+  ScenarioHeader,
   ScenarioTitle,
   TRANSITION_CLASS_NAME,
   TransitionContainer,
@@ -57,15 +57,17 @@ export const Scenario = ({
 
   return (
     <ScenarioContainer data-testid={currentScenario}>
-      <BackButton
-        onClick={() => {
-          setIsForward(false);
-          goBack();
-        }}
-      >
-        <BackArrow src={ArrowSvg} alt="back arrow" />
-      </BackButton>
-      <ProgressBar currentScenario={currentScenario} />
+      <ScenarioHeader>
+        <BackButton
+          onClick={() => {
+            setIsForward(false);
+            goBack();
+          }}
+        >
+          <BackArrow src={ArrowSvg} alt="back arrow" />
+        </BackButton>
+        <ProgressBar currentScenario={currentScenario} />
+      </ScenarioHeader>
       <SwitchTransition mode="out-in">
         <CSSTransition
           key={currentScenario}

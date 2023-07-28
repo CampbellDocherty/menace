@@ -1,13 +1,13 @@
 import { styled } from 'styled-components';
 
 export const Container = styled.div`
+  margin-top: 2rem;
   padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   max-width: 700px;
-  height: 100vh;
-  max-height: 1200px;
+  max-height: 100vh;
   margin-left: auto;
   margin-right: auto;
   padding-top: 8%;
