@@ -20,8 +20,8 @@ export const BodyText = styled.p`
 
 export const IntroText = styled(BodyText)`
   font-size: 1.1rem;
-  padding-left: 8px;
-  padding-right: 8px;
+  padding: 0px 8px;
+  margin: 12px 0px;
 `;
 
 export const RestartButton = styled.button<{ readonly $teststarted: boolean }>`
