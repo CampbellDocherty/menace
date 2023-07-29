@@ -1,6 +1,15 @@
 import { IntroText } from '../../styles';
 import { Button } from '../Scenario/styles';
-import { Footer, ImageCollage, Title } from './styles';
+import {
+  Footer,
+  ImageCollage,
+  MenaceButton,
+  MenaceImage,
+  Title,
+} from './styles';
+import AngelOne from '../../assets/angel1.png';
+import AngelTwo from '../../assets/angel2.png';
+import Devil from '../../assets/devil.png';
 
 export const Home = ({ onProceed }: { onProceed: () => void }) => {
   return (
@@ -14,7 +23,27 @@ export const Home = ({ onProceed }: { onProceed: () => void }) => {
         and only 00ab.
       </IntroText>
       <ImageCollage>
-        <Button onClick={onProceed}>Take the test</Button>
+        <MenaceButton>
+          <MenaceImage
+            onClick={onProceed}
+            src={AngelOne}
+            alt="Abolaji as an angel number 1"
+          />
+        </MenaceButton>
+        <MenaceButton>
+          <MenaceImage
+            onClick={onProceed}
+            src={AngelTwo}
+            alt="Abolaji as an angel number 2"
+          />
+        </MenaceButton>
+        <MenaceButton>
+          <MenaceImage
+            onClick={onProceed}
+            src={Devil}
+            alt="Abolaji as a devil"
+          />
+        </MenaceButton>
       </ImageCollage>
       <Footer>
         This is in no way medical advice. Please don&apos;t make any romantic

@@ -15,8 +15,23 @@ export const Title = styled.h1`
 export const ImageCollage = styled.div`
   width: 100%;
   flex: 1;
-  border: 1px solid black;
+  display: flex;
   margin-bottom: 12px;
+  align-items: center;
+  justify-content: space-evenly;
+`;
+
+export const MenaceButton = styled.button`
+  width: 30%;
+  outline: none;
+  background: none;
+  background-color: none;
+  border: none;
+  cursor: pointer;
+`;
+
+export const MenaceImage = styled.img`
+  width: 100%;
 `;
 
 export const Footer = styled.p`
