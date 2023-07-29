@@ -37,7 +37,7 @@ export const BackArrow = styled.img`
 `;
 
 export const ScenarioTitle = styled(BodyText)`
-  margin-bottom: 40px;
+  margin: 12px 0px 16px 0px;
   font-size: 1.3rem;
 `;
 
@@ -81,7 +81,7 @@ export const Button = styled.button`
   background: none;
   min-height: 30px;
   height: fit-content;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
   font-size: 1.2rem;
   cursor: pointer;
   position: relative;
