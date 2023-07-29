@@ -7,12 +7,12 @@ describe('When the app renders', () => {
     render(<App />);
     screen.getByText('Are you a menace?');
     screen.getByText('Is that a bad thing?', { exact: false });
-    // screen.getByText('This is in no way medical advice.', { exact: false });
+    screen.getByText('This is in no way medical advice.', { exact: false });
   });
 
   test('a user can start the personality test', () => {
     render(<App />);
-    const button = screen.getByRole('button', { name: 'Take the test' });
+    const button = screen.getByAltText('Take the test #1');
     fireEvent.click(button);
     screen.getByText(
       'Please select all the images with a menace in them. Click verify once there are none left.',

@@ -17,14 +17,14 @@ const setup = (mockContext: ReturnType<typeof setupContext>) => {
     <Context.Provider value={mockContext}>
       <Router />
       <Restart />
-    </Context.Provider>,
+    </Context.Provider>
   );
 };
 
 test('updates the context when a user proceeds', () => {
   const mockContext = setupContext(Pages.HOME);
   setup(mockContext);
-  const button = screen.getByRole('button', { name: 'Take the test' });
+  const button = screen.getByAltText('Take the test #1');
   fireEvent.click(button);
   expect(mockContext.proceed).toHaveBeenCalledTimes(1);
 });

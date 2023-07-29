@@ -27,22 +27,18 @@ export const Home = ({ onProceed }: { onProceed: () => void }) => {
           <MenaceImage
             onClick={onProceed}
             src={AngelOne}
-            alt="Abolaji as an angel number 1"
+            alt="Take the test #1"
           />
         </MenaceButton>
         <MenaceButton>
           <MenaceImage
             onClick={onProceed}
             src={AngelTwo}
-            alt="Abolaji as an angel number 2"
+            alt="Take the test #2"
           />
         </MenaceButton>
         <MenaceButton>
-          <MenaceImage
-            onClick={onProceed}
-            src={Devil}
-            alt="Abolaji as a devil"
-          />
+          <MenaceImage onClick={onProceed} src={Devil} alt="Take the test #3" />
         </MenaceButton>
       </ImageCollage>
       <Footer>
