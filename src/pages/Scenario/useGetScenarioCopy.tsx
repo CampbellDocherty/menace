@@ -104,7 +104,7 @@ const scenarioCopy = {
       },
       { text: "I'd tell them, but not straight away", menaceValue: 0.25 },
       {
-        text: "Not cheating! 😣 I'd come clean immediately",
+        text: "I'd come clean immediately 😣",
         menaceValue: 0,
       },
     ],
