@@ -2,7 +2,7 @@ import { styled } from 'styled-components';
 
 export const Title = styled.h1`
   font-family: 'RoyalAcidOutline';
-  font-size: 64px;
+  font-size: 3.8rem;
   margin: 0;
   margin-bottom: 4px;
   color: white;
@@ -13,12 +13,15 @@ export const Title = styled.h1`
     -1px -1px 0 #000;
 `;
 
+export const ImageCollage = styled.div`
+  width: 100%;
+  flex: 1;
+  border: 1px solid black;
+  margin-bottom: 12px;
+`;
+
 export const Footer = styled.p`
-  position: fixed;
-  left: 50%;
-  bottom: 5px;
-  transform: translate(-50%, -50%);
-  margin: 0 auto;
+  margin: 0;
   font-size: 14px;
   width: 80%;
   text-align: center;

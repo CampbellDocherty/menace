@@ -6,7 +6,7 @@ import { CtaCopy, useGetScenarioCopy } from './useGetScenarioCopy';
 import {
   BackArrow,
   BackButton,
-  BubbleButton,
+  Button,
   ButtonContainer,
   ScenarioContainer,
   ScenarioHeader,
@@ -81,9 +81,9 @@ export const Scenario = ({
             <ScenarioTitle>{copy.title}</ScenarioTitle>
             <ButtonContainer>
               {shuffle(copy.cta).map(({ text, menaceValue }) => (
-                <BubbleButton key={text} onClick={() => onAnswer(menaceValue)}>
+                <Button key={text} onClick={() => onAnswer(menaceValue)}>
                   {text}
-                </BubbleButton>
+                </Button>
               ))}
             </ButtonContainer>
           </TransitionContainer>

@@ -1,4 +1,5 @@
 import { styled } from 'styled-components';
+import { Button } from '../Scenario/styles';
 
 export const Container = styled.div`
   display: flex;
@@ -30,16 +31,8 @@ export const Square = styled.div<{ readonly selected: boolean }>`
   cursor: pointer;
 `;
 
-export const VerifyCaptchaButton = styled.button`
-  border-radius: 4px;
-  background: none;
-  border: 1px solid black;
-  width: 10rem;
-  height: 2rem;
-  cursor: pointer;
+export const VerifyCaptchaButton = styled(Button)`
   margin-left: auto;
-  font-size: 20px;
-  padding: 4px;
 `;
 
 export const CaptchaActionWrapper = styled.div`

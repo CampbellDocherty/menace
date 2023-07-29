@@ -1,26 +1,27 @@
 import { styled } from 'styled-components';
 
 export const Container = styled.div`
-  margin-top: 2rem;
-  padding: 20px;
+  padding: 20px 10px 10px 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   max-width: 700px;
+  min-height: 100vh;
   max-height: 100vh;
   margin-left: auto;
   margin-right: auto;
   position: relative;
+  overflow: scroll;
 `;
 
 export const BodyText = styled.p`
-  font-size: 20px;
+  font-size: 1.2rem;
 `;
 
 export const IntroText = styled(BodyText)`
-  font-size: 20px;
-  padding-left: 16px;
-  padding-right: 16px;
+  font-size: 1.1rem;
+  padding-left: 8px;
+  padding-right: 8px;
 `;
 
 export const RestartButton = styled.button<{ readonly $teststarted: boolean }>`
