@@ -9,7 +9,6 @@ import {
   Temperature,
   Thermometer,
 } from './styles';
-import { Title } from '../Home/styles';
 
 export const Results = () => {
   const { answers } = useContext(AnswersContext);

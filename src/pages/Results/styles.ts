@@ -5,14 +5,15 @@ export const ResultContainer = styled.div`
   width: 100%;
   height: fit-content;
   display: flex;
-  padding-left: 8px;
+  justify-content: space-between;
+  padding-left: 24px;
 `;
 
 export const CopyContainer = styled.div`
   display: flex;
   flex-direction: column;
-  flex: 1;
   align-items: flex-end;
+  width: 70%;
 `;
 
 export const ResultTitle = styled.h1`
@@ -21,7 +22,6 @@ export const ResultTitle = styled.h1`
   margin: 0;
   margin-bottom: 4px;
   color: white;
-  width: 100%;
   text-align: right;
   letter-spacing: 2px;
   text-shadow: -1px 1px 1px #000, 1px 1px 1px #000, 1px -1px 0 #000,
@@ -31,7 +31,6 @@ export const ResultTitle = styled.h1`
 export const Description = styled(BodyText)`
   font-size: 1.2rem;
   margin: 0;
-  width: 70%;
 `;
 
 export const Thermometer = styled.div`
