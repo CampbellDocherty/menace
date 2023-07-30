@@ -24,7 +24,10 @@ export const ResultTitle = styled.h1`
   color: white;
   text-align: right;
   letter-spacing: 2px;
-  text-shadow: -1px 1px 1px #000, 1px 1px 1px #000, 1px -1px 0 #000,
+  text-shadow:
+    -1px 1px 1px #000,
+    1px 1px 1px #000,
+    1px -1px 0 #000,
     -1px -1px 0 #000;
 `;
 
