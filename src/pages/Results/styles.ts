@@ -1,9 +1,37 @@
 import { styled } from 'styled-components';
 import { BodyText } from '../../styles';
 
+export const ResultContainer = styled.div`
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  padding-left: 8px;
+`;
+
+export const CopyContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: flex-end;
+`;
+
+export const ResultTitle = styled.h1`
+  font-family: 'RoyalAcidOutline';
+  font-size: 2.6rem;
+  margin: 0;
+  margin-bottom: 4px;
+  color: white;
+  width: 100%;
+  text-align: right;
+  letter-spacing: 2px;
+  text-shadow: -1px 1px 1px #000, 1px 1px 1px #000, 1px -1px 0 #000,
+    -1px -1px 0 #000;
+`;
+
 export const Description = styled(BodyText)`
-  width: 85%;
-  font-size: 24px;
+  font-size: 1.2rem;
+  margin: 0;
+  width: 70%;
 `;
 
 export const Thermometer = styled.div`

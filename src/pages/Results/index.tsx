@@ -1,7 +1,14 @@
 import { useContext, useMemo } from 'react';
 import { AnswersContext } from '../../context/Answers/AnswersContext';
 import { calculateResult } from './calculateResult';
-import { Description, Temperature, Thermometer } from './styles';
+import {
+  CopyContainer,
+  Description,
+  ResultContainer,
+  ResultTitle,
+  Temperature,
+  Thermometer,
+} from './styles';
 import { Title } from '../Home/styles';
 
 export const Results = () => {
@@ -34,11 +41,15 @@ export const Results = () => {
 
   return (
     <>
-      <Thermometer>
-        <Temperature datavalue={`${result}%`} />
-      </Thermometer>
-      <Title size={54}>{personality.title}</Title>
-      <Description>{personality.desc}</Description>
+      <ResultContainer>
+        <Thermometer>
+          <Temperature datavalue={`${result}%`} />
+        </Thermometer>
+        <CopyContainer>
+          <ResultTitle>{personality.title}</ResultTitle>
+          <Description>{personality.desc}</Description>
+        </CopyContainer>
+      </ResultContainer>
     </>
   );
 };
