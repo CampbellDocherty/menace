@@ -8,7 +8,6 @@ import {
   Title,
 } from './styles';
 import AngelOne from '../../assets/angel1.png';
-import AngelTwo from '../../assets/angel2.png';
 import Devil from '../../assets/devil.png';
 
 export const Home = ({ onProceed }: { onProceed: () => void }) => {
@@ -24,21 +23,11 @@ export const Home = ({ onProceed }: { onProceed: () => void }) => {
       </IntroText>
       <ImageCollage>
         <MenaceButton>
-          <MenaceImage
-            onClick={onProceed}
-            src={AngelOne}
-            alt="Take the test #1"
-          />
+          <MenaceImage src={AngelOne} alt="Take the test #1" />
         </MenaceButton>
+        <Button onClick={onProceed}>Take the test</Button>
         <MenaceButton>
-          <MenaceImage
-            onClick={onProceed}
-            src={AngelTwo}
-            alt="Take the test #2"
-          />
-        </MenaceButton>
-        <MenaceButton>
-          <MenaceImage onClick={onProceed} src={Devil} alt="Take the test #3" />
+          <MenaceImage src={Devil} alt="Take the test #3" />
         </MenaceButton>
       </ImageCollage>
       <Footer>

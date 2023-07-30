@@ -12,7 +12,7 @@ describe('When the app renders', () => {
 
   test('a user can start the personality test', () => {
     render(<App />);
-    const button = screen.getByAltText('Take the test #1');
+    const button = screen.getByRole('button', { name: 'Take the test' });
     fireEvent.click(button);
     screen.getByText(
       'Please select all the images with a menace in them. Click verify once there are none left.',
