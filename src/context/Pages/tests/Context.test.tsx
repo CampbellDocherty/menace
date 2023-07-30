@@ -17,7 +17,7 @@ const setup = (mockContext: ReturnType<typeof setupContext>) => {
     <Context.Provider value={mockContext}>
       <Router />
       <Restart />
-    </Context.Provider>
+    </Context.Provider>,
   );
 };
 
