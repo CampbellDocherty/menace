@@ -1,12 +1,6 @@
 import { IntroText } from '../../styles';
 import { Button } from '../Scenario/styles';
-import {
-  Footer,
-  ImageCollage,
-  MenaceButton,
-  MenaceImage,
-  Title,
-} from './styles';
+import { Footer, ImageCollage, MenaceImage, Title } from './styles';
 import AngelOne from '../../assets/angel1.png';
 import Devil from '../../assets/devil.png';
 
@@ -22,13 +16,9 @@ export const Home = ({ onProceed }: { onProceed: () => void }) => {
         and only 00ab.
       </IntroText>
       <ImageCollage>
-        <MenaceButton>
-          <MenaceImage src={AngelOne} alt="Take the test #1" />
-        </MenaceButton>
+        <MenaceImage src={AngelOne} alt="Take the test #1" />
         <Button onClick={onProceed}>Take the test</Button>
-        <MenaceButton>
-          <MenaceImage src={Devil} alt="Take the test #3" />
-        </MenaceButton>
+        <MenaceImage src={Devil} alt="Take the test #3" />
       </ImageCollage>
       <Footer>
         This is in no way medical advice. Please don&apos;t make any romantic

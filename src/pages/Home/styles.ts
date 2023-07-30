@@ -8,36 +8,34 @@ export const Title = styled.h1`
   width: 100%;
   text-align: center;
   letter-spacing: 2px;
-  text-shadow:
-    -1px 1px 1px #000,
-    1px 1px 1px #000,
-    1px -1px 0 #000,
+  text-shadow: -1px 1px 1px #000, 1px 1px 1px #000, 1px -1px 0 #000,
     -1px -1px 0 #000;
 `;
 
 export const ImageCollage = styled.div`
   width: 100%;
-  flex: 1;
   display: flex;
-  margin-bottom: 12px;
+  margin: 12px 0px;
   align-items: center;
   justify-content: space-evenly;
 `;
 
-export const MenaceButton = styled.button`
-  width: 30%;
-  outline: none;
-  background: none;
-  background-color: none;
-  border: none;
-  cursor: pointer;
-`;
-
 export const MenaceImage = styled.img`
-  width: 100%;
+  width: 28%;
+
+  &:first-child {
+    margin-right: 8px;
+  }
+
+  &:last-child {
+    margin-left: 8px;
+  }
 `;
 
 export const Footer = styled.p`
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
   margin: 0;
   font-size: 14px;
   width: 80%;
