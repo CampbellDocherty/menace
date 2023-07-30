@@ -1,10 +1,9 @@
 import { styled } from 'styled-components';
 
-export const Title = styled.h1<{ readonly size?: number }>`
+export const Title = styled.h1`
   font-family: 'RoyalAcidOutline';
-  font-size: ${({ size }) => (size ? `${size}px` : '64px')};
+  font-size: 3.8rem;
   margin: 0;
-  margin-bottom: 4px;
   color: white;
   width: 100%;
   text-align: center;
@@ -16,12 +15,31 @@ export const Title = styled.h1<{ readonly size?: number }>`
     -1px -1px 0 #000;
 `;
 
+export const ImageCollage = styled.div`
+  width: 100%;
+  display: flex;
+  margin: 12px 0px;
+  align-items: center;
+  justify-content: space-evenly;
+`;
+
+export const MenaceImage = styled.img`
+  width: 28%;
+
+  &:first-child {
+    margin-right: 8px;
+  }
+
+  &:last-child {
+    margin-left: 8px;
+  }
+`;
+
 export const Footer = styled.p`
-  position: fixed;
-  left: 50%;
-  bottom: 5px;
-  transform: translate(-50%, -50%);
-  margin: 0 auto;
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  margin: 0;
   font-size: 14px;
   width: 80%;
   text-align: center;

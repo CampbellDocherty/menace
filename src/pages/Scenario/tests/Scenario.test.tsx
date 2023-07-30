@@ -19,10 +19,7 @@ const renderScenario = (page: Pages) => {
   );
 };
 
-const scenarios = [
-  [8, Pages.SCENARIO_EIGHT],
-  [9, Pages.SCENARIO_NINE],
-];
+const scenarios = [[9, Pages.SCENARIO_NINE]];
 
 describe.each(scenarios)(
   'when a user arrives on page %s',
@@ -115,6 +112,19 @@ test('Scenario 7', () => {
   );
   const button = screen.getByText(
     'What happens on holiday stays on holiday 🤷‍♂️',
+  );
+  fireEvent.click(button);
+
+  expect(mockPagesContext.proceed).toHaveBeenCalledTimes(1);
+});
+
+test('Scenario 8', () => {
+  renderScenario(Pages.SCENARIO_EIGHT);
+  screen.getByText(
+    "Under what conditions would you consider getting with your friend's ex?",
+  );
+  const button = screen.getByText(
+    "Name the time and place I'm in, it's not my fault my friends have great taste 🤷‍♂️",
   );
   fireEvent.click(button);
 

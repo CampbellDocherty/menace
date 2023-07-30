@@ -104,21 +104,25 @@ const scenarioCopy = {
       },
       { text: "I'd tell them, but not straight away", menaceValue: 0.25 },
       {
-        text: "Not cheating! 😣 I'd come clean immediately",
+        text: "I'd come clean immediately 😣",
         menaceValue: 0,
       },
     ],
   },
   [Pages.SCENARIO_EIGHT]: {
-    title: 'Scenario 8',
+    title:
+      "Under what conditions would you consider getting with your friend's ex?",
     cta: [
-      { text: '100 menace', menaceValue: 1 },
       {
-        text: '75 menace',
+        text: "Name the time and place I'm in, it's not my fault my friends have great taste 🤷‍♂️",
+        menaceValue: 1,
+      },
+      {
+        text: 'Anything can happen on a night out 🤫',
         menaceValue: 0.75,
       },
-      { text: '25 menace', menaceValue: 0.25 },
-      { text: '0 menace', menaceValue: 0 },
+      { text: "I'd only do it for love", menaceValue: 0.25 },
+      { text: 'Never ever!', menaceValue: 0 },
     ],
   },
   [Pages.SCENARIO_NINE]: {

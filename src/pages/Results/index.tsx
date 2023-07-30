@@ -1,9 +1,14 @@
 import { useContext, useMemo } from 'react';
 import { AnswersContext } from '../../context/Answers/AnswersContext';
 import { calculateResult } from './calculateResult';
-import { Description, MediaSection, ResultImage } from './styles';
-import { Title } from '../Home/styles';
-import { ResultBoxPlot } from './ResultBoxPlot';
+import {
+  CopyContainer,
+  Description,
+  ResultContainer,
+  ResultTitle,
+  Temperature,
+  Thermometer,
+} from './styles';
 
 export const Results = () => {
   const { answers } = useContext(AnswersContext);
@@ -35,11 +40,15 @@ export const Results = () => {
 
   return (
     <>
-      <ResultImage />
-      <Title size={54}>{personality.title}</Title>
-      <ResultBoxPlot result={result} />
-      <Description>{personality.desc}</Description>
-      <MediaSection />
+      <ResultContainer>
+        <Thermometer>
+          <Temperature datavalue={`${result}%`} />
+        </Thermometer>
+        <CopyContainer>
+          <ResultTitle>{personality.title}</ResultTitle>
+          <Description>{personality.desc}</Description>
+        </CopyContainer>
+      </ResultContainer>
     </>
   );
 };

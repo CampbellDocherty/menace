@@ -3,7 +3,7 @@ import { BodyText } from '../../styles';
 
 export const ScenarioContainer = styled.div`
   height: 80%;
-  width: 85%;
+  width: 95%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -37,8 +37,8 @@ export const BackArrow = styled.img`
 `;
 
 export const ScenarioTitle = styled(BodyText)`
-  margin-bottom: 40px;
-  font-size: 24px;
+  margin: 12px 0px 16px 0px;
+  font-size: 1.3rem;
 `;
 
 export const ButtonContainer = styled.div`
@@ -46,18 +46,6 @@ export const ButtonContainer = styled.div`
   flex-direction: column;
   width: 100%;
   justify-content: space-evenly;
-`;
-
-export const Button = styled.button`
-  border-radius: 4px;
-  background: none;
-  border: 1px solid black;
-  min-height: 40px;
-  height: fit-content;
-  margin-bottom: 12px;
-  font-size: 20px;
-  padding: 4px;
-  cursor: pointer;
 `;
 
 export const TRANSITION_CLASS_NAME = `fade`;
@@ -92,35 +80,18 @@ export const TransitionContainer = styled.section<{
   }
 `;
 
-export const BubbleButton = styled.button`
+export const Button = styled.button`
   border-radius: 8px;
   background: none;
-  min-height: 40px;
+  min-height: 30px;
   height: fit-content;
-  margin-bottom: 16px;
-  font-size: 20px;
+  margin-bottom: 8px;
+  font-size: 1.2rem;
   cursor: pointer;
   position: relative;
-  display: inline-block;
   text-align: center;
   line-height: 1.3em;
-  padding: 8px;
+  padding: 8px 8px;
   border: 2px solid black;
   box-sizing: border-box;
-
-  /* &::after {
-    content: '';
-    display: block;
-    position: absolute;
-    box-sizing: border-box;
-
-    height: 4px;
-    width: 4px;
-    bottom: 10px;
-    left: -2px;
-    background: #fff;
-    box-shadow: -4px -4px #fff, -4px 0 #fff, -8px 0 #fff, 0 -8px #fff,
-      -4px 4px #000, -8px 4px #000, -12px 4px #000, -16px 4px #000, -12px 0 #000,
-      -8px -4px #000, -4px -8px #000, 0 -4px #fff;
-  } */
 `;
