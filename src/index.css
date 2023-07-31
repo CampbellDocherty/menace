@@ -20,13 +20,9 @@
   box-sizing: border-box;
 }
 
-body,
-#root {
+body {
   margin: 0;
   font-family: 'ComicNeueSans';
-  min-height: 100vh;
-  max-height: 100vh;
-  overflow-y: scroll;
 }
 
 button {

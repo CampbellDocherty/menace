@@ -9,9 +9,7 @@ export const Container = styled.div`
   align-items: center;
   max-width: 700px;
   min-height: ${AVAIL_HEIGHT_OF_VIEWPORT}px;
-  max-height: ${AVAIL_HEIGHT_OF_VIEWPORT}px;
   overflow-y: scroll;
-  overflow-x: hidden;
   margin-left: auto;
   margin-right: auto;
   position: relative;
