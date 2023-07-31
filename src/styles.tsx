@@ -15,6 +15,7 @@ export const Container = styled.div`
 `;
 
 export const BodyText = styled.p`
+  margin: 0px 0px 16px 0px;
   font-size: 1.2rem;
 `;
 
