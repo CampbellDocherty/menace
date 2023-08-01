@@ -20,16 +20,16 @@ export const Results = () => {
         desc: "100% menace! Even when we were developing this test we thought that was only possible in theory. That's too much menace for one person to harness. Our recommended media might just be the thing that can save you!",
       };
     }
-    if (result > 60) {
+    if (result > 55) {
       return {
         title: 'Menace',
         desc: "You're definitely a menace. Maybe too much of a menace - but don't worry we're not judging! We think you can bring that number down with some self development. Check out our recommended media below!",
       };
     }
-    if (result >= 40 && result <= 60) {
+    if (result >= 45 && result <= 55) {
       return {
         title: 'Just Right',
-        desc: "You've got the perfect mix of menace and sweetness. You've got the right approach to your romantic life but no one is perfect. Check out our recommneded media, it'll help you stay on your toes!",
+        desc: "The perfect mix of menace and sweetness. You've got the right approach to your romantic life but no one is perfect. Check out our recommneded media, it'll help you stay on your toes!",
       };
     }
     return {
@@ -42,7 +42,7 @@ export const Results = () => {
     <>
       <ResultContainer>
         <Thermometer>
-          <Temperature datavalue={`${result}%`} />
+          <Temperature datavalue={`${Math.round(result)}%`} />
         </Thermometer>
         <CopyContainer>
           <ResultTitle>{personality.title}</ResultTitle>
