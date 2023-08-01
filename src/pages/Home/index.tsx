@@ -1,7 +1,7 @@
 import { IntroText } from '../../styles';
 import { Button } from '../Scenario/styles';
 import { Disclaimer, ImageCollage, MenaceImage, Title } from './styles';
-import AngelOne from '../../assets/angel1.png';
+import Angel from '../../assets/angel.png';
 import Devil from '../../assets/devil.png';
 
 export const Home = ({ onProceed }: { onProceed: () => void }) => {
@@ -16,9 +16,9 @@ export const Home = ({ onProceed }: { onProceed: () => void }) => {
         and only 00ab.
       </IntroText>
       <ImageCollage>
-        <MenaceImage src={AngelOne} alt="Take the test #1" />
+        <MenaceImage src={Angel} alt="Abolaji as an angel" />
         <Button onClick={onProceed}>Take the test</Button>
-        <MenaceImage src={Devil} alt="Take the test #3" />
+        <MenaceImage src={Devil} alt="Abolaji as a menace" />
       </ImageCollage>
       <Disclaimer>
         This is in no way medical advice. Please don&apos;t make any romantic
