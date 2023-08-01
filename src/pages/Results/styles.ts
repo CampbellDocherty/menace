@@ -39,15 +39,21 @@ export const Description = styled(BodyText)`
   margin: 0;
 `;
 
+const BULB_WIDTH = '45px';
+const BULB_LEFT_OFFSET = '40px';
+const BULB_BORDER_SIZE = '3px';
+
 export const Thermometer = styled.div`
   height: 25px;
   background: #3d3d44;
-  width: calc(100% - 45px);
+  width: calc(100% - ${BULB_LEFT_OFFSET});
   position: relative;
   border: 3px solid #2b2b32;
   border-radius: 20px;
   z-index: 1;
-  margin: 16px 0px 48px 40px;
+  margin-top: 16px;
+  margin-bottom: 48px;
+  margin-left: calc(${BULB_LEFT_OFFSET} - ${BULB_BORDER_SIZE});
 
   &::before,
   &::after {
@@ -70,11 +76,11 @@ export const Thermometer = styled.div`
 
   &::after {
     transform: translateY(-50%);
-    height: 45px;
-    width: 45px;
+    height: ${BULB_WIDTH};
+    width: ${BULB_WIDTH};
     background-color: #3dcadf;
-    left: -40px;
-    border: 3px solid #2b2b32;
+    left: -${BULB_LEFT_OFFSET};
+    border: ${BULB_BORDER_SIZE} solid #2b2b32;
     z-index: -3;
     top: 50%;
   }
@@ -101,7 +107,7 @@ export const Temperature = styled.div<{ readonly datavalue: string }>`
     font-size: 1em;
     line-height: 1;
     transform: translateX(-50%);
-    top: calc(100% + 1em / 1.5);
-    right: calc(-2em + 5px * 2);
+    top: 150%;
+    right: -3em;
   }
 `;
