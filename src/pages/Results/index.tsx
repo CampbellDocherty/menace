@@ -42,7 +42,7 @@ export const Results = () => {
     <>
       <ResultContainer>
         <Thermometer>
-          <Temperature datavalue={`${result}%`} />
+          <Temperature datavalue={`${Math.round(result)}%`} />
         </Thermometer>
         <CopyContainer>
           <ResultTitle>{personality.title}</ResultTitle>
