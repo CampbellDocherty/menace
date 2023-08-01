@@ -35,7 +35,7 @@ export const MenaceImage = styled.img`
   }
 `;
 
-export const Footer = styled.p`
+export const Disclaimer = styled.p`
   flex: 1;
   display: flex;
   align-items: flex-end;

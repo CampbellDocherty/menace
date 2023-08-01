@@ -4,7 +4,7 @@ import { Pages } from '../../../Pages';
 import Router from '../../../router/Router';
 import { AnswersContext } from '../AnswersContext';
 import { defaultAnswers } from '../defaultAnswers';
-import { Restart } from '../../../Restart';
+import { Restart } from '../../../pages/Footer/Restart';
 import { Context } from '../../Pages/Context';
 
 describe('Answers context', () => {

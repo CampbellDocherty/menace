@@ -9,7 +9,7 @@ export const Container = styled.div`
   width: 100%;
   max-width: 500px;
   height: 100%;
-  padding: 0px 24px;
+  padding: 0px;
   text-align: justify;
 `;
 

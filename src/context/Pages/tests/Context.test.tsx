@@ -3,7 +3,7 @@ import { expect, test, vi } from 'vitest';
 import { Pages } from '../../../Pages';
 import Router from '../../../router/Router';
 import { Context } from '../Context';
-import { Restart } from '../../../Restart';
+import { Restart } from '../../../pages/Footer/Restart';
 
 const setupContext = (initialPage = Pages.HOME) => ({
   page: initialPage,

@@ -1,19 +1,17 @@
 import { AnswersProvider } from './context/Answers/AnswersProvider';
-import { MusicPlayer } from './music';
 import Router from './router/Router';
 import { Container } from './styles';
 import { Provider } from './context/Pages/Provider';
-import { Restart } from './Restart';
+import { Footer } from './pages/Footer';
 
 const App = () => {
   return (
     <Provider>
-      <MusicPlayer />
       <AnswersProvider>
         <Container>
           <Router />
+          <Footer />
         </Container>
-        <Restart />
       </AnswersProvider>
     </Provider>
   );
