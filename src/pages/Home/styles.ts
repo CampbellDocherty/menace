@@ -4,7 +4,7 @@ export const Title = styled.h1`
   font-family: 'RoyalAcidOutline';
   font-size: 3.8rem;
   margin: 0;
-  color: white;
+  color: aliceblue;
   width: 100%;
   text-align: center;
   letter-spacing: 2px;
