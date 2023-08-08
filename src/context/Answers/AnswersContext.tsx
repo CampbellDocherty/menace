@@ -18,7 +18,7 @@ export interface ScenarioAnswers {
 interface AnswersContextType {
   readonly answers: ScenarioAnswers;
   readonly name: string;
-  readonly setName: (name: string) => void;
+  readonly updateName: (name: string) => void;
   readonly updateAnswers: (scenario: number, answer: number) => void;
   readonly reset: () => void;
 }
@@ -26,7 +26,7 @@ interface AnswersContextType {
 export const AnswersContext = createContext<AnswersContextType>({
   answers: defaultAnswers,
   name: '',
-  setName: () => {},
+  updateName: () => {},
   updateAnswers: () => {},
   reset: () => {},
 });

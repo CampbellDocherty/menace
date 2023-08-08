@@ -16,13 +16,13 @@ import { useContext, useState } from 'react';
 import { AnswersContext } from '../../context/Answers/AnswersContext';
 
 export const Home = ({ onProceed }: { onProceed: () => void }) => {
-  const { setName } = useContext(AnswersContext);
+  const { updateName } = useContext(AnswersContext);
   const [nickname, setNickname] = useState('');
   const [error, setError] = useState('');
 
   const onTestStart = () => {
     if (nickname) {
-      setName(nickname);
+      updateName(nickname);
       onProceed();
     } else {
       setError('Enter a nickname');

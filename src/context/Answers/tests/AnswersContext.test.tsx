@@ -12,7 +12,7 @@ describe('Answers context', () => {
   const mockAnswersContext = {
     answers: defaultAnswers,
     name: '',
-    setName: vi.fn(),
+    updateName: vi.fn(),
     updateAnswers: vi.fn(),
     reset: vi.fn(),
   };
@@ -53,7 +53,7 @@ test('updates the context when a user submits name reset', () => {
   const mockAnswersContext = {
     answers: defaultAnswers,
     name: '',
-    setName: vi.fn(),
+    updateName: vi.fn(),
     updateAnswers: vi.fn(),
     reset: vi.fn(),
   };
@@ -68,5 +68,5 @@ test('updates the context when a user submits name reset', () => {
   fillNickname();
   const button = screen.getByRole('button', { name: 'Take the test' });
   fireEvent.click(button);
-  expect(mockAnswersContext.setName).toHaveBeenCalledTimes(1);
+  expect(mockAnswersContext.updateName).toHaveBeenCalledTimes(1);
 });
