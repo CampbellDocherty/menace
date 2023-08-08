@@ -12,14 +12,17 @@ import {
 } from './styles';
 import Angel from '../../assets/angel.png';
 import Devil from '../../assets/devil.png';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { AnswersContext } from '../../context/Answers/AnswersContext';
 
 export const Home = ({ onProceed }: { onProceed: () => void }) => {
+  const { setName } = useContext(AnswersContext);
   const [nickname, setNickname] = useState('');
   const [error, setError] = useState('');
 
   const onTestStart = () => {
     if (nickname) {
+      setName(nickname);
       onProceed();
     } else {
       setError('Enter a nickname');

@@ -18,6 +18,8 @@ export const AnswersProvider = ({
     previousAnswers || defaultAnswers,
   );
 
+  const [name, setName] = useState('');
+
   const updateAnswers = (scenario: number, answer: number) => {
     const updatedAnswers = { ...answers, [scenario]: answer };
     localStorage.setItem('previousAnswers', JSON.stringify(updatedAnswers));
@@ -29,7 +31,7 @@ export const AnswersProvider = ({
     setAnswers(defaultAnswers);
   };
 
-  const providerData = { answers, updateAnswers, reset };
+  const providerData = { answers, name, setName, updateAnswers, reset };
 
   return (
     <AnswersContext.Provider value={providerData}>
