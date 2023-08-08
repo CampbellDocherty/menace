@@ -32,7 +32,6 @@ export const Input = styled.input`
   border: none;
   background-color: transparent;
   border-bottom: 1px solid black;
-  margin-bottom: 16px;
   height: 30px;
   font-size: 1rem;
   width: 90%;
@@ -44,6 +43,15 @@ export const Input = styled.input`
   &:focus {
     outline: none;
   }
+`;
+
+export const ErrorText = styled.p`
+  color: #ef4a3f;
+  width: 90%;
+  font-size: 0.9rem;
+  margin: 0;
+  margin-top: 4px;
+  margin-bottom: 16px;
 `;
 
 export const ImageCollage = styled.div`

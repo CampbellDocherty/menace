@@ -1,6 +1,7 @@
 import { describe, test } from 'vitest';
 import { fireEvent, render, screen } from '@testing-library/react';
 import App from '../../../App';
+import { fillNickname } from './helpers';
 
 describe('When the app renders', () => {
   test('it shows the text', () => {
@@ -10,15 +11,9 @@ describe('When the app renders', () => {
     screen.getByText('This is in no way medical advice.', { exact: false });
   });
 
-  test('can input name', () => {
-    render(<App />);
-    screen.getByLabelText('Nickname');
-    const input = screen.getByPlaceholderText('e.g. 00ab');
-    fireEvent.change(input, { value: 'Cam' });
-  });
-
   test('a user can start the personality test', () => {
     render(<App />);
+    fillNickname();
     const button = screen.getByRole('button', { name: 'Take the test' });
     fireEvent.click(button);
     screen.getByText(

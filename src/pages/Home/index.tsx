@@ -8,11 +8,29 @@ import {
   Label,
   MenaceImage,
   Title,
+  ErrorText,
 } from './styles';
 import Angel from '../../assets/angel.png';
 import Devil from '../../assets/devil.png';
+import { useState } from 'react';
 
 export const Home = ({ onProceed }: { onProceed: () => void }) => {
+  const [nickname, setNickname] = useState('');
+  const [error, setError] = useState('');
+
+  const onTestStart = () => {
+    if (nickname) {
+      onProceed();
+    } else {
+      setError('Enter a nickname');
+    }
+  };
+
+  const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setError('');
+    setNickname(event.target.value);
+  };
+
   return (
     <>
       <Title>Are you a menace?</Title>
@@ -29,12 +47,16 @@ export const Home = ({ onProceed }: { onProceed: () => void }) => {
         <Form>
           <Label htmlFor="nickname">Nickname</Label>
           <Input
+            onChange={onChange}
+            value={nickname}
+            onFocus={() => setError('')}
             type="text"
             name="nickname"
             id="nickname"
             placeholder="e.g. 00ab"
           />
-          <Button onClick={onProceed}>Take the test</Button>
+          <ErrorText>{error}</ErrorText>
+          <Button onClick={onTestStart}>Take the test</Button>
         </Form>
         <MenaceImage src={Devil} alt="Abolaji as a menace" />
       </ImageCollage>
