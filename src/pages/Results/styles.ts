@@ -88,7 +88,7 @@ export const Thermometer = styled.div`
 
 export const Temperature = styled.div<{ readonly datavalue: string }>`
   left: 0;
-  background: linear-gradient(to left, #ff566c, #ff96a4, #96ceff) no-repeat
+  background: linear-gradient(to left, #ef4a3f, #ff96a4, #96ceff) no-repeat
     bottom;
   height: 100%;
   width: ${(props) => props.datavalue};

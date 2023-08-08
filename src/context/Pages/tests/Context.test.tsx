@@ -4,6 +4,7 @@ import { Pages } from '../../../Pages';
 import Router from '../../../router/Router';
 import { Context } from '../Context';
 import { Restart } from '../../../pages/Footer/Restart';
+import { fillNickname } from '../../../pages/Home/tests/helpers';
 
 const setupContext = (initialPage = Pages.HOME) => ({
   page: initialPage,
@@ -24,6 +25,7 @@ const setup = (mockContext: ReturnType<typeof setupContext>) => {
 test('updates the context when a user proceeds', () => {
   const mockContext = setupContext(Pages.HOME);
   setup(mockContext);
+  fillNickname();
   const button = screen.getByRole('button', { name: 'Take the test' });
   fireEvent.click(button);
   expect(mockContext.proceed).toHaveBeenCalledTimes(1);

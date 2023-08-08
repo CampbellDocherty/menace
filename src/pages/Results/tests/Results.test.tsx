@@ -12,6 +12,8 @@ const setup = (answers: Record<string, number> = {}) => {
   const mockContext = {
     answers: MOCK_ANSWERS(answers),
     updateAnswers: vi.fn(),
+    name: '',
+    updateName: vi.fn(),
     reset: resetAnswersMock,
   };
 

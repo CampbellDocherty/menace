@@ -1,4 +1,5 @@
 import { afterEach, beforeEach, vi } from 'vitest';
+import 'vitest-canvas-mock';
 
 vi.mock('react-transition-group', () => {
   const FakeSwitchTransition = vi.fn(({ children }) => children);
