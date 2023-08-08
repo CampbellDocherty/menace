@@ -12,7 +12,7 @@ const ProgressAmount = styled.div<{ width: number }>`
   width: ${({ width }) => `${width}%`};
   height: 100%;
   border-radius: 8px;
-  background-color: lightblue;
+  background-color: #96ceff;
   transition: width 0.2s ease-in;
 `;
 

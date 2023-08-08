@@ -23,6 +23,7 @@
 body {
   margin: 0;
   font-family: 'ComicNeueSans';
+  background-color: aliceblue;
 }
 
 button {
@@ -33,4 +34,5 @@ button {
 p {
   text-align: justify;
   text-justify: inter-word;
+  opacity: 0.9;
 }

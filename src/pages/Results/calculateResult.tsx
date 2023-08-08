@@ -33,7 +33,7 @@ export const getPersonalityType = (result: number) => {
   }
   if (result >= 45 && result <= 55) {
     return {
-      desc: "The perfect mix of menace and sweetness. You've got the right approach to your romantic life but no one is perfect. Check out our recommneded media, it'll help you stay on your toes!",
+      desc: "The perfect mix of menace and sweetness. You've got the right approach to your romantic life but no one is perfect. Check out our recommended media, it'll help you stay on your toes!",
       image: {
         src: Angel,
         alt: 'Abolaji as an angel',

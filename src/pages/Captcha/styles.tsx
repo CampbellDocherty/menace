@@ -25,9 +25,9 @@ export const GridWrapper = styled.div`
 export const Square = styled.div<{ readonly selected: boolean }>`
   background-color: #eaeaea;
   border: ${({ selected }) =>
-    selected ? '1px solid green' : '1px solid #ccc'};
+    selected ? '1px solid #96CEFF' : '1px solid #ccc'};
   box-shadow: ${({ selected }) =>
-    selected ? 'inset 0 0 0 2px green' : 'none'};
+    selected ? 'inset 0 0 0 2px #96CEFF' : 'none'};
   cursor: pointer;
 `;
 

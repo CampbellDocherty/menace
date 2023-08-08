@@ -2,14 +2,13 @@ import { useContext, useMemo } from 'react';
 import { AnswersContext } from '../../context/Answers/AnswersContext';
 import { calculateResult, getPersonalityType } from './calculateResult';
 import {
-  CopyContainer,
   Description,
   Container,
   ResultTitle,
   Temperature,
   Thermometer,
+  Image,
 } from './styles';
-import { MenaceImage } from '../Home/styles';
 
 export const Results = () => {
   const { answers } = useContext(AnswersContext);
@@ -23,13 +22,10 @@ export const Results = () => {
         <Thermometer>
           <Temperature datavalue={`${Math.round(result)}%`} />
         </Thermometer>
-        <CopyContainer>
-          <MenaceImage
-            src={personality.image.src}
-            alt={personality.image.alt}
-          />
-          <Description>{personality.desc}</Description>
-        </CopyContainer>
+        <Description>
+          <Image src={personality.image.src} alt={personality.image.alt} />
+          {personality.desc}
+        </Description>
       </Container>
     </>
   );

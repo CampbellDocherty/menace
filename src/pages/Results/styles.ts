@@ -8,13 +8,6 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: space-between;
 `;
-
-export const CopyContainer = styled.div`
-  display: flex;
-  align-items: center;
-  width: 100%;
-`;
-
 export const Result = styled.div`
   display: flex;
 `;
@@ -24,7 +17,7 @@ export const ResultTitle = styled.h1`
   font-size: 2.3rem;
   margin: 0;
   margin-bottom: 4px;
-  color: white;
+  color: aliceblue;
   text-align: left;
   letter-spacing: 2px;
   text-shadow:
@@ -34,21 +27,28 @@ export const ResultTitle = styled.h1`
     -1px -1px 0 #000;
 `;
 
+export const Image = styled.img`
+  width: 80px;
+  display: inline-block;
+  float: left;
+  padding-right: 12px;
+`;
+
 export const Description = styled(BodyText)`
   font-size: 1.2rem;
-  margin: 0;
+  margin: 0 auto;
 `;
 
 const BULB_WIDTH = '45px';
 const BULB_LEFT_OFFSET = '40px';
-const BULB_BORDER_SIZE = '3px';
+const BULB_BORDER_SIZE = '2.5px';
 
 export const Thermometer = styled.div`
   height: 25px;
   background: #3d3d44;
   width: calc(100% - ${BULB_LEFT_OFFSET});
   position: relative;
-  border: 3px solid #2b2b32;
+  border: 2.5px solid #2b2b32;
   border-radius: 20px;
   z-index: 1;
   margin-top: 16px;
@@ -78,7 +78,7 @@ export const Thermometer = styled.div`
     transform: translateY(-50%);
     height: ${BULB_WIDTH};
     width: ${BULB_WIDTH};
-    background-color: #3dcadf;
+    background-color: #96ceff;
     left: -${BULB_LEFT_OFFSET};
     border: ${BULB_BORDER_SIZE} solid #2b2b32;
     z-index: -3;
@@ -88,7 +88,8 @@ export const Thermometer = styled.div`
 
 export const Temperature = styled.div<{ readonly datavalue: string }>`
   left: 0;
-  background: linear-gradient(to left, red, #3dcadf) no-repeat bottom;
+  background: linear-gradient(to left, #ff566c, #ff96a4, #96ceff) no-repeat
+    bottom;
   height: 100%;
   width: ${(props) => props.datavalue};
   border-radius: 2px;

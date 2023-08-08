@@ -71,5 +71,4 @@ export const RestartButton = styled.button`
 export const RestartIcon = styled.img`
   width: 50px;
   height: 50px;
-  opacity: 80%;
 `;
