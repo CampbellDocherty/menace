@@ -15,6 +15,16 @@ export const Home = ({ onProceed }: { onProceed: () => void }) => {
         devised by leading thinkers in the field and music provided by the one
         and only 00ab.
       </IntroText>
+      <label htmlFor="nickname">
+        Nickname
+        <input
+          type="text"
+          name="nickname"
+          id="nickname"
+          placeholder="e.g. 00ab"
+        />
+      </label>
+
       <ImageCollage>
         <MenaceImage src={Angel} alt="Abolaji as an angel" />
         <Button onClick={onProceed}>Take the test</Button>

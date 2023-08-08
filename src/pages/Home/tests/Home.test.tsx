@@ -10,6 +10,13 @@ describe('When the app renders', () => {
     screen.getByText('This is in no way medical advice.', { exact: false });
   });
 
+  test('can input name', () => {
+    render(<App />);
+    screen.getByLabelText('Nickname');
+    const input = screen.getByPlaceholderText('e.g. 00ab');
+    fireEvent.change(input, { value: 'Cam' });
+  });
+
   test('a user can start the personality test', () => {
     render(<App />);
     const button = screen.getByRole('button', { name: 'Take the test' });
