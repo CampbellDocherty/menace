@@ -1,6 +1,14 @@
 import { IntroText } from '../../styles';
 import { Button } from '../Scenario/styles';
-import { Disclaimer, ImageCollage, MenaceImage, Title } from './styles';
+import {
+  Disclaimer,
+  Form,
+  ImageCollage,
+  Input,
+  Label,
+  MenaceImage,
+  Title,
+} from './styles';
 import Angel from '../../assets/angel.png';
 import Devil from '../../assets/devil.png';
 
@@ -15,19 +23,19 @@ export const Home = ({ onProceed }: { onProceed: () => void }) => {
         devised by leading thinkers in the field and music provided by the one
         and only 00ab.
       </IntroText>
-      <label htmlFor="nickname">
-        Nickname
-        <input
-          type="text"
-          name="nickname"
-          id="nickname"
-          placeholder="e.g. 00ab"
-        />
-      </label>
 
       <ImageCollage>
         <MenaceImage src={Angel} alt="Abolaji as an angel" />
-        <Button onClick={onProceed}>Take the test</Button>
+        <Form>
+          <Label htmlFor="nickname">Nickname</Label>
+          <Input
+            type="text"
+            name="nickname"
+            id="nickname"
+            placeholder="e.g. 00ab"
+          />
+          <Button onClick={onProceed}>Take the test</Button>
+        </Form>
         <MenaceImage src={Devil} alt="Abolaji as a menace" />
       </ImageCollage>
       <Disclaimer>

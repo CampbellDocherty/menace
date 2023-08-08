@@ -26,6 +26,11 @@ body {
   background-color: aliceblue;
 }
 
+input,
+input::placeholder {
+  font-family: 'ComicNeueSans';
+}
+
 button {
   font-family: 'ComicNeueSans';
   color: black;
