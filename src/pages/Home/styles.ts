@@ -36,9 +36,10 @@ export const Input = styled.input`
   height: 30px;
   font-size: 1rem;
   width: 90%;
+  text-transform: capitalize;
 
   &::placeholder {
-    font-family:;
+    text-transform: none;
   }
   &:focus {
     outline: none;
