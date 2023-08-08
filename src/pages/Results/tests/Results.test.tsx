@@ -50,7 +50,7 @@ describe('When a user arrives at the results page it shows their personality bas
   test('between 45% and 55% shows just right', () => {
     setup({ 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 });
     screen.getByText(
-      "The perfect mix of menace and sweetness. You've got the right approach to your romantic life but no one is perfect. Check out our recommneded media, it'll help you stay on your toes!",
+      "The perfect mix of menace and sweetness. You've got the right approach to your romantic life but no one is perfect. Check out our recommended media, it'll help you stay on your toes!",
     );
     screen.getByAltText('Abolaji as an angel');
   });
