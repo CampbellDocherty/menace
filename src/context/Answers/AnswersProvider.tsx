@@ -20,15 +20,27 @@ export const AnswersProvider = ({
     return null;
   }, []);
 
+  const previousId = useMemo(() => {
+    const idFromStorage = localStorage.getItem('id');
+    if (idFromStorage) return idFromStorage;
+    return null;
+  }, []);
+
   const [answers, setAnswers] = useState<ScenarioAnswers>(
     previousAnswers || defaultAnswers,
   );
 
   const [name, setName] = useState(previousName || '');
+  const [id, setId] = useState(previousId || '');
 
   const updateName = (nickname: string) => {
     localStorage.setItem('nickname', nickname);
     setName(nickname);
+  };
+
+  const updateId = (id: string) => {
+    localStorage.setItem('id', id);
+    setId(id);
   };
 
   const updateAnswers = (scenario: number, answer: number) => {
@@ -42,7 +54,15 @@ export const AnswersProvider = ({
     setAnswers(defaultAnswers);
   };
 
-  const providerData = { answers, name, updateName, updateAnswers, reset };
+  const providerData = {
+    answers,
+    name,
+    id,
+    updateId,
+    updateName,
+    updateAnswers,
+    reset,
+  };
 
   return (
     <AnswersContext.Provider value={providerData}>

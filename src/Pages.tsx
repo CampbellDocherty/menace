@@ -12,4 +12,5 @@ export enum Pages {
   SCENARIO_NINE,
   SCENARIO_TEN,
   RESULTS,
+  LEADERBOARD,
 }
