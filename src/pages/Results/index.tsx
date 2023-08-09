@@ -9,8 +9,9 @@ import {
   Thermometer,
   Image,
 } from './styles';
+import { Button } from '../Scenario/styles';
 
-export const Results = () => {
+export const Results = ({ onProceed }: { readonly onProceed: () => void }) => {
   const { answers } = useContext(AnswersContext);
   const result = useMemo(() => calculateResult(answers), [answers]);
   const personality = getPersonalityType(result);
@@ -26,6 +27,7 @@ export const Results = () => {
           <Image src={personality.image.src} alt={personality.image.alt} />
           {personality.desc}
         </Description>
+        <Button onClick={onProceed}>Leaderboard</Button>
       </Container>
     </>
   );
