@@ -12,6 +12,16 @@ export const calculateResult = (answers: ScenarioAnswers) => {
   return resultAsPercentage;
 };
 
+export const calculateMultiplier = (answers: ScenarioAnswers) => {
+  const answerValues = Object.values(answers);
+  const amountOf1Answers = answerValues.reduce((partialSum, answer) => {
+    if (answer === 1) return partialSum + answer;
+    return partialSum + 0;
+  }, 0);
+
+  return amountOf1Answers;
+};
+
 export const getPersonalityType = (result: number) => {
   if (result === 100) {
     return {
