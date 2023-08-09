@@ -5,7 +5,8 @@ import {
   calculateMultiplier,
   calculateResult,
 } from '../Results/calculateResult';
-import { Cell, Heading, Table } from './styles';
+import Devil from '../../assets/devil.png';
+import { Cell, Heading, Multiplier, Table } from './styles';
 
 export const Leaderboard = () => {
   const { answers, name } = useContext(AnswersContext);
@@ -28,7 +29,12 @@ export const Leaderboard = () => {
           <Cell>#1</Cell>
           <Cell>{name}</Cell>
           <Cell>{result}%</Cell>
-          <Cell>x{multiplier}</Cell>
+          <Cell>
+            <Multiplier>
+              <p>x{multiplier}</p>
+              <img src={Devil} alt="Abolaji as a devil" />
+            </Multiplier>
+          </Cell>
           <Cell>{format(Date.now(), 'dd MMM yy')}</Cell>
         </tr>
       </tbody>
