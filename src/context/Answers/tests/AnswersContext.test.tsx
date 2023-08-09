@@ -12,7 +12,9 @@ describe('Answers context', () => {
   const mockAnswersContext = {
     answers: defaultAnswers,
     name: '',
+    id: '',
     updateName: vi.fn(),
+    updateId: vi.fn(),
     updateAnswers: vi.fn(),
     reset: vi.fn(),
   };
@@ -53,7 +55,9 @@ test('updates the context when a user submits name reset', () => {
   const mockAnswersContext = {
     answers: defaultAnswers,
     name: '',
+    id: '',
     updateName: vi.fn(),
+    updateId: vi.fn(),
     updateAnswers: vi.fn(),
     reset: vi.fn(),
   };

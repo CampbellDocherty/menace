@@ -23,7 +23,9 @@ const setup = () => {
     answers: MOCK_ANSWERS,
     updateAnswers: vi.fn(),
     name: 'Cam',
+    id: '',
     updateName: vi.fn(),
+    updateId: vi.fn(),
     reset: vi.fn(),
   };
 

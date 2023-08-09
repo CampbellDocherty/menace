@@ -18,14 +18,18 @@ export interface ScenarioAnswers {
 interface AnswersContextType {
   readonly answers: ScenarioAnswers;
   readonly name: string;
+  readonly id: string;
   readonly updateName: (name: string) => void;
   readonly updateAnswers: (scenario: number, answer: number) => void;
+  readonly updateId: (id: string) => void;
   readonly reset: () => void;
 }
 
 export const AnswersContext = createContext<AnswersContextType>({
   answers: defaultAnswers,
+  id: '',
   name: '',
+  updateId: () => {},
   updateName: () => {},
   updateAnswers: () => {},
   reset: () => {},

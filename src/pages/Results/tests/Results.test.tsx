@@ -13,6 +13,8 @@ const setup = (answers: Record<string, number> = {}) => {
     answers: MOCK_ANSWERS(answers),
     updateAnswers: vi.fn(),
     name: '',
+    id: '',
+    updateId: vi.fn(),
     updateName: vi.fn(),
     reset: resetAnswersMock,
   };
