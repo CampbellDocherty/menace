@@ -1,16 +1,5 @@
-import { styled, keyframes, css } from 'styled-components';
+import { styled } from 'styled-components';
 import { BodyText } from '../../styles';
-import { Button } from '../Scenario/styles';
-
-export const ResultContainer = styled.div`
-  width: 100%;
-  height: fit-content;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex: 1;
-`;
 
 export const Container = styled.div`
   width: 100%;
@@ -51,45 +40,6 @@ export const Description = styled(BodyText)`
   margin-bottom: 16px;
 `;
 
-const fadeIn = keyframes`
-from {
-    opacity:0;
-  }
-
-  to {
-    opacity:1;
-  }
-`;
-
-export const FadeInText = styled(BodyText)`
-  font-size: 1rem;
-  margin-bottom: 8px;
-  opacity: 0;
-  animation: ${fadeIn} 1.5s ease-in-out forwards;
-`;
-
-export const FadeInTitle = styled.h1`
-  font-family: 'RoyalAcidOutline';
-  font-size: 2.8rem;
-  margin: 0;
-  margin-bottom: 16px;
-  color: aliceblue;
-  text-align: left;
-  letter-spacing: 2px;
-  text-shadow:
-    -1px 1px 1px #000,
-    1px 1px 1px #000,
-    1px -1px 0 #000,
-    -1px -1px 0 #000;
-
-  opacity: 0;
-  animation: ${fadeIn} 3.5s ease-in-out forwards;
-`;
-
-export const FadeInButton = styled(Button)`
-  animation: ${fadeIn} 3.5s ease-in-out forwards;
-`;
-
 export const Thermometer = styled.div`
   height: 25px;
   background: #3d3d44;
@@ -107,8 +57,6 @@ export const Thermometer = styled.div`
     content: '';
     border-radius: 50%;
   }
-
-  animation: ${fadeIn} 3.5s ease-in-out forwards;
 `;
 
 export const Temperature = styled.div<{ readonly datavalue: string }>`
@@ -136,6 +84,4 @@ export const Temperature = styled.div<{ readonly datavalue: string }>`
     top: 150%;
     right: -3em;
   }
-
-  animation: ${fadeIn} 3.5s ease-in-out forwards;
 `;

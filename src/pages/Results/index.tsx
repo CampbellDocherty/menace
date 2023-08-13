@@ -1,4 +1,4 @@
-import { useContext, useEffect, useMemo, useState } from 'react';
+import { useContext, useMemo } from 'react';
 import { AnswersContext } from '../../context/Answers/AnswersContext';
 import {
   calculateMultiplier,
@@ -12,15 +12,10 @@ import {
   Temperature,
   Thermometer,
   Image,
-  ResultContainer,
-  FadeInText,
-  FadeInTitle,
-  FadeInButton,
 } from './styles';
 import { Button } from '../Scenario/styles';
 import { v4 as uuidv4 } from 'uuid';
 import { addUser } from '../../firebase/database';
-import { BodyText } from '../../styles';
 
 export const Results = ({ onProceed }: { readonly onProceed: () => void }) => {
   const { answers, name, updateId } = useContext(AnswersContext);
@@ -38,32 +33,6 @@ export const Results = ({ onProceed }: { readonly onProceed: () => void }) => {
     updateId(id);
     onProceed();
   };
-
-  const [isCalculating, setIsCalculating] = useState(true);
-
-  useEffect(() => {
-    setTimeout(() => setIsCalculating(false), 2000);
-  }, []);
-
-  if (isCalculating) {
-    return (
-      <ResultContainer>
-        <Image src={personality.image.src} alt={personality.image.alt} />
-        <BodyText>Calculating result...</BodyText>
-      </ResultContainer>
-    );
-  }
-
-  return (
-    <ResultContainer>
-      <FadeInText>{personality.intro}</FadeInText>
-      <FadeInTitle>{personality.type}</FadeInTitle>
-      <Thermometer>
-        <Temperature datavalue={`${Math.round(result)}%`} />
-      </Thermometer>
-      <FadeInButton onClick={onProceed}>Continue</FadeInButton>
-    </ResultContainer>
-  );
 
   return (
     <>

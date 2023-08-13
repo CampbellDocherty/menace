@@ -1,5 +1,5 @@
 import { act, render, screen } from '@testing-library/react';
-import { afterEach, beforeEach, describe, test, vi } from 'vitest';
+import { describe, test, vi } from 'vitest';
 import { AnswersContext } from '../../../context/Answers/AnswersContext';
 import { Pages } from '../../../Pages';
 import Router from '../../../router/Router';
@@ -20,7 +20,7 @@ const setup = (answers: Record<string, number> = {}) => {
   };
 
   const mockPagesContext = {
-    page: Pages.RESULTS,
+    page: Pages.PERSONALITY,
     restart: vi.fn(),
     proceed: vi.fn(),
     back: vi.fn(),
