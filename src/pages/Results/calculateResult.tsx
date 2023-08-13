@@ -27,7 +27,7 @@ export const getPersonalityType = (result: number) => {
     return {
       intro: 'You are a',
       type: 'Menace',
-      desc: "100% menace! Even when we were developing this test we thought that was only possible in theory. That's too much menace for one person to harness. Our recommended media might just be the thing that can save you!",
+      desc: `${result}% menace! That's too much menace for one person to harness. Honestly, we can't help you. Get therapy or something. Who knows, maybe out recommended media might save you!`,
       image: {
         src: Devil,
         alt: 'Abolaji as a menace',
@@ -59,7 +59,7 @@ export const getPersonalityType = (result: number) => {
   return {
     intro: 'You are an',
     type: 'Angel',
-    desc: "By our calculations you're not a menace. That may sound like a good thing but we think a balanced diet of menace and sweetness is what's best for anyone. You've got to get that number up for your own sake. Our recommended media could help you do just that!",
+    desc: "By our calculations you're an angel. That may sound like a good thing but we think a balanced diet of menace and sweetness is what's best for anyone. Get that number up with the help of our recommended media!",
     image: {
       src: Angel,
       alt: 'Abolaji as an angel',

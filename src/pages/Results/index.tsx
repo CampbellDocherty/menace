@@ -5,14 +5,7 @@ import {
   calculateResult,
   getPersonalityType,
 } from './calculateResult';
-import {
-  Description,
-  Container,
-  ResultTitle,
-  Temperature,
-  Thermometer,
-  Image,
-} from './styles';
+import { Description, Container, ResultTitle, Image, Header } from './styles';
 import { Button } from '../Scenario/styles';
 import { v4 as uuidv4 } from 'uuid';
 import { addUser } from '../../firebase/database';
@@ -35,18 +28,13 @@ export const Results = ({ onProceed }: { readonly onProceed: () => void }) => {
   };
 
   return (
-    <>
-      <Container>
-        <ResultTitle>Menace-o-meter</ResultTitle>
-        <Thermometer>
-          <Temperature datavalue={`${Math.round(result)}%`} />
-        </Thermometer>
-        <Description>
-          <Image src={personality.image.src} alt={personality.image.alt} />
-          {personality.desc}
-        </Description>
-        <Button onClick={onSubmit}>Leaderboard</Button>
-      </Container>
-    </>
+    <Container>
+      <Header>
+        <ResultTitle>{personality.type}</ResultTitle>
+        <Image src={personality.image.src} alt={personality.image.alt} />
+      </Header>
+      <Description>{personality.desc}</Description>
+      <Button onClick={onSubmit}>Leaderboard</Button>
+    </Container>
   );
 };

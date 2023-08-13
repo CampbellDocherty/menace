@@ -19,9 +19,6 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
 `;
-export const Result = styled.div`
-  display: flex;
-`;
 
 export const ResultTitle = styled.h1`
   font-family: 'RoyalAcidOutline';
@@ -117,7 +114,7 @@ export const Temperature = styled.div<{ readonly datavalue: string }>`
     bottom;
   height: 100%;
   width: ${(props) => props.datavalue};
-  border-radius: 2px;
+  border-radius: 20px;
   background-size: 100% 100%;
   transition: all 0.2s ease-in-out;
   position: absolute;
