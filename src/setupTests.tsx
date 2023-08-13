@@ -23,8 +23,10 @@ vi.spyOn(window.HTMLMediaElement.prototype, 'play').mockImplementation(
 
 beforeEach(() => {
   localStorage.clear();
+  vi.useFakeTimers();
 });
 
 afterEach(() => {
+  vi.restoreAllMocks();
   vi.clearAllMocks();
 });
