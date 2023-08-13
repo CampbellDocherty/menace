@@ -56,7 +56,7 @@ export const Leaderboard = () => {
         {normalizedUsers &&
           normalizedUsers.map((user, index) => {
             const rank = index + 1;
-            const { name, multiplier, result } = user;
+            const { name, multiplier, result, completed } = user;
             return (
               <tr key={user.id}>
                 <Cell>#{rank}</Cell>
@@ -68,7 +68,7 @@ export const Leaderboard = () => {
                     <img src={Devil} alt="Abolaji as a devil" />
                   </Multiplier>
                 </Cell>
-                <Cell>{format(Date.now(), 'dd MMM yy')}</Cell>
+                <Cell>{format(completed, 'dd MMM yy')}</Cell>
               </tr>
             );
           })}

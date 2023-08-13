@@ -5,7 +5,7 @@ import {
   Temperature,
   Thermometer,
   Image,
-  ResultContainer,
+  Container,
   FadeInText,
   FadeInTitle,
   FadeInButton,
@@ -32,21 +32,21 @@ export const Personality = ({
 
   if (isCalculating) {
     return (
-      <ResultContainer>
+      <Container>
         <Image src={personality.image.src} alt={personality.image.alt} />
         <BodyText>Calculating result...</BodyText>
-      </ResultContainer>
+      </Container>
     );
   }
 
   return (
-    <ResultContainer>
+    <Container>
       <FadeInText>{personality.intro}</FadeInText>
       <FadeInTitle>{personality.type}</FadeInTitle>
       <Thermometer>
         <Temperature datavalue={`${Math.round(result)}%`} />
       </Thermometer>
       <FadeInButton onClick={onProceed}>Continue</FadeInButton>
-    </ResultContainer>
+    </Container>
   );
 };

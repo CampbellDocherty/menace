@@ -2,7 +2,7 @@ import { styled, keyframes } from 'styled-components';
 import { BodyText } from '../../styles';
 import { Button } from '../Scenario/styles';
 
-export const ResultContainer = styled.div`
+export const Container = styled.div`
   width: 100%;
   height: fit-content;
   display: flex;
@@ -12,40 +12,11 @@ export const ResultContainer = styled.div`
   flex: 1;
 `;
 
-export const Container = styled.div`
-  width: 100%;
-  max-width: 100%;
-  height: fit-content;
-  display: flex;
-  flex-direction: column;
-`;
-
-export const ResultTitle = styled.h1`
-  font-family: 'RoyalAcidOutline';
-  font-size: 2.3rem;
-  margin: 0;
-  margin-bottom: 4px;
-  color: aliceblue;
-  text-align: left;
-  letter-spacing: 2px;
-  text-shadow:
-    -1px 1px 1px #000,
-    1px 1px 1px #000,
-    1px -1px 0 #000,
-    -1px -1px 0 #000;
-`;
-
 export const Image = styled.img`
   width: 80px;
   display: inline-block;
   float: left;
   padding-right: 12px;
-`;
-
-export const Description = styled(BodyText)`
-  font-size: 1.2rem;
-  margin: 0 auto;
-  margin-bottom: 16px;
 `;
 
 const fadeIn = keyframes`
