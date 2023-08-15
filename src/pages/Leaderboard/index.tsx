@@ -56,9 +56,9 @@ export const Leaderboard = () => {
         {normalizedUsers &&
           normalizedUsers.map((user, index) => {
             const rank = index + 1;
-            const { name, multiplier, result, completed } = user;
+            const { name, multiplier, result, completed, id } = user;
             return (
-              <tr key={user.id}>
+              <tr key={id}>
                 <Cell>#{rank}</Cell>
                 <Cell>{name}</Cell>
                 <Cell>{result}%</Cell>

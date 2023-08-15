@@ -51,7 +51,7 @@ export const FadeInText = styled(BodyText)`
   font-size: 1rem;
   margin-bottom: 8px;
   opacity: 0;
-  animation: ${fadeIn} 1.5s ease-in-out forwards;
+  animation: ${fadeIn} 1s ease-in-out forwards;
 `;
 
 export const FadeInTitle = styled.h1`
@@ -68,18 +68,18 @@ export const FadeInTitle = styled.h1`
     -1px -1px 0 #000;
 
   opacity: 0;
-  animation: ${fadeIn} 3.5s ease-in-out forwards;
+  animation: ${fadeIn} 3s ease-in-out forwards;
 `;
 
 export const FadeInButton = styled(Button)`
-  animation: ${fadeIn} 3.5s ease-in-out forwards;
+  animation: ${fadeIn} 3s ease-in-out forwards;
 `;
 
 export const FadeInImage = styled.img`
   width: 70px;
   margin-bottom: 16px;
 
-  animation: ${fadeIn} 3.5s ease-in-out forwards;
+  animation: ${fadeIn} 3s ease-in-out forwards;
 `;
 
 export const Thermometer = styled.div`
@@ -100,7 +100,7 @@ export const Thermometer = styled.div`
     border-radius: 50%;
   }
 
-  animation: ${fadeIn} 3.5s ease-in-out forwards;
+  animation: ${fadeIn} 3s ease-in-out forwards;
 `;
 
 export const Temperature = styled.div<{ readonly datavalue: string }>`
@@ -129,5 +129,5 @@ export const Temperature = styled.div<{ readonly datavalue: string }>`
     right: -3em;
   }
 
-  animation: ${fadeIn} 3.5s ease-in-out forwards;
+  animation: ${fadeIn} 3s ease-in-out forwards;
 `;
