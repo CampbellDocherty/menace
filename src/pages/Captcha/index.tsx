@@ -4,10 +4,14 @@ import {
   Container,
   ErrorText,
   GridWrapper,
+  Image,
   Square,
   VerifyCaptchaButton,
 } from './styles';
 import { BodyText } from '../../styles';
+
+import Angel from '../../assets/angel.png';
+import Devil from '../../assets/devil.png';
 
 const GRID_SQUARES = Array(9).fill(null);
 const CORRECT_IMAGES = [2, 5, 6];
@@ -54,14 +58,17 @@ export const Captcha = ({ onProceed }: { onProceed: () => void }) => {
       </BodyText>
       <GridWrapper>
         {GRID_SQUARES.map((_, i) => {
-          const imageNumber = i + 1;
+          const imageNumber: number = i + 1;
+          const src = CORRECT_IMAGES.includes(imageNumber) ? Devil : Angel;
           return (
             <Square
               key={i}
               data-testid={`captcha-image-${imageNumber}`}
               onClick={() => updateSelectedImages(imageNumber)}
               selected={selectedImages.includes(imageNumber)}
-            />
+            >
+              <Image src={src} alt="captcha image" />
+            </Square>
           );
         })}
       </GridWrapper>

@@ -12,11 +12,29 @@ export const Container = styled.div`
   flex: 1;
 `;
 
+const rotate = keyframes`
+0% {
+    transform:rotate(20deg);
+  }
+
+  25% {
+    transform:rotate(-20deg);
+  }
+   50% {
+    transform:rotate(20deg);
+  }
+   70% {
+    transform:rotate(-20deg);
+  }
+
+  100% {
+    transform:rotate(20deg);
+  }
+`;
+
 export const Image = styled.img`
-  width: 80px;
-  display: inline-block;
-  float: left;
-  padding-right: 12px;
+  width: 30px;
+  animation: ${rotate} 2s ease-in-out forwards;
 `;
 
 const fadeIn = keyframes`
@@ -33,14 +51,13 @@ export const FadeInText = styled(BodyText)`
   font-size: 1rem;
   margin-bottom: 8px;
   opacity: 0;
-  animation: ${fadeIn} 1.5s ease-in-out forwards;
+  animation: ${fadeIn} 1s ease-in-out forwards;
 `;
 
 export const FadeInTitle = styled.h1`
   font-family: 'RoyalAcidOutline';
   font-size: 2.8rem;
   margin: 0;
-  margin-bottom: 16px;
   color: aliceblue;
   text-align: left;
   letter-spacing: 2px;
@@ -51,11 +68,18 @@ export const FadeInTitle = styled.h1`
     -1px -1px 0 #000;
 
   opacity: 0;
-  animation: ${fadeIn} 3.5s ease-in-out forwards;
+  animation: ${fadeIn} 3s ease-in-out forwards;
 `;
 
 export const FadeInButton = styled(Button)`
-  animation: ${fadeIn} 3.5s ease-in-out forwards;
+  animation: ${fadeIn} 3s ease-in-out forwards;
+`;
+
+export const FadeInImage = styled.img`
+  width: 70px;
+  margin-bottom: 16px;
+
+  animation: ${fadeIn} 3s ease-in-out forwards;
 `;
 
 export const Thermometer = styled.div`
@@ -76,7 +100,7 @@ export const Thermometer = styled.div`
     border-radius: 50%;
   }
 
-  animation: ${fadeIn} 3.5s ease-in-out forwards;
+  animation: ${fadeIn} 3s ease-in-out forwards;
 `;
 
 export const Temperature = styled.div<{ readonly datavalue: string }>`
@@ -105,5 +129,5 @@ export const Temperature = styled.div<{ readonly datavalue: string }>`
     right: -3em;
   }
 
-  animation: ${fadeIn} 3.5s ease-in-out forwards;
+  animation: ${fadeIn} 3s ease-in-out forwards;
 `;
