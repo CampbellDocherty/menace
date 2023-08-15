@@ -23,12 +23,17 @@ export const GridWrapper = styled.div`
 `;
 
 export const Square = styled.div<{ readonly selected: boolean }>`
-  background-color: #eaeaea;
-  border: ${({ selected }) =>
-    selected ? '1px solid #96CEFF' : '1px solid #ccc'};
+  border: ${({ selected }) => (selected ? '1px solid #96CEFF' : 'none')};
   box-shadow: ${({ selected }) =>
     selected ? 'inset 0 0 0 2px #96CEFF' : 'none'};
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const Image = styled.img`
+  width: 60px;
 `;
 
 export const VerifyCaptchaButton = styled(Button)`
