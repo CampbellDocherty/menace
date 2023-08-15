@@ -12,10 +12,19 @@ export const Container = styled.div`
   flex: 1;
 `;
 
+const shrink = keyframes`
+from {
+    filter:grayscale(100%);
+  }
+
+  to {
+    filter:grayscale(0%);
+  }
+`;
+
 export const Image = styled.img`
   width: 70px;
-  display: inline-block;
-  float: left;
+  animation: ${shrink} 2s ease-in-out forwards;
 `;
 
 const fadeIn = keyframes`
@@ -58,8 +67,6 @@ export const FadeInButton = styled(Button)`
 
 export const FadeInImage = styled.img`
   width: 70px;
-  display: inline-block;
-  float: left;
   margin-bottom: 16px;
 
   animation: ${fadeIn} 3.5s ease-in-out forwards;
