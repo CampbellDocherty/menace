@@ -13,10 +13,9 @@ export const Container = styled.div`
 `;
 
 export const Image = styled.img`
-  width: 80px;
+  width: 70px;
   display: inline-block;
   float: left;
-  padding-right: 12px;
 `;
 
 const fadeIn = keyframes`
@@ -40,7 +39,6 @@ export const FadeInTitle = styled.h1`
   font-family: 'RoyalAcidOutline';
   font-size: 2.8rem;
   margin: 0;
-  margin-bottom: 16px;
   color: aliceblue;
   text-align: left;
   letter-spacing: 2px;
@@ -55,6 +53,15 @@ export const FadeInTitle = styled.h1`
 `;
 
 export const FadeInButton = styled(Button)`
+  animation: ${fadeIn} 3.5s ease-in-out forwards;
+`;
+
+export const FadeInImage = styled.img`
+  width: 70px;
+  display: inline-block;
+  float: left;
+  margin-bottom: 16px;
+
   animation: ${fadeIn} 3.5s ease-in-out forwards;
 `;
 

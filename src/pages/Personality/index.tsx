@@ -1,6 +1,9 @@
 import { useContext, useEffect, useMemo, useState } from 'react';
 import { AnswersContext } from '../../context/Answers/AnswersContext';
-import { calculateResult, getPersonalityType } from './calculateResult';
+import {
+  calculateResult,
+  getPersonalityType,
+} from '../Results/calculateResult';
 import {
   Temperature,
   Thermometer,
@@ -9,6 +12,7 @@ import {
   FadeInText,
   FadeInTitle,
   FadeInButton,
+  FadeInImage,
 } from './styles';
 import { BodyText } from '../../styles';
 
@@ -43,6 +47,7 @@ export const Personality = ({
     <Container>
       <FadeInText>{personality.intro}</FadeInText>
       <FadeInTitle>{personality.type}</FadeInTitle>
+      <FadeInImage src={personality.image.src} alt={personality.image.alt} />
       <Thermometer>
         <Temperature datavalue={`${Math.round(result)}%`} />
       </Thermometer>
