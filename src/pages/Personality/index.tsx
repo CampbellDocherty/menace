@@ -15,6 +15,7 @@ import {
   FadeInImage,
 } from './styles';
 import { BodyText } from '../../styles';
+import QuestionMark from '../../assets/question-mark.png';
 
 export const Personality = ({
   onProceed,
@@ -37,7 +38,7 @@ export const Personality = ({
   if (isCalculating) {
     return (
       <Container>
-        <Image src={personality.image.src} alt={personality.image.alt} />
+        <Image src={QuestionMark} alt="question mark" />
         <BodyText>Calculating result...</BodyText>
       </Container>
     );

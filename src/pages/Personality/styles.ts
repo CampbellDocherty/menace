@@ -12,19 +12,29 @@ export const Container = styled.div`
   flex: 1;
 `;
 
-const shrink = keyframes`
-from {
-    filter:grayscale(100%);
+const rotate = keyframes`
+0% {
+    transform:rotate(20deg);
   }
 
-  to {
-    filter:grayscale(0%);
+  25% {
+    transform:rotate(-20deg);
+  }
+   50% {
+    transform:rotate(20deg);
+  }
+   70% {
+    transform:rotate(-20deg);
+  }
+
+  100% {
+    transform:rotate(20deg);
   }
 `;
 
 export const Image = styled.img`
-  width: 70px;
-  animation: ${shrink} 2s ease-in-out forwards;
+  width: 30px;
+  animation: ${rotate} 2s ease-in-out forwards;
 `;
 
 const fadeIn = keyframes`
