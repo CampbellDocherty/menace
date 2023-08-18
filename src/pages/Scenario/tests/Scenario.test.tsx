@@ -86,7 +86,7 @@ test('Scenario 6', () => {
 });
 
 test('Bonus scenario', () => {
-  renderScenario(Pages.SCENARIO_SIX);
+  renderScenario(Pages.BONUS);
   screen.getByText(
     "Oh no! Whilst you're getting their insta your date arrives, what do you tell them?",
   );
