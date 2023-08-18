@@ -35,8 +35,9 @@ export const Scenario = ({
 }: {
   readonly currentScenario: Scenarios;
   readonly onProceed: (numberOfPagesToProceed?: number) => void;
-  readonly goBack: () => void;
+  readonly goBack: (numberOfPagesToGoBack?: number) => void;
 }) => {
+  const { answers } = useContext(AnswersContext);
   const [isForward, setIsForward] = useState(true);
 
   const scenarioRefs = useCreateScenarioRefs();
@@ -45,9 +46,9 @@ export const Scenario = ({
   const copy = useGetScenarioCopy(currentScenario);
 
   const { updateAnswers } = useContext(AnswersContext);
-  const answerQuestion = (isMenace: number) => {
+  const answerQuestion = (answer: number) => {
     const currentQuestionNumber = currentScenario - 1;
-    updateAnswers(currentQuestionNumber, isMenace);
+    updateAnswers(currentQuestionNumber, answer);
   };
 
   const onAnswer = (answer: number) => {
@@ -66,7 +67,13 @@ export const Scenario = ({
         <BackButton
           onClick={() => {
             setIsForward(false);
-            goBack();
+            if (
+              currentScenario === Pages.SCENARIO_SEVEN &&
+              answers[Pages.SCENARIO_SIX] !== 1
+            ) {
+              return goBack(2);
+            }
+            return goBack(1);
           }}
         >
           <BackArrow src={ArrowSvg} alt="back arrow" />
