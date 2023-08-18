@@ -4,8 +4,8 @@ import { Pages } from '../../Pages';
 
 interface AnswersContextType {
   readonly page: Pages;
-  readonly proceed: () => void;
-  readonly back: () => void;
+  readonly proceed: (numberOfPagesToProceed?: number) => void;
+  readonly back: (numberOfPagesToGoBack?: number) => void;
   readonly restart: () => void;
 }
 

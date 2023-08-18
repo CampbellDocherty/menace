@@ -17,6 +17,7 @@ import {
 import { AnswersContext } from '../../context/Answers/AnswersContext';
 import { ProgressBar } from './ProgressBar';
 import { useCreateScenarioRefs } from './useCreateScenarioRefs';
+import { Pages } from '../../Pages';
 
 const shuffle = (array: Array<CtaCopy>) => {
   const n = array.length;
@@ -33,9 +34,10 @@ export const Scenario = ({
   goBack,
 }: {
   readonly currentScenario: Scenarios;
-  readonly onProceed: () => void;
-  readonly goBack: () => void;
+  readonly onProceed: (numberOfPagesToProceed?: number) => void;
+  readonly goBack: (numberOfPagesToGoBack?: number) => void;
 }) => {
+  const { answers } = useContext(AnswersContext);
   const [isForward, setIsForward] = useState(true);
 
   const scenarioRefs = useCreateScenarioRefs();
@@ -44,15 +46,19 @@ export const Scenario = ({
   const copy = useGetScenarioCopy(currentScenario);
 
   const { updateAnswers } = useContext(AnswersContext);
-  const answerQuestion = (isMenace: number) => {
+  const answerQuestion = (answer: number) => {
     const currentQuestionNumber = currentScenario - 1;
-    updateAnswers(currentQuestionNumber, isMenace);
+    updateAnswers(currentQuestionNumber, answer);
   };
 
   const onAnswer = (answer: number) => {
     setIsForward(true);
     answerQuestion(answer);
-    onProceed();
+
+    if (currentScenario === Pages.SCENARIO_SIX && answer !== 1) {
+      return onProceed(2);
+    }
+    return onProceed(1);
   };
 
   return (
@@ -61,7 +67,13 @@ export const Scenario = ({
         <BackButton
           onClick={() => {
             setIsForward(false);
-            goBack();
+            if (
+              currentScenario === Pages.SCENARIO_SEVEN &&
+              answers[Pages.SCENARIO_SIX] !== 1
+            ) {
+              return goBack(2);
+            }
+            return goBack(1);
           }}
         >
           <BackArrow src={ArrowSvg} alt="back arrow" />
