@@ -85,6 +85,17 @@ test('Scenario 6', () => {
   expect(mockPagesContext.proceed).toHaveBeenCalledTimes(1);
 });
 
+test('Bonus scenario', () => {
+  renderScenario(Pages.SCENARIO_SIX);
+  screen.getByText(
+    "Oh no! Whilst you're getting their insta your date arrives, what do you tell them?",
+  );
+  const button = screen.getByText('Gaslight, gaslight, gaslight');
+  fireEvent.click(button);
+
+  expect(mockPagesContext.proceed).toHaveBeenCalledTimes(1);
+});
+
 test('Scenario 7', () => {
   renderScenario(Pages.SCENARIO_SEVEN);
   screen.getByText(

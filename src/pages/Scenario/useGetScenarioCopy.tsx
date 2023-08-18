@@ -28,7 +28,7 @@ const scenarioCopy = {
         text: 'As long as they like (I want more rounds)',
         menaceValue: 0.75,
       },
-      { text: 'If we have a good time, mi casa es tu casa', menaceValue: 0.1 },
+      { text: 'If we have a good time, mi casa es tu casa', menaceValue: 0.2 },
       { text: "They've gotta go but I'll pay for the uber", menaceValue: 0.3 },
       {
         text: 'All night... how else would I get my cuddles 🥺',
@@ -61,9 +61,9 @@ const scenarioCopy = {
       { text: '👻', menaceValue: 1 },
       {
         text: 'Text of course',
-        menaceValue: 0.75,
+        menaceValue: 0.8,
       },
-      { text: 'On the phone. Respectful and quick', menaceValue: 0.25 },
+      { text: 'On the phone. Respectful and quick', menaceValue: 0.45 },
       { text: 'In person, I owe it to them', menaceValue: 0 },
       { text: "I'm always the one broken up with 😪", menaceValue: 0 },
     ],
@@ -94,7 +94,7 @@ const scenarioCopy = {
       },
       {
         text: "I would go over but I don't want to get caught",
-        menaceValue: 0.55,
+        menaceValue: 0.65,
       },
       {
         text: "I'm too shy, I wouldn't move to them even if I wanted to 🙈",
@@ -102,6 +102,28 @@ const scenarioCopy = {
       },
       {
         text: 'I lower my gaze 😇',
+        menaceValue: 0,
+      },
+    ],
+  },
+  [Pages.BONUS]: {
+    title:
+      "Oh no! Whilst you're getting their insta your date arrives, what do you tell them?",
+    cta: [
+      {
+        text: "Don't worry! That's just my cousin, we haven't seen each other in ageeesss",
+        menaceValue: 0.7,
+      },
+      {
+        text: 'Gaslight, gaslight, gaslight',
+        menaceValue: 1,
+      },
+      {
+        text: '🏃‍♂️💨',
+        menaceValue: 0.85,
+      },
+      {
+        text: "I'd come clean",
         menaceValue: 0,
       },
     ],
@@ -137,7 +159,7 @@ const scenarioCopy = {
         text: 'Anything can happen on a night out 🤫',
         menaceValue: 0.8,
       },
-      { text: "I'd only do it for love", menaceValue: 0.15 },
+      { text: "I'd only do it for love", menaceValue: 0.35 },
       { text: "Never ever! There's lines I won't cross", menaceValue: 0 },
     ],
   },

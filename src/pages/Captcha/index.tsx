@@ -53,8 +53,8 @@ export const Captcha = ({ onProceed }: { onProceed: () => void }) => {
   return (
     <Container>
       <BodyText>
-        Please select all the images with a menace in them. Click verify once
-        there are none left.
+        Please select all the menaces. Click verify when you have selected them
+        all.
       </BodyText>
       <GridWrapper>
         {GRID_SQUARES.map((_, i) => {

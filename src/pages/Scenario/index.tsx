@@ -17,6 +17,7 @@ import {
 import { AnswersContext } from '../../context/Answers/AnswersContext';
 import { ProgressBar } from './ProgressBar';
 import { useCreateScenarioRefs } from './useCreateScenarioRefs';
+import { Pages } from '../../Pages';
 
 const shuffle = (array: Array<CtaCopy>) => {
   const n = array.length;
@@ -33,7 +34,7 @@ export const Scenario = ({
   goBack,
 }: {
   readonly currentScenario: Scenarios;
-  readonly onProceed: () => void;
+  readonly onProceed: (numberOfPagesToProceed?: number) => void;
   readonly goBack: () => void;
 }) => {
   const [isForward, setIsForward] = useState(true);
@@ -52,7 +53,11 @@ export const Scenario = ({
   const onAnswer = (answer: number) => {
     setIsForward(true);
     answerQuestion(answer);
-    onProceed();
+
+    if (currentScenario === Pages.SCENARIO_SIX && answer !== 1) {
+      return onProceed(2);
+    }
+    return onProceed(1);
   };
 
   return (

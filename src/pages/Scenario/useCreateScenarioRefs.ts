@@ -7,6 +7,7 @@ export const useCreateScenarioRefs = () => {
   const scenarioFourRef = useRef<HTMLDivElement>(null);
   const scenarioFiveRef = useRef<HTMLDivElement>(null);
   const scenarioSixRef = useRef<HTMLDivElement>(null);
+  const scenarioBonusRef = useRef<HTMLDivElement>(null);
   const scenarioSevenRef = useRef<HTMLDivElement>(null);
   const scenarioEightRef = useRef<HTMLDivElement>(null);
   const scenarioNineRef = useRef<HTMLDivElement>(null);
@@ -18,6 +19,7 @@ export const useCreateScenarioRefs = () => {
     scenarioFourRef,
     scenarioFiveRef,
     scenarioSixRef,
+    scenarioBonusRef,
     scenarioSevenRef,
     scenarioEightRef,
     scenarioNineRef,
