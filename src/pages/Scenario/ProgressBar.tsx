@@ -16,7 +16,7 @@ const ProgressAmount = styled.div<{ width: number }>`
   transition: width 0.2s ease-in;
 `;
 
-const NUMBER_OF_SCENARIOS = 10;
+const NUMBER_OF_SCENARIOS = 11;
 
 export const ProgressBar = ({
   currentScenario,

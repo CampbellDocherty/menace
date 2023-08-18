@@ -31,6 +31,8 @@ describe('When a user comes back to the app having got part way through the pers
   });
 
   test('shows them their last visited page', () => {
-    screen.getByText('Scenario 10');
+    screen.getByText(
+      'You have a crush on someone but they say they\'re into your friend "AB", what\'s your next move?',
+    );
   });
 });

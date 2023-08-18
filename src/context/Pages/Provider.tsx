@@ -16,13 +16,19 @@ export const Provider = ({
     localStorage.setItem('lastVisitedPage', `${page}`);
   }, [page]);
 
-  const proceed = useCallback(() => {
-    setPage(page + 1);
-  }, [setPage, page]);
+  const proceed = useCallback(
+    (numberOfPagesToProceed = 1) => {
+      setPage(page + numberOfPagesToProceed);
+    },
+    [setPage, page],
+  );
 
-  const back = useCallback(() => {
-    setPage(page - 1);
-  }, [setPage, page]);
+  const back = useCallback(
+    (numberOfPagesToGoBack = 1) => {
+      setPage(page - numberOfPagesToGoBack);
+    },
+    [setPage, page],
+  );
 
   const restart = useCallback(() => {
     setPage(Pages.HOME);

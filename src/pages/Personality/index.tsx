@@ -52,7 +52,7 @@ export const Personality = ({
       <Thermometer>
         <Temperature datavalue={`${Math.round(result)}%`} />
       </Thermometer>
-      <FadeInButton onClick={onProceed}>Continue</FadeInButton>
+      <FadeInButton onClick={() => onProceed()}>Continue</FadeInButton>
     </Container>
   );
 };

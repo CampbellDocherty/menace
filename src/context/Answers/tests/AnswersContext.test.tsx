@@ -38,7 +38,7 @@ describe('Answers context', () => {
   });
 
   test('updates the context when a user answers a question', () => {
-    const button = screen.getByRole('button', { name: 'Just a friend' });
+    const button = screen.getByRole('button', { name: 'Just a "friend"' });
     fireEvent.click(button);
     expect(mockAnswersContext.updateAnswers).toHaveBeenCalledTimes(1);
     expect(mockAnswersContext.updateAnswers).toHaveBeenCalledWith(1, 1);

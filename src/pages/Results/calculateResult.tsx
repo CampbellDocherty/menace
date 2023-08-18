@@ -8,7 +8,7 @@ export const calculateResult = (answers: ScenarioAnswers) => {
     (partialSum, answer) => partialSum + answer,
     0,
   );
-  const resultAsPercentage = (sumOfAnswers / 10) * 100;
+  const resultAsPercentage = (sumOfAnswers / answerValues.length) * 100;
   return resultAsPercentage;
 };
 
