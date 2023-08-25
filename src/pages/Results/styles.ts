@@ -7,6 +7,8 @@ export const Container = styled.div`
   height: fit-content;
   display: flex;
   flex-direction: column;
+  flex: 1;
+  overflow: auto; /* Enables scrolling if content overflows */
 `;
 
 export const Header = styled.div`
@@ -85,4 +87,8 @@ export const Tab = styled.button`
     border: none;
     outline: none;
   }
+`;
+
+export const Content = styled.div`
+  width: 100%;
 `;

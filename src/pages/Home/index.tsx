@@ -12,17 +12,20 @@ import {
 } from './styles';
 import Angel from '../../assets/angel.png';
 import Devil from '../../assets/devil.png';
+import { v4 as uuidv4 } from 'uuid';
 import { useContext, useState } from 'react';
 import { AnswersContext } from '../../context/Answers/AnswersContext';
 
 export const Home = ({ onProceed }: { onProceed: () => void }) => {
-  const { updateName } = useContext(AnswersContext);
+  const { updateName, updateId } = useContext(AnswersContext);
   const [nickname, setNickname] = useState('');
   const [error, setError] = useState('');
 
   const onTestStart = () => {
     if (nickname) {
       updateName(nickname);
+      const id = uuidv4();
+      updateId(id);
       onProceed();
     } else {
       setError('Enter a nickname');

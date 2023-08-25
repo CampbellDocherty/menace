@@ -13,14 +13,14 @@ import {
   Header,
   ResultTab,
   Tab,
+  Content,
 } from './styles';
-import { v4 as uuidv4 } from 'uuid';
 import { addUser } from '../../firebase/database';
 import { Leaderboard } from '../Leaderboard';
 
 export const Results = () => {
   const [isResultTab, setIsResultTab] = useState(true);
-  const { answers, name, updateId } = useContext(AnswersContext);
+  const { answers, name, id } = useContext(AnswersContext);
   const result = useMemo(() => {
     const unroundedResult = calculateResult(answers);
     return Math.round(unroundedResult);
@@ -29,10 +29,8 @@ export const Results = () => {
   const multiplier = useMemo(() => calculateMultiplier(answers), [answers]);
 
   const onSubmit = () => {
-    const id = uuidv4();
     const details = { name, result, multiplier, completed: Date.now() };
     addUser(id, details);
-    updateId(id);
     setIsResultTab(false);
   };
 
@@ -46,11 +44,13 @@ export const Results = () => {
         <Tab onClick={() => setIsResultTab(true)}>Your result</Tab>
         <Tab onClick={onSubmit}>Leaderboard</Tab>
       </ResultTab>
-      {isResultTab ? (
-        <Description>{personality.desc}</Description>
-      ) : (
-        <Leaderboard />
-      )}
+      <Content>
+        {isResultTab ? (
+          <Description>{personality.desc}</Description>
+        ) : (
+          <Leaderboard />
+        )}
+      </Content>
     </Container>
   );
 };
