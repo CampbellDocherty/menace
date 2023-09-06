@@ -7,8 +7,6 @@ export const Container = styled.div`
   height: fit-content;
   display: flex;
   flex-direction: column;
-  flex: 1;
-  overflow: auto; /* Enables scrolling if content overflows */
 `;
 
 export const Header = styled.div`
@@ -91,4 +89,11 @@ export const Tab = styled.button`
 
 export const Content = styled.div`
   width: 100%;
+  overflow-y: auto;
+  flex: 1;
+  min-height: 0;
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
 `;

@@ -2,8 +2,6 @@ import { styled } from 'styled-components';
 
 export const Table = styled.table`
   width: 100%;
-  max-height: 100%;
-  overflow-y: scroll;
 `;
 
 export const Heading = styled.th`
