@@ -6,10 +6,10 @@
 }
 
 @font-face {
-  font-family: 'ComicNeueSans';
+  font-family: 'Roboto-Regular';
   src:
-    local('ComicNeueSans'),
-    url(./fonts/ComicNeueSans.ttf) format('truetype');
+    local('Roboto-Regular'),
+    url(./fonts/Roboto-Regular.ttf) format('truetype');
 }
 
 :root {
@@ -22,17 +22,17 @@
 
 body {
   margin: 0;
-  font-family: 'ComicNeueSans';
+  font-family: 'Roboto-Regular';
   background-color: #f0f8ff;
 }
 
 input,
 input::placeholder {
-  font-family: 'ComicNeueSans';
+  font-family: 'Roboto-Regular';
 }
 
 button {
-  font-family: 'ComicNeueSans';
+  font-family: 'Roboto-Regular';
   color: black;
 }
 

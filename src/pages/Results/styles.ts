@@ -36,7 +36,7 @@ export const Image = styled.img`
 `;
 
 export const Description = styled(BodyText)`
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   margin: 0 auto;
   margin-bottom: 16px;
 `;
@@ -72,6 +72,7 @@ export const Tab = styled.button`
   outline: none;
   background: none;
   font-size: 1.4rem;
+  opacity: 90%;
   cursor: pointer;
   text-align: right;
   line-height: 1.3em;
