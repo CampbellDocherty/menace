@@ -18,7 +18,6 @@ export const Leaderboard = () => {
       if (!response.users) {
         return setUsers(null);
       }
-
       setUsers(response.users);
     };
 

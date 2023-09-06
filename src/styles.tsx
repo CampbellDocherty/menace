@@ -1,6 +1,6 @@
 import { styled } from 'styled-components';
 
-const AVAIL_HEIGHT_OF_VIEWPORT = window.innerHeight;
+export const AVAIL_HEIGHT_OF_VIEWPORT = window.innerHeight;
 
 export const Container = styled.div`
   padding: 16px 10px;
@@ -9,6 +9,7 @@ export const Container = styled.div`
   align-items: center;
   max-width: 700px;
   min-height: ${AVAIL_HEIGHT_OF_VIEWPORT}px;
+  max-height: ${AVAIL_HEIGHT_OF_VIEWPORT}px;
   overflow-y: scroll;
   margin-left: auto;
   margin-right: auto;

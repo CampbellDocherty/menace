@@ -40,3 +40,60 @@ export const Description = styled(BodyText)`
   margin: 0 auto;
   margin-bottom: 16px;
 `;
+
+export const ResultTab = styled.div<{ $isleftunderline: boolean }>`
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  position: relative;
+
+  &::after {
+    position: absolute;
+    content: '';
+    height: 3px;
+    background-color: black;
+    width: 130px;
+    bottom: 0;
+    left: ${({ $isleftunderline }) =>
+      $isleftunderline ? '0' : 'calc(100% - 130px)'};
+
+    transition: left 0.5s;
+  }
+`;
+
+export const Tab = styled.button`
+  width: 50%;
+  height: 100%;
+  border: none;
+  background-color: none;
+  outline: none;
+  background: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  text-align: right;
+  line-height: 1.3em;
+  padding: 8px 0px;
+
+  &:first-child {
+    text-align: left;
+  }
+
+  &:focus {
+    border: none;
+    outline: none;
+  }
+`;
+
+export const Content = styled.div`
+  width: 100%;
+  overflow-y: auto;
+  flex: 1;
+  min-height: 0;
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+`;

@@ -8,6 +8,7 @@ export const FooterControls = styled.div`
   width: 100%;
   height: fit-content;
   flex: 1;
+  margin-top: 16px;
 `;
 
 export const CoverArt = styled.img`

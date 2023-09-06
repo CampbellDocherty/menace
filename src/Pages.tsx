@@ -14,5 +14,4 @@ export enum Pages {
   SCENARIO_TEN,
   PERSONALITY,
   RESULTS,
-  LEADERBOARD,
 }
