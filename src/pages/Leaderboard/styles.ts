@@ -7,6 +7,7 @@ export const Table = styled.table`
 export const Heading = styled.th`
   text-align: left;
   padding: 4px;
+  font-weight: 500;
 `;
 
 export const Cell = styled.td`
