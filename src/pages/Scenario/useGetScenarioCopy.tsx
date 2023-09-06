@@ -173,6 +173,7 @@ const scenarioCopy = {
       },
       { text: "If I see them out, it's all love", menaceValue: 0.25 },
       { text: "We're actually friends, no hanky panky", menaceValue: 0 },
+      { text: "We don't get along 🙅‍♂️", menaceValue: 0.6 },
     ],
   },
   [Pages.SCENARIO_TEN]: {
