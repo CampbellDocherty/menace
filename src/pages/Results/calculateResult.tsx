@@ -22,7 +22,19 @@ export const calculateMultiplier = (answers: ScenarioAnswers) => {
   return amountOf1Answers;
 };
 
-export const getPersonalityType = (result: number) => {
+type Image = {
+  src: string;
+  alt: string;
+};
+
+type PersonalityType = {
+  intro: string;
+  type: 'Menace' | 'Just right' | 'Angel';
+  desc: string;
+  image: Image;
+};
+
+export const getPersonalityType = (result: number): PersonalityType => {
   if (result === 100) {
     return {
       intro: 'You are a',
