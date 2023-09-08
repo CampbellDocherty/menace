@@ -41,13 +41,14 @@ export const Scenario = ({
   const [isForward, setIsForward] = useState(true);
 
   const scenarioRefs = useCreateScenarioRefs();
-  const nodeRef = scenarioRefs[currentScenario - 2];
+  const scenarioZeroIndexed = currentScenario - 1;
+  const nodeRef = scenarioRefs[scenarioZeroIndexed];
 
   const copy = useGetScenarioCopy(currentScenario);
 
   const { updateAnswers } = useContext(AnswersContext);
   const answerQuestion = (answer: number) => {
-    const currentQuestionNumber = currentScenario - 1;
+    const currentQuestionNumber = currentScenario;
     updateAnswers(currentQuestionNumber, answer);
   };
 
@@ -55,27 +56,30 @@ export const Scenario = ({
     setIsForward(true);
     answerQuestion(answer);
 
-    if (currentScenario === Pages.SCENARIO_SIX && answer !== 1) {
+    const userHasNotSelectedTheBonusRoundAnswer =
+      currentScenario === Pages.SCENARIO_SIX && answer !== 1;
+
+    if (userHasNotSelectedTheBonusRoundAnswer) {
       return onProceed(2);
     }
     return onProceed(1);
   };
 
+  const onBack = () => {
+    setIsForward(false);
+    const userHasAccessToTheBonusRound =
+      currentScenario === Pages.SCENARIO_SEVEN &&
+      answers[Pages.SCENARIO_SIX] === 1;
+    if (!userHasAccessToTheBonusRound) {
+      return goBack(2);
+    }
+    return goBack(1);
+  };
+
   return (
     <ScenarioContainer data-testid={currentScenario}>
       <ScenarioHeader>
-        <BackButton
-          onClick={() => {
-            setIsForward(false);
-            if (
-              currentScenario === Pages.SCENARIO_SEVEN &&
-              answers[Pages.SCENARIO_SIX] !== 1
-            ) {
-              return goBack(2);
-            }
-            return goBack(1);
-          }}
-        >
+        <BackButton onClick={onBack}>
           <BackArrow src={ArrowSvg} alt="back arrow" />
         </BackButton>
         <ProgressBar currentScenario={currentScenario} />
