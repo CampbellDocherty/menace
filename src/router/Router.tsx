@@ -1,5 +1,4 @@
 import { useContext } from 'react';
-import { Captcha } from '../pages/Captcha';
 import { Home } from '../pages/Home';
 import { Pages } from '../Pages';
 import { Scenario } from '../pages/Scenario';
@@ -13,8 +12,6 @@ const Router = () => {
   switch (page) {
     case Pages.HOME:
       return <Home onProceed={proceed} />;
-    case Pages.CAPTCHA:
-      return <Captcha onProceed={proceed} />;
     case Pages.PERSONALITY:
       return <Personality onProceed={proceed} />;
     case Pages.RESULTS:

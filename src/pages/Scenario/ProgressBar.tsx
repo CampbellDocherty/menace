@@ -23,9 +23,8 @@ export const ProgressBar = ({
 }: {
   readonly currentScenario: Scenarios;
 }) => {
-  const currentScenarioNumber = currentScenario - 1;
   const percentageOfScenariosComplete =
-    (currentScenarioNumber / NUMBER_OF_SCENARIOS) * 100;
+    (currentScenario / NUMBER_OF_SCENARIOS) * 100;
   return (
     <Bar>
       <ProgressAmount width={percentageOfScenariosComplete} />

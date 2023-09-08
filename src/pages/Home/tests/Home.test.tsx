@@ -16,8 +16,6 @@ describe('When the app renders', () => {
     fillNickname();
     const button = screen.getByRole('button', { name: 'Take the test' });
     fireEvent.click(button);
-    screen.getByText(
-      'Please select all the menaces. Click verify when you have selected them all.',
-    );
+    screen.getByText('Just a "friend"');
   });
 });
