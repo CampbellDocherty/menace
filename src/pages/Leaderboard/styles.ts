@@ -30,3 +30,9 @@ export const Multiplier = styled.div`
     height: 35px;
   }
 `;
+
+export const ErrorText = styled.p`
+  color: #ef4a3f;
+  margin: 0;
+  margin-right: 16px;
+`;

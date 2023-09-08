@@ -1,9 +1,8 @@
 import { useEffect, useMemo, useState } from 'react';
 import { format } from 'date-fns';
 import Devil from '../../assets/devil.png';
-import { Cell, Heading, Multiplier, Table } from './styles';
+import { Cell, Heading, Multiplier, Table, ErrorText } from './styles';
 import { UserDetails, getUsers } from '../../firebase/database';
-import { ErrorText } from '../Captcha/styles';
 
 export const Leaderboard = () => {
   const [users, setUsers] = useState<Record<string, UserDetails> | null>(null);

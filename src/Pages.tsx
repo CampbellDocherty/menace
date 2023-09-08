@@ -1,6 +1,5 @@
 export enum Pages {
   HOME,
-  CAPTCHA,
   SCENARIO_ONE,
   SCENARIO_TWO,
   SCENARIO_THREE,
