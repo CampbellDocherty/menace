@@ -12,12 +12,13 @@ import {
   Container,
   FadeInText,
   FadeInTitle,
-  FadeInButton,
   FadeInImage,
+  LeaderboardContainer,
 } from './styles';
 import { BodyText } from '../../styles';
 import QuestionMark from '../../assets/question-mark.png';
 import { addUser } from '../../firebase/database';
+import { Leaderboard } from '../Leaderboard';
 
 export const Personality = ({
   onProceed,
@@ -60,7 +61,9 @@ export const Personality = ({
       <Thermometer>
         <Temperature datavalue={`${Math.round(result)}%`} />
       </Thermometer>
-      <FadeInButton onClick={() => onProceed()}>Continue</FadeInButton>
+      <LeaderboardContainer>
+        <Leaderboard />
+      </LeaderboardContainer>
     </Container>
   );
 };

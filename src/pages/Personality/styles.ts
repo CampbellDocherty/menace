@@ -77,8 +77,6 @@ export const FadeInButton = styled(Button)`
 
 export const FadeInImage = styled.img`
   width: 70px;
-  margin-bottom: 16px;
-
   animation: ${fadeIn} 3s ease-in-out forwards;
 `;
 
@@ -128,6 +126,20 @@ export const Temperature = styled.div<{ readonly datavalue: string }>`
     top: 150%;
     right: -3em;
   }
+
+  animation: ${fadeIn} 3s ease-in-out forwards;
+`;
+
+export const LeaderboardContainer = styled.div`
+  max-height: 200px;
+  width: 100%;
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 
   animation: ${fadeIn} 3s ease-in-out forwards;
 `;
