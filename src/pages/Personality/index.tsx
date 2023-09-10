@@ -20,11 +20,7 @@ import QuestionMark from '../../assets/question-mark.png';
 import { addUser } from '../../firebase/database';
 import { Leaderboard } from '../Leaderboard';
 
-export const Personality = ({
-  onProceed,
-}: {
-  readonly onProceed: () => void;
-}) => {
+export const Personality = () => {
   const { answers, id, name } = useContext(AnswersContext);
   const result = useMemo(() => {
     const unroundedResult = calculateResult(answers);
@@ -56,7 +52,7 @@ export const Personality = ({
   return (
     <Container>
       <FadeInText>{personality.intro}</FadeInText>
-      <FadeInTitle>{personality.type}</FadeInTitle>
+      <FadeInTitle src={personality.type.src} alt={personality.type.alt} />
       <FadeInImage src={personality.image.src} alt={personality.image.alt} />
       <Thermometer>
         <Temperature datavalue={`${Math.round(result)}%`} />

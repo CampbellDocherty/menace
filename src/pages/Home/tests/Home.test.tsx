@@ -6,7 +6,7 @@ import { fillNickname } from './helpers';
 describe('When the app renders', () => {
   test('it shows the text', () => {
     render(<App />);
-    screen.getByText('Are you a menace?');
+    screen.getByAltText('Are you a menace?');
     screen.getByText('Is that a bad thing?', { exact: false });
     screen.getByText('This is in no way medical advice.', { exact: false });
   });

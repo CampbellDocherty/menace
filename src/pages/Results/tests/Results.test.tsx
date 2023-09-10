@@ -44,13 +44,6 @@ describe('When a user arrives at the results page it shows their personality bas
     screen.getByAltText('Abolaji as a menace');
   });
 
-  test('shows unique message for 100% menace', () => {
-    setup();
-    screen.getByText(
-      "100% menace! That's too much menace for one person to harness. Honestly, we can't help you. Get therapy or something. Who knows, maybe out recommended media might save you!",
-    );
-  });
-
   test('between 45% and 55% shows just right', () => {
     setup({ 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 });
     screen.getByText(

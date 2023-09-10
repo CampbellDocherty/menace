@@ -29,7 +29,7 @@ export const Results = () => {
   return (
     <Container>
       <Header>
-        <ResultTitle>{personality.type}</ResultTitle>
+        <ResultTitle>{personality.type.alt}</ResultTitle>
         <Image src={personality.image.src} alt={personality.image.alt} />
       </Header>
       <ResultTab $isleftunderline={isResultTab}>

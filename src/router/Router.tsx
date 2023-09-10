@@ -13,7 +13,7 @@ const Router = () => {
     case Pages.HOME:
       return <Home onProceed={proceed} />;
     case Pages.PERSONALITY:
-      return <Personality onProceed={proceed} />;
+      return <Personality />;
     case Pages.RESULTS:
       return <Results />;
     default:
