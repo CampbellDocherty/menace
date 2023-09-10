@@ -54,20 +54,9 @@ export const FadeInText = styled(BodyText)`
   animation: ${fadeIn} 1s ease-in-out forwards;
 `;
 
-export const FadeInTitle = styled.h1`
-  font-family: 'RoyalAcidOutline';
-  font-size: 2.8rem;
-  margin: 0;
-  color: aliceblue;
-  text-align: left;
-  letter-spacing: 2px;
-  text-shadow:
-    -1px 1px 1px #000,
-    1px 1px 1px #000,
-    1px -1px 0 #000,
-    -1px -1px 0 #000;
-
-  opacity: 0;
+export const FadeInTitle = styled.img`
+  width: 60%;
+  margin: 4px 0px;
   animation: ${fadeIn} 3s ease-in-out forwards;
 `;
 

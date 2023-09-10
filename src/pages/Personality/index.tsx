@@ -52,7 +52,7 @@ export const Personality = () => {
   return (
     <Container>
       <FadeInText>{personality.intro}</FadeInText>
-      <FadeInTitle>{personality.type}</FadeInTitle>
+      <FadeInTitle src={personality.type.src} alt={personality.type.alt} />
       <FadeInImage src={personality.image.src} alt={personality.image.alt} />
       <Thermometer>
         <Temperature datavalue={`${Math.round(result)}%`} />
