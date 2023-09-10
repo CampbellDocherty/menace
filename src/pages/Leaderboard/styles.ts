@@ -5,13 +5,13 @@ export const Table = styled.table`
 `;
 
 export const Heading = styled.th`
-  text-align: left;
+  text-align: center;
   padding: 4px;
-  font-weight: 500;
+  font-weight: 600;
 `;
 
 export const Cell = styled.td`
-  text-align: left;
+  text-align: center;
   text-transform: capitalize;
   padding: 4px;
 `;
@@ -21,6 +21,7 @@ export const Multiplier = styled.div`
   width: 100%;
   height: 100%;
   align-items: center;
+  justify-content: center;
 
   & > p {
     margin: 0 8px 0 0;
