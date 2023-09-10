@@ -20,11 +20,7 @@ import QuestionMark from '../../assets/question-mark.png';
 import { addUser } from '../../firebase/database';
 import { Leaderboard } from '../Leaderboard';
 
-export const Personality = ({
-  onProceed,
-}: {
-  readonly onProceed: () => void;
-}) => {
+export const Personality = () => {
   const { answers, id, name } = useContext(AnswersContext);
   const result = useMemo(() => {
     const unroundedResult = calculateResult(answers);
