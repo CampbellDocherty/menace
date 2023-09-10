@@ -135,11 +135,5 @@ export const LeaderboardContainer = styled.div`
   width: 100%;
   overflow: auto;
 
-  &::-webkit-scrollbar {
-    display: none;
-  }
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-
   animation: ${fadeIn} 3s ease-in-out forwards;
 `;
