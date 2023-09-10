@@ -13,7 +13,12 @@ export const Provider = ({
   const [page, setPage] = useState(lastVisitedPage || initialPage);
 
   useEffect(() => {
-    localStorage.setItem('lastVisitedPage', `${page}`);
+    if (page > Pages.PERSONALITY) {
+      localStorage.setItem('lastVisitedPage', `${Pages.HOME}`);
+      setPage(Pages.HOME);
+    } else {
+      localStorage.setItem('lastVisitedPage', `${page}`);
+    }
   }, [page]);
 
   const proceed = useCallback(

@@ -4,7 +4,7 @@ import {
   calculateMultiplier,
   calculateResult,
   getPersonalityType,
-} from '../Results/calculateResult';
+} from './calculateResult';
 import {
   Temperature,
   Thermometer,
