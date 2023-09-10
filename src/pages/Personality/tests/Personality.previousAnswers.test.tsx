@@ -28,6 +28,6 @@ describe('When a user arrives at the results page with previously filled in answ
     act(() => {
       vi.advanceTimersByTime(2000);
     });
-    screen.getByText('Angel');
+    screen.getByAltText('Angel');
   });
 });

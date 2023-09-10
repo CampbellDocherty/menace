@@ -41,7 +41,7 @@ describe('When a user arrives at the results page it shows their personality typ
     act(() => {
       vi.advanceTimersByTime(2000);
     });
-    screen.getByText('Menace');
+    screen.getByAltText('Menace');
   });
 
   test('between 45% and 55% shows just right', () => {
@@ -49,7 +49,7 @@ describe('When a user arrives at the results page it shows their personality typ
     act(() => {
       vi.advanceTimersByTime(2000);
     });
-    screen.getByText('Just right');
+    screen.getByAltText('Just right');
   });
 
   test('less than 45% shows Not Menace', () => {
@@ -65,6 +65,6 @@ describe('When a user arrives at the results page it shows their personality typ
     act(() => {
       vi.advanceTimersByTime(2000);
     });
-    screen.getByText('Angel');
+    screen.getByAltText('Angel');
   });
 });
