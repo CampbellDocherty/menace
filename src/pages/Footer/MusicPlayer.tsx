@@ -42,14 +42,18 @@ export const MusicPlayer = ({
 
     if (audioRef && audioRef.current) {
       if (testStarted) {
-        setIsPaused(false);
         playAudio();
       } else {
-        setIsPaused(true);
         audioRef.current.pause();
       }
     }
   }, [testStarted]);
+
+  useEffect(() => {
+    if (audioRef && audioRef.current) {
+      setIsPaused(audioRef.current?.paused);
+    }
+  }, [audioRef.current]);
 
   const onClick = async () => {
     if (audioRef && audioRef.current) {
