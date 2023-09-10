@@ -55,7 +55,8 @@ export const FadeInText = styled(BodyText)`
 `;
 
 export const FadeInTitle = styled.img`
-  width: 60%;
+  width: 70%;
+  max-width: 300px;
   margin: 4px 0px;
   animation: ${fadeIn} 3s ease-in-out forwards;
 `;
