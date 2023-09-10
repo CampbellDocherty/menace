@@ -3,7 +3,7 @@ import { styled } from 'styled-components';
 export const Title = styled.img`
   width: 90%;
   max-width: 400px;
-  margin-top: 8px;
+  margin-top: 16px;
   margin-bottom: 16px;
 `;
 
