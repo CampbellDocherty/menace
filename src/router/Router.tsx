@@ -2,7 +2,6 @@ import { useContext } from 'react';
 import { Home } from '../pages/Home';
 import { Pages } from '../Pages';
 import { Scenario } from '../pages/Scenario';
-import { Results } from '../pages/Results';
 import { Context } from '../context/Pages/Context';
 import { Personality } from '../pages/Personality';
 
@@ -14,8 +13,6 @@ const Router = () => {
       return <Home onProceed={proceed} />;
     case Pages.PERSONALITY:
       return <Personality />;
-    case Pages.RESULTS:
-      return <Results />;
     default:
       return (
         <Scenario currentScenario={page} onProceed={proceed} goBack={back} />
