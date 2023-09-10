@@ -12,6 +12,7 @@ import {
 } from './styles';
 import Angel from '../../assets/angel.png';
 import Devil from '../../assets/devil.png';
+import TitleImage from '../../assets/title.png';
 import { v4 as uuidv4 } from 'uuid';
 import { useContext, useState } from 'react';
 import { AnswersContext } from '../../context/Answers/AnswersContext';
@@ -39,7 +40,7 @@ export const Home = ({ onProceed }: { onProceed: () => void }) => {
 
   return (
     <>
-      <Title>Are you a menace?</Title>
+      <Title src={TitleImage} alt="Are you a menace?" />
       <IntroText>
         Is that a bad thing? In a few short minutes you will know the answer to
         these questions. Take the certified &apos;Menace&apos; personality test

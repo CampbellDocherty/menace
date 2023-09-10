@@ -1,18 +1,10 @@
 import { styled } from 'styled-components';
 
-export const Title = styled.h1`
-  font-family: 'RoyalAcidOutline';
-  font-size: 3.8rem;
-  margin: 0;
-  color: aliceblue;
-  width: 100%;
-  letter-spacing: 2px;
-  text-align: center;
-  text-shadow:
-    -1px 1px 1px #000,
-    1px 1px 1px #000,
-    1px -1px 0 #000,
-    -1px -1px 0 #000;
+export const Title = styled.img`
+  width: 90%;
+  max-width: 400px;
+  margin-top: 8px;
+  margin-bottom: 16px;
 `;
 
 export const Form = styled.div`
@@ -64,6 +56,7 @@ export const ImageCollage = styled.div`
 
 export const MenaceImage = styled.img`
   width: 28%;
+  max-width: 140px;
 
   &:first-child {
     margin-right: 8px;
