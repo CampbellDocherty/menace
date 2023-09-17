@@ -58,7 +58,6 @@ export const Home = ({ onProceed }: { onProceed: () => void }) => {
       <ImageCollage>
         <ImageColumn>
           <MenaceImage src={Angel} alt="Abolaji as an angel" />
-          <MenaceImage src={Devil} alt="Abolaji as a devil" />
         </ImageColumn>
         <Form>
           <Label htmlFor="nickname">Nickname</Label>
@@ -72,7 +71,7 @@ export const Home = ({ onProceed }: { onProceed: () => void }) => {
             id="nickname"
             placeholder="e.g. 00ab"
           />
-          <ErrorText>{error}</ErrorText>
+          {error && <ErrorText>{error}</ErrorText>}
           <Label htmlFor="email">Email (optional)</Label>
           <Input
             onChange={onChangeEmail}
@@ -87,7 +86,6 @@ export const Home = ({ onProceed }: { onProceed: () => void }) => {
         </Form>
         <ImageColumn>
           <MenaceImage src={Devil} alt="Abolaji as a devil" />
-          <MenaceImage src={Angel} alt="Abolaji as an angel" />
         </ImageColumn>
       </ImageCollage>
       <Disclaimer>
