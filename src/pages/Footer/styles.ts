@@ -6,7 +6,6 @@ export const FooterControls = styled.div`
   justify-content: space-between;
   align-items: flex-end;
   width: 100%;
-  height: fit-content;
   flex: 1;
   margin-top: 16px;
 `;
@@ -18,15 +17,15 @@ export const CoverArt = styled.img`
   cursor: pointer;
   height: 100%;
   margin-left: 12px;
+  border-radius: 5px;
 `;
 
 export const AudioContainer = styled.div`
   z-index: 1;
-  height: 90px;
+  height: 55px;
   display: flex;
   justify-content: flex-end;
   transition: display 600ms;
-  width: 100%;
 `;
 
 export const ArtistInfoContainer = styled.div`
@@ -36,19 +35,20 @@ export const ArtistInfoContainer = styled.div`
 `;
 
 export const SongTitle = styled(BodyText)`
-  font-size: 24px;
+  font-size: 16px;
   margin: 0;
   margin-bottom: 4px;
 `;
 
 export const SongArtist = styled(BodyText)`
+  font-size: 12px;
   margin: 0;
   text-align: right;
   margin-bottom: 4px;
 `;
 
 export const AudioControlImage = styled.img`
-  width: 20px;
+  width: 12px;
   opacity: 90%;
   align-self: flex-end;
   opacity: 90%;
