@@ -11,6 +11,7 @@ import {
   CoverArt,
   SongArtist,
   SongTitle,
+  SpotifyLink,
 } from './styles';
 import { Pages } from '../../Pages';
 import { Context } from '../../context/Pages/Context';
@@ -82,13 +83,13 @@ export const MusicPlayer = ({
           <AudioControlImage src={PauseSvg} alt="Pause button for the music" />
         )}
       </ArtistInfoContainer>
-      <a
+      <SpotifyLink
         href="https://open.spotify.com/track/5AmpGqzuwZnI968me1wxgJ?si=65dfa5e2764e411d"
         target="_blank"
         rel="noreferrer"
       >
         <CoverArt onClick={onClick} src={SpotifyLogo} alt="spotify loho" />
-      </a>
+      </SpotifyLink>
       <audio loop controls={false} ref={audioRef}>
         <source src={menaceUrl} type="audio/mp3" />
         Your browser does not support the audio element.

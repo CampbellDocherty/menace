@@ -10,6 +10,10 @@ export const FooterControls = styled.div`
   margin-top: 16px;
 `;
 
+export const SpotifyLink = styled.a`
+  height: 100%;
+`;
+
 export const CoverArt = styled.img`
   box-shadow: 0px 2px 10px 2px rgba(0, 0, 0, 0.38);
   -webkit-box-shadow: 0px 2px 10px 2px rgba(0, 0, 0, 0.38);
