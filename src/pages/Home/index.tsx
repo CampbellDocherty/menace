@@ -19,7 +19,7 @@ import { useContext, useState } from 'react';
 import { AnswersContext } from '../../context/Answers/AnswersContext';
 
 export const Home = ({ onProceed }: { onProceed: () => void }) => {
-  const { updateName, updateId } = useContext(AnswersContext);
+  const { updateName, updateId, updateEmail } = useContext(AnswersContext);
   const [nickname, setNickname] = useState('');
   const [email, setEmail] = useState('');
   const [error, setError] = useState('');
@@ -27,6 +27,7 @@ export const Home = ({ onProceed }: { onProceed: () => void }) => {
   const onTestStart = () => {
     if (nickname) {
       updateName(nickname);
+      updateEmail(email);
       const id = uuidv4();
       updateId(id);
       onProceed();

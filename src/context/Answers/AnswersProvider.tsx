@@ -20,6 +20,12 @@ export const AnswersProvider = ({
     return null;
   }, []);
 
+  const previousEmail = useMemo(() => {
+    const emailFromStorage = localStorage.getItem('email');
+    if (emailFromStorage) return emailFromStorage;
+    return null;
+  }, []);
+
   const previousId = useMemo(() => {
     const idFromStorage = localStorage.getItem('id');
     if (idFromStorage) return idFromStorage;
@@ -31,11 +37,17 @@ export const AnswersProvider = ({
   );
 
   const [name, setName] = useState(previousName || '');
+  const [email, setEmail] = useState(previousEmail || '');
   const [id, setId] = useState(previousId || '');
 
   const updateName = (nickname: string) => {
     localStorage.setItem('nickname', nickname);
     setName(nickname);
+  };
+
+  const updateEmail = (email: string) => {
+    localStorage.setItem('email', email);
+    setEmail(email);
   };
 
   const updateId = (id: string) => {
@@ -57,9 +69,11 @@ export const AnswersProvider = ({
   const providerData = {
     answers,
     name,
+    email,
     id,
     updateId,
     updateName,
+    updateEmail,
     updateAnswers,
     reset,
   };

@@ -18,8 +18,10 @@ export interface ScenarioAnswers {
 interface AnswersContextType {
   readonly answers: ScenarioAnswers;
   readonly name: string;
+  readonly email: string;
   readonly id: string;
   readonly updateName: (name: string) => void;
+  readonly updateEmail: (email: string) => void;
   readonly updateAnswers: (scenario: number, answer: number) => void;
   readonly updateId: (id: string) => void;
   readonly reset: () => void;
@@ -29,8 +31,10 @@ export const AnswersContext = createContext<AnswersContextType>({
   answers: defaultAnswers,
   id: '',
   name: '',
+  email: '',
   updateId: () => {},
   updateName: () => {},
+  updateEmail: () => {},
   updateAnswers: () => {},
   reset: () => {},
 });
