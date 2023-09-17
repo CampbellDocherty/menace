@@ -6,7 +6,6 @@ export const FooterControls = styled.div`
   justify-content: space-between;
   align-items: flex-end;
   width: 100%;
-  height: fit-content;
   flex: 1;
   margin-top: 16px;
 `;
@@ -18,6 +17,7 @@ export const CoverArt = styled.img`
   cursor: pointer;
   height: 100%;
   margin-left: 12px;
+  border-radius: 5px;
 `;
 
 export const AudioContainer = styled.div`
@@ -26,7 +26,6 @@ export const AudioContainer = styled.div`
   display: flex;
   justify-content: flex-end;
   transition: display 600ms;
-  width: 100%;
 `;
 
 export const ArtistInfoContainer = styled.div`

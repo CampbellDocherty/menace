@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/media-has-caption */
 import { useContext, useEffect, useRef, useState } from 'react';
 import menaceUrl from '../../assets/menace.mp3';
-import coverArt from '../../assets/cover-art.jpg';
+import SpotifyLogo from '../../assets/spotify-logo.png';
 import PlaySvg from '../../assets/play.svg';
 import PauseSvg from '../../assets/pause.svg';
 import {
@@ -72,31 +72,27 @@ export const MusicPlayer = ({
   };
 
   return (
-    <>
-      <AudioContainer>
-        <ArtistInfoContainer>
-          <SongTitle>Menace</SongTitle>
-          <SongArtist>by 00ab</SongArtist>
-          {isPaused ? (
-            <AudioControlImage
-              onClick={onClick}
-              src={PlaySvg}
-              alt="Play button for the music"
-            />
-          ) : (
-            <AudioControlImage
-              onClick={onClick}
-              src={PauseSvg}
-              alt="Pause button for the music"
-            />
-          )}
-        </ArtistInfoContainer>
-        <CoverArt onClick={onClick} src={coverArt} alt="cover art for menace" />
-      </AudioContainer>
+    <AudioContainer>
+      <ArtistInfoContainer onClick={onClick}>
+        <SongTitle>Menace</SongTitle>
+        <SongArtist>by 00ab</SongArtist>
+        {isPaused ? (
+          <AudioControlImage src={PlaySvg} alt="Play button for the music" />
+        ) : (
+          <AudioControlImage src={PauseSvg} alt="Pause button for the music" />
+        )}
+      </ArtistInfoContainer>
+      <a
+        href="https://open.spotify.com/track/5AmpGqzuwZnI968me1wxgJ?si=65dfa5e2764e411d"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <CoverArt onClick={onClick} src={SpotifyLogo} alt="spotify loho" />
+      </a>
       <audio loop controls={false} ref={audioRef}>
         <source src={menaceUrl} type="audio/mp3" />
         Your browser does not support the audio element.
       </audio>
-    </>
+    </AudioContainer>
   );
 };
