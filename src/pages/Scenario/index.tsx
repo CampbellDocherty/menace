@@ -67,9 +67,14 @@ export const Scenario = ({
 
   const onBack = () => {
     setIsForward(false);
+
+    const isSeventhScenario = currentScenario === Pages.SCENARIO_SEVEN;
+    if (!isSeventhScenario) {
+      return goBack(1);
+    }
     const userHasAccessToTheBonusRound =
-      currentScenario === Pages.SCENARIO_SEVEN &&
-      answers[Pages.SCENARIO_SIX] === 1;
+      answers[Pages.SCENARIO_SIX] && answers[Pages.SCENARIO_SIX] === 1;
+
     if (!userHasAccessToTheBonusRound) {
       return goBack(2);
     }
