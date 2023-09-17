@@ -12,8 +12,10 @@ describe('Answers context', () => {
   const mockAnswersContext = {
     answers: defaultAnswers,
     name: '',
+    email: '',
     id: '',
     updateName: vi.fn(),
+    updateEmail: vi.fn(),
     updateId: vi.fn(),
     updateAnswers: vi.fn(),
     reset: vi.fn(),
@@ -51,12 +53,14 @@ describe('Answers context', () => {
   });
 });
 
-test('updates the context when a user submits name reset', () => {
+test('updates the context when a user submits name', () => {
   const mockAnswersContext = {
     answers: defaultAnswers,
     name: '',
+    email: '',
     id: '',
     updateName: vi.fn(),
+    updateEmail: vi.fn(),
     updateId: vi.fn(),
     updateAnswers: vi.fn(),
     reset: vi.fn(),
@@ -73,4 +77,30 @@ test('updates the context when a user submits name reset', () => {
   const button = screen.getByRole('button', { name: 'Take the test' });
   fireEvent.click(button);
   expect(mockAnswersContext.updateName).toHaveBeenCalledTimes(1);
+});
+
+test('updates the context when a user submits email', () => {
+  const mockAnswersContext = {
+    answers: defaultAnswers,
+    name: '',
+    id: '',
+    email: '',
+    updateName: vi.fn(),
+    updateEmail: vi.fn(),
+    updateId: vi.fn(),
+    updateAnswers: vi.fn(),
+    reset: vi.fn(),
+  };
+
+  render(
+    <AnswersContext.Provider value={mockAnswersContext}>
+      <Router />
+      <Restart />
+    </AnswersContext.Provider>,
+  );
+
+  fillNickname();
+  const button = screen.getByRole('button', { name: 'Take the test' });
+  fireEvent.click(button);
+  expect(mockAnswersContext.updateEmail).toHaveBeenCalledTimes(1);
 });

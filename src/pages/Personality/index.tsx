@@ -21,7 +21,7 @@ import { addUser } from '../../firebase/database';
 import { Leaderboard } from '../Leaderboard';
 
 export const Personality = () => {
-  const { answers, id, name } = useContext(AnswersContext);
+  const { answers, id, name, email } = useContext(AnswersContext);
   const result = useMemo(() => {
     const unroundedResult = calculateResult(answers);
     return Math.round(unroundedResult);
@@ -36,7 +36,7 @@ export const Personality = () => {
   }, []);
 
   useEffect(() => {
-    const details = { name, result, multiplier, completed: Date.now() };
+    const details = { name, result, multiplier, completed: Date.now(), email };
     addUser(id, details);
   }, []);
 

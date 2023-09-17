@@ -5,20 +5,6 @@ import { Scenario } from '../pages/Scenario';
 import { Context } from '../context/Pages/Context';
 import { Personality } from '../pages/Personality';
 
-const SCENARIOS = [
-  Pages.SCENARIO_ONE,
-  Pages.SCENARIO_TWO,
-  Pages.SCENARIO_THREE,
-  Pages.SCENARIO_FOUR,
-  Pages.SCENARIO_FIVE,
-  Pages.SCENARIO_SIX,
-  Pages.BONUS,
-  Pages.SCENARIO_SEVEN,
-  Pages.SCENARIO_EIGHT,
-  Pages.SCENARIO_NINE,
-  Pages.SCENARIO_TEN,
-];
-
 const Router = () => {
   const { page, proceed, back } = useContext(Context);
 

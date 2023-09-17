@@ -20,14 +20,20 @@ export const Label = styled.label`
   width: 90%;
 `;
 
-export const Input = styled.input`
+export const Input = styled.input<{ $isError?: boolean }>`
   border: none;
+  outline: none;
   background-color: transparent;
   border-bottom: 1px solid black;
   height: 30px;
   font-size: 1rem;
   width: 90%;
-  text-transform: capitalize;
+  margin-bottom: ${({ $isError }) => ($isError ? '4px' : '16px')};
+  border-radius: 0;
+
+  &:first-child {
+    text-transform: capitalize;
+  }
 
   &::placeholder {
     text-transform: none;
@@ -43,7 +49,7 @@ export const ErrorText = styled.p`
   font-size: 0.9rem;
   margin: 0;
   margin-top: 4px;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 `;
 
 export const ImageCollage = styled.div`
@@ -54,17 +60,22 @@ export const ImageCollage = styled.div`
   justify-content: space-evenly;
 `;
 
-export const MenaceImage = styled.img`
-  width: 28%;
-  max-width: 140px;
-
+export const ImageColumn = styled.div`
+  width: 20%;
+  max-width: 120px;
+  display: flex;
+  flex-direction: column;
   &:first-child {
     margin-right: 8px;
   }
-
   &:last-child {
     margin-left: 8px;
   }
+`;
+
+export const MenaceImage = styled.img`
+  width: 100%;
+  max-width: 140px;
 `;
 
 export const Disclaimer = styled.p`

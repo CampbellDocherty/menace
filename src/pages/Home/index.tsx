@@ -9,6 +9,7 @@ import {
   MenaceImage,
   Title,
   ErrorText,
+  ImageColumn,
 } from './styles';
 import Angel from '../../assets/angel.png';
 import Devil from '../../assets/devil.png';
@@ -18,13 +19,15 @@ import { useContext, useState } from 'react';
 import { AnswersContext } from '../../context/Answers/AnswersContext';
 
 export const Home = ({ onProceed }: { onProceed: () => void }) => {
-  const { updateName, updateId } = useContext(AnswersContext);
+  const { updateName, updateId, updateEmail } = useContext(AnswersContext);
   const [nickname, setNickname] = useState('');
+  const [email, setEmail] = useState('');
   const [error, setError] = useState('');
 
   const onTestStart = () => {
     if (nickname) {
       updateName(nickname);
+      updateEmail(email);
       const id = uuidv4();
       updateId(id);
       onProceed();
@@ -33,9 +36,13 @@ export const Home = ({ onProceed }: { onProceed: () => void }) => {
     }
   };
 
-  const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const onChangeNickname = (event: React.ChangeEvent<HTMLInputElement>) => {
     setError('');
     setNickname(event.target.value);
+  };
+
+  const onChangeEmail = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(event.target.value);
   };
 
   return (
@@ -50,11 +57,14 @@ export const Home = ({ onProceed }: { onProceed: () => void }) => {
       </IntroText>
 
       <ImageCollage>
-        <MenaceImage src={Angel} alt="Abolaji as an angel" />
+        <ImageColumn>
+          <MenaceImage src={Angel} alt="Abolaji as an angel" />
+        </ImageColumn>
         <Form>
           <Label htmlFor="nickname">Nickname</Label>
           <Input
-            onChange={onChange}
+            $isError={!!error}
+            onChange={onChangeNickname}
             value={nickname}
             onFocus={() => setError('')}
             type="text"
@@ -62,10 +72,22 @@ export const Home = ({ onProceed }: { onProceed: () => void }) => {
             id="nickname"
             placeholder="e.g. 00ab"
           />
-          <ErrorText>{error}</ErrorText>
+          {error && <ErrorText>{error}</ErrorText>}
+          <Label htmlFor="email">Email (optional)</Label>
+          <Input
+            onChange={onChangeEmail}
+            value={email}
+            onFocus={() => setError('')}
+            type="email"
+            name="email"
+            id="email"
+            placeholder="e.g. ab@gmail.com"
+          />
           <Button onClick={onTestStart}>Take the test</Button>
         </Form>
-        <MenaceImage src={Devil} alt="Abolaji as a menace" />
+        <ImageColumn>
+          <MenaceImage src={Devil} alt="Abolaji as a devil" />
+        </ImageColumn>
       </ImageCollage>
       <Disclaimer>
         This is in no way medical advice. Please don&apos;t make any romantic

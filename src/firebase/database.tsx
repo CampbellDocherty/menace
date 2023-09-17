@@ -8,6 +8,7 @@ export type UserDetails = {
   result: number;
   multiplier: number;
   completed: number;
+  email: string;
 };
 
 export const addUser = async (id: string, details: UserDetails) => {
