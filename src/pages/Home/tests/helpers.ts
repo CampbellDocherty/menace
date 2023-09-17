@@ -5,3 +5,11 @@ export const fillNickname = async () => {
   const input = screen.getByPlaceholderText('e.g. 00ab') as HTMLInputElement;
   fireEvent.change(input, { target: { value: 'Cam' } });
 };
+
+export const fillEmail = async () => {
+  screen.getByLabelText('Email (optional)');
+  const input = screen.getByPlaceholderText(
+    'e.g. ab@gmail.com',
+  ) as HTMLInputElement;
+  fireEvent.change(input, { target: { value: 'cam@gmail.com' } });
+};
