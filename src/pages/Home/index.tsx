@@ -73,7 +73,7 @@ export const Home = ({ onProceed }: { onProceed: () => void }) => {
             placeholder="e.g. 00ab"
           />
           {error && <ErrorText>{error}</ErrorText>}
-          <Label htmlFor="email">Email (optional)</Label>
+          <Label htmlFor="email">Email</Label>
           <Input
             onChange={onChangeEmail}
             value={email}
