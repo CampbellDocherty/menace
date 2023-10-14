@@ -7,7 +7,7 @@ export const fillNickname = async () => {
 };
 
 export const fillEmail = async () => {
-  screen.getByLabelText('Email (optional)');
+  screen.getByLabelText('Email');
   const input = screen.getByPlaceholderText(
     'e.g. ab@gmail.com',
   ) as HTMLInputElement;
